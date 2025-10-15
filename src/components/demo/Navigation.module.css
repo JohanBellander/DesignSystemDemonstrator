@@ -75,53 +75,58 @@
 
 /* Top Bar Navigation */
 .topBar {
-  background: var(--color-neutral-0);
-  border-bottom: var(--border-width-thin) solid var(--color-neutral-200);
-  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--nav-background-color, var(--color-neutral-0));
+  border-bottom: var(--border-width-thin) solid var(--nav-border-color, var(--color-neutral-200));
+  padding: var(--nav-padding, var(--spacing-md) var(--spacing-lg));
+  height: var(--nav-height, auto);
+  box-shadow: var(--nav-shadow, none);
   position: relative;
   z-index: 100;
+  display: flex;
+  align-items: center;
 }
 
 .topBarContent {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--spacing-xl);
+  gap: var(--nav-gap, var(--spacing-xl));
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .logo {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary-600);
+  font-size: var(--nav-font-size, var(--font-size-xl));
+  font-weight: var(--nav-font-weight, var(--font-weight-bold));
+  color: var(--nav-text-color, var(--color-primary-600));
 }
 
 .navLinks {
   display: flex;
-  gap: var(--spacing-lg);
+  gap: var(--nav-gap, var(--spacing-lg));
   flex: 1;
   justify-content: center;
 }
 
 .navLink {
-  color: var(--color-neutral-700);
+  color: var(--nav-text-color, var(--color-neutral-700));
   text-decoration: none;
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-sm);
+  font-weight: var(--nav-font-weight, var(--font-weight-medium));
+  font-size: var(--nav-font-size, var(--font-size-sm));
   padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: var(--border-radius-sm);
+  border-radius: var(--nav-border-radius, var(--border-radius-sm));
   transition: color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .navLink:hover {
-  color: var(--color-primary-600);
-  background: var(--color-primary-50);
+  color: var(--nav-active-color, var(--color-primary-600));
+  background: var(--nav-hover-color, var(--color-primary-50));
 }
 
 .navActions {
   display: flex;
-  gap: var(--spacing-sm);
+  gap: var(--nav-gap, var(--spacing-sm));
 }
 
 /* Sidebar Navigation */
@@ -130,11 +135,12 @@
   left: 0;
   top: 0;
   bottom: 0;
-  background: var(--color-neutral-0);
-  border-right: var(--border-width-thin) solid var(--color-neutral-200);
+  background: var(--nav-background-color, var(--color-neutral-0));
+  border-right: var(--border-width-thin) solid var(--nav-border-color, var(--color-neutral-200));
   transition: width var(--transition-base);
   overflow: hidden;
   z-index: 50;
+  box-shadow: var(--nav-shadow, none);
 }
 
 .sidebarOpen {
@@ -146,21 +152,21 @@
 }
 
 .sidebarHeader {
-  padding: var(--spacing-lg);
-  border-bottom: var(--border-width-thin) solid var(--color-neutral-200);
+  padding: var(--nav-padding, var(--spacing-lg));
+  border-bottom: var(--border-width-thin) solid var(--nav-border-color, var(--color-neutral-200));
 }
 
 .sidebarTitle {
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-neutral-900);
+  font-size: var(--nav-font-size, var(--font-size-base));
+  font-weight: var(--nav-font-weight, var(--font-weight-semibold));
+  color: var(--nav-text-color, var(--color-neutral-900));
 }
 
 .sidebarNav {
   display: flex;
   flex-direction: column;
   padding: var(--spacing-md);
-  gap: var(--spacing-xs);
+  gap: var(--nav-gap, var(--spacing-xs));
 }
 
 .sidebarLink {
@@ -168,24 +174,24 @@
   align-items: center;
   gap: var(--spacing-md);
   padding: var(--spacing-sm) var(--spacing-md);
-  color: var(--color-neutral-700);
+  color: var(--nav-text-color, var(--color-neutral-700));
   text-decoration: none;
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  border-radius: var(--border-radius-sm);
+  font-size: var(--nav-font-size, var(--font-size-sm));
+  font-weight: var(--nav-font-weight, var(--font-weight-medium));
+  border-radius: var(--nav-border-radius, var(--border-radius-sm));
   transition: background-color var(--transition-fast), color var(--transition-fast);
   white-space: nowrap;
 }
 
 .sidebarLink:hover {
-  background: var(--color-primary-50);
-  color: var(--color-primary-700);
+  background: var(--nav-hover-color, var(--color-primary-50));
+  color: var(--nav-active-color, var(--color-primary-700));
 }
 
 .sidebarLink.active {
-  background: var(--color-primary-100);
-  color: var(--color-primary-700);
-  font-weight: var(--font-weight-semibold);
+  background: var(--nav-hover-color, var(--color-primary-100));
+  color: var(--nav-active-color, var(--color-primary-700));
+  font-weight: var(--nav-font-weight, var(--font-weight-semibold));
 }
 
 .icon {

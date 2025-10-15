@@ -140,4 +140,11 @@ export function applyDesignTokens(designSystem: DesignSystem): void {
       root.style.setProperty(`--surface-${key}`, value);
     });
   }
+
+  // Apply navigation styling tokens (optional)
+  if (tokens.navigation) {
+    Object.entries(tokens.navigation).forEach(([key, value]) => {
+      root.style.setProperty(`--nav-${key.replace(/([A-Z])/g, '-$1').toLowerCase()}`, value);
+    });
+  }
 }

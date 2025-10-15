@@ -273,6 +273,24 @@ export interface Surfaces {
 }
 
 /**
+ * Navigation styling configuration
+ */
+export interface NavigationStyle {
+  backgroundColor?: string;
+  textColor?: string;
+  activeColor?: string;
+  hoverColor?: string;
+  borderColor?: string;
+  height?: string;
+  padding?: string;
+  gap?: string;
+  fontWeight?: string;
+  fontSize?: string;
+  borderRadius?: string;
+  shadow?: string;
+}
+
+/**
  * All design tokens for a design system
  * Note: All properties except colors, typography, and spacing are optional
  * to allow flexibility in design system definitions
@@ -291,6 +309,7 @@ export interface DesignTokens {
   borders?: BorderSystem;
   focusStates?: FocusStates;
   surfaces?: Surfaces;
+  navigation?: NavigationStyle;
 }
 
 /**

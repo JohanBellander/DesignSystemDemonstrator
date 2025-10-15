@@ -30,48 +30,56 @@
 
 /* Navigation */
 .nav {
-  background: var(--color-neutral-0);
-  border-bottom: var(--border-width-thin) solid var(--color-neutral-200);
-  padding: var(--spacing-md) var(--spacing-xl);
+  background: var(--nav-background-color, var(--color-neutral-0));
+  border-bottom: var(--border-width-thin) solid var(--nav-border-color, var(--color-neutral-200));
+  padding: var(--nav-padding, var(--spacing-md) var(--spacing-xl));
+  height: var(--nav-height, auto);
+  box-shadow: var(--nav-shadow, none);
+  display: flex;
+  align-items: center;
 }
 
 .navContent {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--spacing-xl);
+  gap: var(--nav-gap, var(--spacing-xl));
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .logo {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary-600);
+  font-size: var(--nav-font-size, var(--font-size-xl));
+  font-weight: var(--nav-font-weight, var(--font-weight-bold));
+  color: var(--nav-text-color, var(--color-primary-600));
 }
 
 .navLinks {
   display: flex;
-  gap: var(--spacing-lg);
+  gap: var(--nav-gap, var(--spacing-lg));
   flex: 1;
   justify-content: center;
 }
 
 .navLink {
-  color: var(--color-neutral-700);
+  color: var(--nav-text-color, var(--color-neutral-700));
   text-decoration: none;
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-sm);
-  transition: color var(--transition-fast);
+  font-weight: var(--nav-font-weight, var(--font-weight-medium));
+  font-size: var(--nav-font-size, var(--font-size-sm));
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--nav-border-radius, var(--border-radius-sm));
+  transition: color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .navLink:hover {
-  color: var(--color-primary-600);
+  color: var(--nav-active-color, var(--color-primary-600));
+  background: var(--nav-hover-color, var(--color-primary-50));
 }
 
 .navActions {
   display: flex;
-  gap: var(--spacing-sm);
+  gap: var(--nav-gap, var(--spacing-sm));
 }
 
 /* Hero */
@@ -296,11 +304,12 @@
   left: 0;
   top: 0;
   bottom: 0;
-  background: var(--color-neutral-0);
-  border-right: var(--border-width-thin) solid var(--color-neutral-200);
+  background: var(--nav-background-color, var(--color-neutral-0));
+  border-right: var(--border-width-thin) solid var(--nav-border-color, var(--color-neutral-200));
   transition: width var(--transition-base);
   overflow: hidden;
   z-index: 100;
+  box-shadow: var(--nav-shadow, none);
 }
 
 .sidebarOpen {
@@ -312,14 +321,14 @@
 }
 
 .sidebarHeader {
-  padding: var(--spacing-md);
-  border-bottom: var(--border-width-thin) solid var(--color-neutral-200);
+  padding: var(--nav-padding, var(--spacing-md));
+  border-bottom: var(--border-width-thin) solid var(--nav-border-color, var(--color-neutral-200));
 }
 
 .sidebarLogo {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary-600);
+  font-size: var(--nav-font-size, var(--font-size-lg));
+  font-weight: var(--nav-font-weight, var(--font-weight-bold));
+  color: var(--nav-text-color, var(--color-primary-600));
   text-align: center;
 }
 
@@ -327,7 +336,7 @@
   display: flex;
   flex-direction: column;
   padding: var(--spacing-sm);
-  gap: var(--spacing-xs);
+  gap: var(--nav-gap, var(--spacing-xs));
 }
 
 .sidebarLink {
@@ -335,24 +344,24 @@
   align-items: center;
   gap: var(--spacing-sm);
   padding: var(--spacing-sm);
-  color: var(--color-neutral-700);
+  color: var(--nav-text-color, var(--color-neutral-700));
   text-decoration: none;
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  border-radius: var(--border-radius-sm);
+  font-size: var(--nav-font-size, var(--font-size-sm));
+  font-weight: var(--nav-font-weight, var(--font-weight-medium));
+  border-radius: var(--nav-border-radius, var(--border-radius-sm));
   transition: background-color var(--transition-fast), color var(--transition-fast);
   white-space: nowrap;
 }
 
 .sidebarLink:hover {
-  background: var(--color-primary-50);
-  color: var(--color-primary-700);
+  background: var(--nav-hover-color, var(--color-primary-50));
+  color: var(--nav-active-color, var(--color-primary-700));
 }
 
 .sidebarLink.active {
-  background: var(--color-primary-100);
-  color: var(--color-primary-700);
-  font-weight: var(--font-weight-semibold);
+  background: var(--nav-hover-color, var(--color-primary-100));
+  color: var(--nav-active-color, var(--color-primary-700));
+  font-weight: var(--nav-font-weight, var(--font-weight-semibold));
 }
 
 .sidebarIcon {
@@ -385,41 +394,48 @@
 
 /* Top Bar for Sidebar+TopBar pattern */
 .topBar {
-  background: var(--color-neutral-0);
-  border-bottom: var(--border-width-thin) solid var(--color-neutral-200);
-  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--nav-background-color, var(--color-neutral-0));
+  border-bottom: var(--border-width-thin) solid var(--nav-border-color, var(--color-neutral-200));
+  padding: var(--nav-padding, var(--spacing-sm) var(--spacing-md));
+  height: var(--nav-height, auto);
+  box-shadow: var(--nav-shadow, none);
   position: relative;
   z-index: 90;
+  display: flex;
+  align-items: center;
 }
 
 .topBarContent {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .topBarRight {
   display: flex;
-  gap: var(--spacing-xs);
+  gap: var(--nav-gap, var(--spacing-xs));
   align-items: center;
 }
 
 .iconButton {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--border-radius-sm);
-  border: var(--border-width-thin) solid var(--color-neutral-200);
-  background: var(--color-neutral-0);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--nav-border-radius, var(--border-radius-sm));
+  border: var(--border-width-thin) solid var(--nav-border-color, var(--color-neutral-200));
+  background: transparent;
+  color: var(--nav-text-color, var(--color-neutral-700));
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--font-size-base);
-  transition: background-color var(--transition-fast);
+  font-size: var(--nav-font-size, var(--font-size-sm));
+  font-weight: var(--nav-font-weight, var(--font-weight-medium));
+  transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
 .iconButton:hover {
-  background: var(--color-neutral-100);
+  background: var(--nav-hover-color, var(--color-neutral-100));
+  color: var(--nav-active-color, var(--color-primary-600));
 }
 
 /* Hamburger Menu */

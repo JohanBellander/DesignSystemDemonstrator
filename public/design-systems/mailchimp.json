@@ -222,6 +222,20 @@
         "raised": "#FAFAF9",
         "overlay": "#FFFFFF"
       }
+    },
+    "navigation": {
+      "backgroundColor": "#FFE01B",
+      "textColor": "#231E15",
+      "activeColor": "#231E15",
+      "hoverColor": "rgba(35, 30, 21, 0.08)",
+      "borderColor": "rgba(35, 30, 21, 0.1)",
+      "height": "68px",
+      "padding": "0 24px",
+      "gap": "20px",
+      "fontWeight": "600",
+      "fontSize": "1rem",
+      "borderRadius": "16px",
+      "shadow": "0 4px 8px rgba(35, 30, 21, 0.12)"
     }
   }
 }

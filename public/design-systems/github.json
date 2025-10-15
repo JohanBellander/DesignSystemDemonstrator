@@ -173,6 +173,20 @@
       "ringOffset": "0px",
       "ringColor": "rgba(9, 105, 218, 0.3)",
       "outlineStyle": "solid"
+    },
+    "navigation": {
+      "backgroundColor": "#24292F",
+      "textColor": "#FFFFFF",
+      "activeColor": "#FFFFFF",
+      "hoverColor": "rgba(255, 255, 255, 0.1)",
+      "borderColor": "#D0D7DE",
+      "height": "64px",
+      "padding": "0 16px",
+      "gap": "12px",
+      "fontWeight": "600",
+      "fontSize": "0.875rem",
+      "borderRadius": "6px",
+      "shadow": "0 1px 0 rgba(27, 31, 36, 0.04)"
     }
   }
 }
