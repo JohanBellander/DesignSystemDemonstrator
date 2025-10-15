@@ -37,6 +37,49 @@
   font-weight: var(--font-weight-normal);
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.exportButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-primary-600);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-primary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.exportButton:hover {
+  background: var(--color-primary-700);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.exportButton:active {
+  transform: translateY(0);
+}
+
+.exportButton:disabled {
+  background: var(--color-neutral-300);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.exportButton span:first-child {
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
 .main {
   flex: 1;
   animation: fadeIn 300ms ease-in-out;
