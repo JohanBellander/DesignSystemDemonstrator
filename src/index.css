@@ -16,3 +16,38 @@ body {
 #root {
   min-height: 100vh;
 }
+
+/* Token restriction styles */
+.token-restricted {
+  opacity: 0.3;
+  position: relative;
+  cursor: not-allowed;
+  filter: grayscale(80%);
+}
+
+.token-restricted::after {
+  content: '🚫';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.token-restricted:hover::before {
+  content: 'Not allowed in this system';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  margin-bottom: 4px;
+  z-index: 1000;
+}

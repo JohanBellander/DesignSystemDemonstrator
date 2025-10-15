@@ -299,6 +299,33 @@ export interface DesignTokens {
 export type DesignSystemStatus = 'active' | 'deprecated' | 'experimental';
 
 /**
+ * Specifies which tokens are allowed to be used in this design system.
+ * If specified, only the listed tokens should be used. Others are considered "not part of the system".
+ * Use dot notation to specify nested tokens (e.g., "borderRadius.md", "colors.primary.500")
+ */
+export interface AllowedTokens {
+  colors?: {
+    primary?: string[];      // e.g., ["500", "600", "700"] - only these shades allowed
+    secondary?: string[];
+    neutral?: string[];
+    semantic?: string[];      // e.g., ["success", "error"] - only these semantic colors
+    text?: string[];
+    background?: string[];
+    border?: string[];
+  };
+  typography?: {
+    fontFamily?: string[];    // e.g., ["primary"] - only primary font allowed
+    fontSize?: string[];      // e.g., ["sm", "base", "lg"] - only these sizes
+    fontWeight?: string[];    // e.g., ["normal", "bold"] - only these weights
+    lineHeight?: string[];
+  };
+  spacing?: string[];         // e.g., ["sm", "md", "lg"] - only these spacing values
+  borderRadius?: string[];    // e.g., ["md", "lg"] - only these radii allowed
+  shadows?: string[];
+  transitions?: string[];
+}
+
+/**
  * Complete design system definition
  */
 export interface DesignSystem {
@@ -306,6 +333,7 @@ export interface DesignSystem {
   name: string;
   description: string;
   status?: DesignSystemStatus;
+  allowedTokens?: AllowedTokens;
   tokens: DesignTokens;
 }
 

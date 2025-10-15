@@ -2,6 +2,13 @@
   "id": "mailchimp",
   "name": "Mailchimp",
   "description": "Email marketing platform with playful yellow branding, warm earth tones, and friendly personality",
+  "allowedTokens": {
+    "borderRadius": ["lg", "xl", "full"],
+    "spacing": ["sm", "md", "lg", "xl", "2xl"],
+    "typography": {
+      "fontWeight": ["regular", "semibold", "bold"]
+    }
+  },
   "tokens": {
     "colors": {
       "primary": {

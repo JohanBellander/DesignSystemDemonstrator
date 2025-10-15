@@ -12,11 +12,15 @@ import { OpacityScale } from '../demo/OpacityScale';
 import { BorderSystem } from '../demo/BorderSystem';
 import { FocusStates } from '../demo/FocusStates';
 import { Surfaces } from '../demo/Surfaces';
+import { TokenRestrictions } from '../demo/TokenRestrictions';
 import styles from './ComponentShowcase.module.css';
 
 export function ComponentShowcase() {
   return (
     <div className={styles.showcase}>
+      {/* Token Restrictions Section - Only shows if system has restrictions */}
+      <TokenRestrictions />
+      
       {/* Typography Section */}
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>Typography</h2>

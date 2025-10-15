@@ -19,6 +19,28 @@
   "//": "^ Options: 'active' (default, omit if active), 'deprecated' (shows warning badge), 'experimental' (shows info badge)",
   "//": "^ Use 'deprecated' to discourage usage, 'experimental' for systems in testing",
   
+  "//": "--- ALLOWED TOKENS (OPTIONAL) ---",
+  "//": "Specify which tokens are allowed in this design system. Restricted tokens will be grayed out in the UI.",
+  "//": "Omit this entire section if all tokens are allowed.",
+  "allowedTokens": {
+    "borderRadius": ["md", "lg", "xl"],
+    "//": "^ Only these border radius values allowed, others shown as restricted",
+    "spacing": ["sm", "md", "lg", "xl"],
+    "//": "^ Only these spacing values allowed",
+    "typography": {
+      "fontWeight": ["normal", "semibold", "bold"],
+      "//": "^ Only these font weights allowed",
+      "fontSize": ["sm", "base", "lg", "xl"],
+      "//": "^ Only these font sizes allowed"
+    },
+    "colors": {
+      "primary": ["500", "600", "700"],
+      "//": "^ Only these primary color shades allowed",
+      "secondary": ["400", "500", "600"]
+    }
+  },
+  "//": "^ DELETE the entire allowedTokens section if you want all tokens to be available",
+  
   "//": "--- TOKENS OBJECT (REQUIRED) ---",
   "tokens": {
     

@@ -308,6 +308,61 @@ The `status` field is optional and controls how the design system is displayed i
 - Experimental systems show a blue info badge with "🧪 EXPERIMENTAL"
 - Badges appear in the dropdown and next to the selected system name
 
+### Token Restrictions (allowedTokens)
+
+The `allowedTokens` field lets you specify which specific tokens are **allowed** in your design system. This is perfect for enforcing design constraints where only certain values should be used.
+
+```json
+{
+  "id": "my-system",
+  "name": "My System",
+  "description": "Description here",
+  "allowedTokens": {
+    "borderRadius": ["md", "lg", "xl"],
+    "spacing": ["sm", "md", "lg", "xl"],
+    "typography": {
+      "fontWeight": ["normal", "semibold", "bold"],
+      "fontSize": ["sm", "base", "lg", "xl"]
+    },
+    "colors": {
+      "primary": ["500", "600", "700"],
+      "secondary": ["400", "500", "600"]
+    }
+  },
+  "tokens": { ... }
+}
+```
+
+**When to use:**
+- Your design system only allows specific border-radius values (e.g., only rounded corners, no sharp edges)
+- You want to limit spacing to a smaller scale (e.g., only 4 values instead of 8)
+- Only certain font weights should be used (e.g., no light weights)
+- You want to restrict color usage to specific shades (e.g., only mid-range tones)
+
+**How it works:**
+1. Define all tokens normally in the `tokens` section
+2. Add `allowedTokens` to specify which ones can be used
+3. Restricted tokens will be shown **grayed out with 🚫** in the UI
+4. A special "Token Restrictions" section appears showing allowed vs restricted tokens
+
+**Visual Indicators:**
+- Restricted tokens have 30% opacity and are grayed out
+- A 🚫 icon overlays restricted tokens
+- Hovering shows "Not allowed in this system" tooltip
+- Allowed tokens display normally and are fully interactive
+
+**Example Use Cases:**
+- **Strict spacing**: `"spacing": ["md", "lg", "xl"]` - Only medium to extra-large spacing
+- **Simple radii**: `"borderRadius": ["md", "full"]` - Only medium rounded or fully circular
+- **Limited weights**: `"fontWeight": ["regular", "bold"]` - No medium or semibold
+- **Core colors only**: `"primary": ["500"]` - Only the main brand color, not lighter/darker shades
+
+**Important Notes:**
+- Omit `allowedTokens` entirely if all tokens should be available
+- Tokens must still be defined in the main `tokens` section
+- This is a visual/documentation feature - it doesn't prevent CSS from working
+- Use this to guide designers/developers toward correct token usage
+
 ### Grid System
 ```json
 "grid": {
