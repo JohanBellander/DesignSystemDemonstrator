@@ -19,6 +19,16 @@
     "surfaces": {
       "background": ["primary", "secondary", "tertiary"],
       "surface": ["base", "raised", "overlay"]
+    },
+    "components": {
+      "dropdown": {
+        "sizes": ["medium", "large"]
+      },
+      "list": {
+        "variants": ["bordered", "card"],
+        "sizes": ["medium", "large"],
+        "interactive": true
+      }
     }
   },
   "tokens": {

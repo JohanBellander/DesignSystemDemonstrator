@@ -69,3 +69,45 @@ export function hasCategoryRestrictions(
   
   return !!allowedTokens[category as keyof AllowedTokens];
 }
+
+/**
+ * Check if a component variant/size is allowed
+ */
+export function isComponentPropertyAllowed(
+  allowedTokens: AllowedTokens | undefined,
+  component: 'dropdown' | 'list',
+  property: string,
+  value: string | boolean
+): boolean {
+  // If no restrictions are defined, everything is allowed
+  if (!allowedTokens || !allowedTokens.components) {
+    return true;
+  }
+
+  const componentRestrictions = allowedTokens.components[component];
+  
+  // If component has no restrictions, everything is allowed
+  if (!componentRestrictions) {
+    return true;
+  }
+
+  const propertyRestrictions = (componentRestrictions as any)[property];
+  
+  // If property has no restrictions, everything is allowed
+  if (propertyRestrictions === undefined) {
+    return true;
+  }
+
+  // Handle boolean properties
+  if (typeof propertyRestrictions === 'boolean') {
+    return propertyRestrictions;
+  }
+
+  // Handle array restrictions
+  if (Array.isArray(propertyRestrictions)) {
+    return propertyRestrictions.includes(value);
+  }
+
+  // Default to allowed
+  return true;
+}

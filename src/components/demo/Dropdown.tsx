@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useDesignSystem } from '../../context/DesignSystemContext';
+import { isComponentPropertyAllowed } from '../../utils/tokenRestrictions';
 import styles from './Dropdown.module.css';
 
 interface DropdownOption {
@@ -81,6 +83,9 @@ export function Dropdown({
 }
 
 export function DropdownShowcase() {
+  const { selectedSystem } = useDesignSystem();
+  const allowedTokens = selectedSystem?.allowedTokens;
+
   const sampleOptions = [
     { value: 'option1', label: 'First Option' },
     { value: 'option2', label: 'Second Option' },
@@ -88,6 +93,11 @@ export function DropdownShowcase() {
     { value: 'option4', label: 'Fourth Option' },
     { value: 'option5', label: 'Fifth Option' },
   ];
+
+  // Check which sizes are allowed
+  const isSmallAllowed = isComponentPropertyAllowed(allowedTokens, 'dropdown', 'sizes', 'small');
+  const isMediumAllowed = isComponentPropertyAllowed(allowedTokens, 'dropdown', 'sizes', 'medium');
+  const isLargeAllowed = isComponentPropertyAllowed(allowedTokens, 'dropdown', 'sizes', 'large');
 
   return (
     <div className={styles.showcase}>
@@ -100,21 +110,27 @@ export function DropdownShowcase() {
       </div>
       
       <div className={styles.showcaseRow}>
-        <Dropdown 
-          label="Small Size"
-          options={sampleOptions}
-          size="small"
-        />
-        <Dropdown 
-          label="Medium Size"
-          options={sampleOptions}
-          size="medium"
-        />
-        <Dropdown 
-          label="Large Size"
-          options={sampleOptions}
-          size="large"
-        />
+        {isSmallAllowed && (
+          <Dropdown 
+            label="Small Size"
+            options={sampleOptions}
+            size="small"
+          />
+        )}
+        {isMediumAllowed && (
+          <Dropdown 
+            label="Medium Size"
+            options={sampleOptions}
+            size="medium"
+          />
+        )}
+        {isLargeAllowed && (
+          <Dropdown 
+            label="Large Size"
+            options={sampleOptions}
+            size="large"
+          />
+        )}
       </div>
 
       <div className={styles.showcaseRow}>

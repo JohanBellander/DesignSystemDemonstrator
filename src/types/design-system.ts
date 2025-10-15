@@ -365,6 +365,17 @@ export interface AllowedTokens {
     surface?: string[];       // e.g., ["base", "raised"] - only these surface types
   };
   navigationPattern?: 'topbar' | 'sidebar' | 'hamburger' | 'topbar-hamburger' | 'sidebar-topbar' | 'minimal';
+  components?: {
+    dropdown?: {
+      sizes?: ('small' | 'medium' | 'large')[];     // e.g., ["medium", "large"] - only these sizes
+      states?: ('default' | 'hover' | 'focus' | 'error' | 'disabled')[];  // allowed states
+    };
+    list?: {
+      variants?: ('default' | 'bordered' | 'divided' | 'card')[];  // e.g., ["bordered", "card"]
+      sizes?: ('small' | 'medium' | 'large')[];     // e.g., ["medium", "large"]
+      interactive?: boolean;                         // Allow/disallow interactive mode
+    };
+  };
 }
 
 /**
