@@ -15,7 +15,7 @@ export function TokenRestrictions() {
     <div className={styles.restrictions}>
       <h3 className={styles.title}>Token Restrictions in This System</h3>
       <p className={styles.description}>
-        This design system restricts which tokens can be used. Restricted tokens are shown grayed out with 🚫.
+        This design system restricts which tokens can be used. Restricted tokens are shown grayed out with ✕.
       </p>
 
       {/* Border Radius Restrictions */}

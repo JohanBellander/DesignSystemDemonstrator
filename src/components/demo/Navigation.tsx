@@ -85,10 +85,10 @@ function TopBarNavigation() {
         <h2>Top Bar Navigation</h2>
         <p>Classic horizontal navigation bar at the top. Best for desktop-first sites with limited navigation items.</p>
         <ul className={styles.featureList}>
-          <li>✓ Always visible</li>
-          <li>✓ Easy to scan</li>
-          <li>✓ Good for 4-7 main items</li>
-          <li>⚠ Limited space on mobile</li>
+          <li>Always visible</li>
+          <li>Easy to scan</li>
+          <li>Good for 4-7 main items</li>
+          <li>Limited space on mobile</li>
         </ul>
       </div>
     </div>
@@ -105,34 +105,34 @@ function SidebarNavigation({ isOpen, onToggle }: { isOpen: boolean; onToggle: ()
         </div>
         <nav className={styles.sidebarNav}>
           <a href="#" className={`${styles.sidebarLink} ${styles.active}`}>
-            <span className={styles.icon}>🏠</span>
             {isOpen && <span>Dashboard</span>}
+            {!isOpen && <span>D</span>}
           </a>
           <a href="#" className={styles.sidebarLink}>
-            <span className={styles.icon}>📊</span>
             {isOpen && <span>Analytics</span>}
+            {!isOpen && <span>A</span>}
           </a>
           <a href="#" className={styles.sidebarLink}>
-            <span className={styles.icon}>👥</span>
             {isOpen && <span>Users</span>}
+            {!isOpen && <span>U</span>}
           </a>
           <a href="#" className={styles.sidebarLink}>
-            <span className={styles.icon}>⚙️</span>
             {isOpen && <span>Settings</span>}
+            {!isOpen && <span>S</span>}
           </a>
         </nav>
         <button className={styles.sidebarToggle} onClick={onToggle}>
-          {isOpen ? '◀' : '▶'}
+          {isOpen ? '‹' : '›'}
         </button>
       </div>
       <div className={styles.contentArea} style={{ marginLeft: isOpen ? '240px' : '80px' }}>
         <h2>Sidebar Navigation</h2>
         <p>Vertical navigation panel on the side. Perfect for admin dashboards and applications with many sections.</p>
         <ul className={styles.featureList}>
-          <li>✓ Great for many items</li>
-          <li>✓ Can be collapsed</li>
-          <li>✓ Icons + text labels</li>
-          <li>✓ Good for apps</li>
+          <li>Great for many items</li>
+          <li>Can be collapsed</li>
+          <li>Text labels</li>
+          <li>Good for apps</li>
         </ul>
         <p style={{ marginTop: '1rem' }}>
           <Button variant="outline" size="small" onClick={onToggle}>
@@ -176,10 +176,10 @@ function HamburgerNavigation({ isOpen, onToggle }: { isOpen: boolean; onToggle: 
         <h2>Hamburger Menu</h2>
         <p>Hidden menu that expands when clicked. Common on mobile-first or minimalist sites.</p>
         <ul className={styles.featureList}>
-          <li>✓ Clean, minimal look</li>
-          <li>✓ Saves screen space</li>
-          <li>✓ Mobile-friendly</li>
-          <li>⚠ Requires extra click</li>
+          <li>Clean, minimal look</li>
+          <li>Saves screen space</li>
+          <li>Mobile-friendly</li>
+          <li>Requires extra click</li>
         </ul>
         <p style={{ marginTop: '1rem' }}>
           <Button variant="outline" size="small" onClick={onToggle}>
@@ -231,13 +231,13 @@ function TopBarWithHamburger() {
         <h2>Top Bar + Hamburger (Responsive)</h2>
         <p>Desktop shows full navigation, mobile uses hamburger. Best of both worlds for responsive sites.</p>
         <ul className={styles.featureList}>
-          <li>✓ Optimal for each device</li>
-          <li>✓ Full nav on desktop</li>
-          <li>✓ Clean mobile experience</li>
-          <li>✓ Most common pattern</li>
+          <li>Optimal for each device</li>
+          <li>Full nav on desktop</li>
+          <li>Clean mobile experience</li>
+          <li>Most common pattern</li>
         </ul>
         <p style={{ marginTop: '1rem', fontSize: '0.875rem', color: 'var(--color-neutral-600)' }}>
-          💡 Resize your browser window to see the responsive behavior
+          Note: Resize your browser window to see the responsive behavior
         </p>
       </div>
     </div>
@@ -253,28 +253,24 @@ function SidebarWithTopBar() {
           <div className={styles.logo}>Brand</div>
           <div style={{ flex: 1 }}></div>
           <div className={styles.topBarRight}>
-            <button className={styles.iconButton}>🔍</button>
-            <button className={styles.iconButton}>🔔</button>
-            <button className={styles.iconButton}>👤</button>
+            <button className={styles.iconButton}>Search</button>
+            <button className={styles.iconButton}>Alerts</button>
+            <button className={styles.iconButton}>Profile</button>
           </div>
         </div>
       </nav>
       <div className={`${styles.sidebar} ${styles.sidebarOpen}`} style={{ top: '60px' }}>
         <nav className={styles.sidebarNav}>
           <a href="#" className={`${styles.sidebarLink} ${styles.active}`}>
-            <span className={styles.icon}>🏠</span>
             <span>Dashboard</span>
           </a>
           <a href="#" className={styles.sidebarLink}>
-            <span className={styles.icon}>📊</span>
             <span>Reports</span>
           </a>
           <a href="#" className={styles.sidebarLink}>
-            <span className={styles.icon}>💼</span>
             <span>Projects</span>
           </a>
           <a href="#" className={styles.sidebarLink}>
-            <span className={styles.icon}>👥</span>
             <span>Team</span>
           </a>
         </nav>
@@ -283,10 +279,10 @@ function SidebarWithTopBar() {
         <h2>Sidebar + Top Bar</h2>
         <p>Combines vertical sidebar with horizontal top bar. Common in complex dashboards and admin panels.</p>
         <ul className={styles.featureList}>
-          <li>✓ Maximum navigation space</li>
-          <li>✓ Top bar for user actions</li>
-          <li>✓ Sidebar for main sections</li>
-          <li>✓ Professional look</li>
+          <li>Maximum navigation space</li>
+          <li>Top bar for user actions</li>
+          <li>Sidebar for main sections</li>
+          <li>Professional look</li>
         </ul>
       </div>
     </div>
@@ -304,10 +300,10 @@ function MinimalNavigation() {
         <h2>Minimal / No Navigation</h2>
         <p>Landing pages, coming soon pages, or single-focus pages with minimal or no navigation.</p>
         <ul className={styles.featureList}>
-          <li>✓ Maximum focus</li>
-          <li>✓ Clean, distraction-free</li>
-          <li>✓ Good for conversions</li>
-          <li>✓ Single-purpose pages</li>
+          <li>Maximum focus</li>
+          <li>Clean, distraction-free</li>
+          <li>Good for conversions</li>
+          <li>Single-purpose pages</li>
         </ul>
         <div style={{ marginTop: '2rem' }}>
           <Button variant="primary" size="large">Get Started</Button>

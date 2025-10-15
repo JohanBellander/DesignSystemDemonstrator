@@ -45,9 +45,9 @@ export function DesignSystemDemo() {
                 <div className={styles.topBarContent}>
                   <div className={styles.logo}>Brand</div>
                   <div className={styles.topBarRight}>
-                    <button className={styles.iconButton}>🔍</button>
-                    <button className={styles.iconButton}>🔔</button>
-                    <button className={styles.iconButton}>👤</button>
+                    <button className={styles.iconButton}>Search</button>
+                    <button className={styles.iconButton}>Alerts</button>
+                    <button className={styles.iconButton}>Profile</button>
                   </div>
                 </div>
               </nav>
@@ -63,24 +63,24 @@ export function DesignSystemDemo() {
               )}
               <nav className={styles.sidebarNav}>
                 <a href="#" className={`${styles.sidebarLink} ${styles.active}`}>
-                  <span className={styles.sidebarIcon}>🏠</span>
                   {isSidebarOpen && <span>Dashboard</span>}
+                  {!isSidebarOpen && <span>D</span>}
                 </a>
                 <a href="#" className={styles.sidebarLink}>
-                  <span className={styles.sidebarIcon}>📊</span>
                   {isSidebarOpen && <span>Analytics</span>}
+                  {!isSidebarOpen && <span>A</span>}
                 </a>
                 <a href="#" className={styles.sidebarLink}>
-                  <span className={styles.sidebarIcon}>👥</span>
                   {isSidebarOpen && <span>Users</span>}
+                  {!isSidebarOpen && <span>U</span>}
                 </a>
                 <a href="#" className={styles.sidebarLink}>
-                  <span className={styles.sidebarIcon}>⚙️</span>
                   {isSidebarOpen && <span>Settings</span>}
+                  {!isSidebarOpen && <span>S</span>}
                 </a>
               </nav>
               <button className={styles.sidebarToggle} onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-                {isSidebarOpen ? '◀' : '▶'}
+                {isSidebarOpen ? '‹' : '›'}
               </button>
             </div>
           </>
@@ -148,21 +148,18 @@ export function DesignSystemDemo() {
         <section className={styles.features}>
           <div className={styles.featuresGrid}>
             <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>🎨</div>
               <h3 className={styles.featureTitle}>Beautiful Design</h3>
               <p className={styles.featureText}>
                 Carefully crafted components with attention to detail and aesthetics.
               </p>
             </div>
             <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>⚡</div>
               <h3 className={styles.featureTitle}>Lightning Fast</h3>
               <p className={styles.featureText}>
                 Optimized for performance with minimal bundle size and quick load times.
               </p>
             </div>
             <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>♿</div>
               <h3 className={styles.featureTitle}>Accessible</h3>
               <p className={styles.featureText}>
                 Built with accessibility in mind, following WCAG guidelines.
