@@ -1,0 +1,28 @@
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-neutral-200);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+  overflow: hidden;
+}
+
+.small {
+  width: 2rem;
+  height: 2rem;
+  font-size: var(--font-size-sm);
+}
+
+.medium {
+  width: 3rem;
+  height: 3rem;
+  font-size: var(--font-size-base);
+}
+
+.large {
+  width: 4rem;
+  height: 4rem;
+  font-size: var(--font-size-lg);
+}
