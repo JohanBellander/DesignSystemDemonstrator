@@ -4,7 +4,7 @@ import { ComponentShowcase } from './components/ui/ComponentShowcase';
 import styles from './App.module.css';
 
 function AppContent() {
-  const { isLoading, error } = useDesignSystem();
+  const { isLoading, error, selectedSystem } = useDesignSystem();
 
   if (isLoading) {
     return <div className={styles.loading}>Loading design systems...</div>;
@@ -18,7 +18,12 @@ function AppContent() {
     <div className={styles.app}>
       <header className={styles.header}>
         <div className={styles.headerContent}>
-          <h1 className={styles.title}>Design Studio Demonstrator</h1>
+          <div className={styles.titleSection}>
+            <h1 className={styles.title}>Design Studio Demonstrator</h1>
+            {selectedSystem && (
+              <p className={styles.description}>{selectedSystem.description}</p>
+            )}
+          </div>
           <DesignSystemSelector />
         </div>
       </header>

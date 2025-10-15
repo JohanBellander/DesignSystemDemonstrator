@@ -22,10 +22,14 @@
   transition: all var(--transition-base);
 }
 
+.input:hover:not(:disabled) {
+  border-color: var(--color-primary-400);
+}
+
 .input:focus {
   outline: none;
   border-color: var(--color-primary-500);
-  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+  box-shadow: 0 0 0 3px var(--color-primary-100);
 }
 
 .input:disabled {
@@ -39,7 +43,8 @@
 }
 
 .error:focus {
-  box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1);
+  border-color: var(--color-semantic-error);
+  box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.15);
 }
 
 .errorMessage {

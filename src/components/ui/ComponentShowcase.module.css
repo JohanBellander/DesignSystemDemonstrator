@@ -29,3 +29,10 @@
   flex-direction: column;
   gap: var(--spacing-md);
 }
+
+.sectionDescription {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-md);
+  line-height: var(--line-height-relaxed);
+}
