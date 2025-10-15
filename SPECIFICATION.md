@@ -102,6 +102,20 @@ Each design system is defined as a JSON file with the following structure:
 #### Transitions
 - **Duration**: fast, base, slow
 
+#### Navigation *(New)*
+- **Background Color**: Navigation bar background
+- **Text Color**: Default navigation text color
+- **Active Color**: Active/selected navigation item color
+- **Hover Color**: Hover state background overlay
+- **Border Color**: Navigation border/separator color
+- **Height**: Navigation bar height
+- **Padding**: Internal padding
+- **Gap**: Space between navigation items
+- **Font Weight**: Text weight for navigation items
+- **Font Size**: Text size for navigation items
+- **Border Radius**: Corner rounding (for nav items or container)
+- **Shadow**: Shadow effect for navigation elevation
+
 #### Grid *(Optional)*
 - **Columns**: Number of grid columns (typically 12)
 - **Gutter**: Space between grid columns
@@ -156,12 +170,18 @@ This flexibility allows design systems to:
 
 ### Initial Components (MVP)
 
-1. **Typography Showcase**
+1. **Navigation Showcase** *(New)*
+   - Different navigation patterns: topbar, sidebar, minimal, topbar-hamburger, sidebar-topbar
+   - Customizable styling per design system
+   - Demonstrates: navigation tokens, layout patterns, brand-specific styling
+   - Each design system can define its own navigation appearance
+
+2. **Typography Showcase**
    - Display all heading levels (h1-h6)
    - Body text variants
    - Demonstrates: font family, sizes, weights, line heights, colors
 
-2. **Button**
+3. **Button**
    - Variants: primary, secondary, outline, ghost
    - Sizes: small, medium, large
    - States: default, hover, active, disabled
@@ -194,34 +214,34 @@ This flexibility allows design systems to:
    - Horizontal separator
    - Demonstrates: border colors, spacing
 
-9. **Layout & Grid System** *(New)*
+9. **Layout & Grid System**
    - 12-column grid visualization
    - Container width examples (sm, md, lg, xl, 2xl)
    - Breakpoint reference list
    - Demonstrates: grid system, layout tokens, responsive design
 
-10. **Elevation System** *(New)*
+10. **Elevation System**
     - Shadow level cards (0-24)
     - Z-index layering reference
     - Demonstrates: elevation shadows, z-index values, depth hierarchy
 
-11. **Opacity Scale** *(New)*
+11. **Opacity Scale**
     - Opacity value swatches
     - Use case examples (disabled buttons, overlays, dividers)
     - Demonstrates: transparency values, layering effects
 
-12. **Border System** *(New)*
+12. **Border System**
     - Border width examples (thin, medium, thick)
     - Border style examples (solid, dashed, dotted)
     - Border radius reminder (from existing tokens)
     - Demonstrates: border properties, outline patterns
 
-13. **Focus States** *(New)*
+13. **Focus States**
     - Interactive focus ring examples
     - Focus property reference
     - Demonstrates: keyboard navigation styling, accessibility features
 
-14. **Surfaces & Backgrounds** *(New)*
+14. **Surfaces & Backgrounds**
     - Background hierarchy visualization
     - Surface elevation examples
     - Layering demonstration
@@ -299,25 +319,42 @@ design-studio-demonstrator/
 
 ### Initial Design Systems
 
-The MVP includes three design systems:
+The application includes five design systems:
 
 1. **Material Design**
    - Colorful, expressive
    - Rounded corners
    - Elevation through shadows
    - Roboto font family
+   - Topbar with hamburger menu navigation pattern
 
-2. **Apple-Inspired**
+2. **Apple Inspired**
    - Minimal, clean
    - San Francisco font aesthetic
-   - Subtle shadows
+   - Subtle shadows with frosted glass effects
    - Refined spacing
+   - Minimal navigation pattern
 
 3. **GitHub Primer**
    - Developer-focused
-   - Neutral color palette
+   - Neutral color palette with dark navigation
    - Clear hierarchy
    - System fonts
+   - Sidebar with topbar navigation pattern
+
+4. **Tokens Studio**
+   - Vibrant, modern design
+   - Bold typography and bright accent colors
+   - Dramatic dark backgrounds with cyan highlights
+   - Generous spacing for impact
+   - Topbar navigation pattern
+
+5. **Mailchimp**
+   - Playful yellow branding
+   - Warm earth tones
+   - Friendly personality with rounded corners
+   - Soft shadows
+   - Sidebar navigation pattern
 
 ### Adding New Design Systems
 
@@ -351,14 +388,15 @@ These may be considered for future versions.
 
 The MVP is successful when:
 
-1. ✅ All three design systems load correctly
+1. ✅ All five design systems load correctly
 2. ✅ Dropdown selector switches between systems
-3. ✅ All 8 components render with correct styling
-4. ✅ Design tokens are properly applied via CSS custom properties
-5. ✅ New design systems can be added without code changes
-6. ✅ Application runs in modern browsers
-7. ✅ Code is type-safe (no TypeScript errors)
-8. ✅ Project is on GitHub with clear documentation
+3. ✅ All 14 components render with correct styling
+4. ✅ Navigation patterns are customizable per design system
+5. ✅ Design tokens are properly applied via CSS custom properties
+6. ✅ New design systems can be added without code changes
+7. ✅ Application runs in modern browsers
+8. ✅ Code is type-safe (no TypeScript errors)
+9. ✅ Project is on GitHub with clear documentation
 
 ## Browser Support
 

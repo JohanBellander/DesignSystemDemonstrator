@@ -335,6 +335,105 @@ The `allowedTokens` field lets you specify which specific tokens are **allowed**
 - This is a visual/documentation feature - it doesn't prevent CSS from working
 - Use this to guide designers/developers toward correct token usage
 
+### Navigation Styling *(Recommended)*
+
+Define how your navigation should look. Each design system can have a unique navigation appearance that matches its brand identity.
+
+```json
+"navigation": {
+  "backgroundColor": "#FFFFFF",
+  "textColor": "#000000",
+  "activeColor": "#2196F3",
+  "hoverColor": "rgba(33, 150, 243, 0.08)",
+  "borderColor": "rgba(0, 0, 0, 0.12)",
+  "height": "64px",
+  "padding": "0 24px",
+  "gap": "16px",
+  "fontWeight": "500",
+  "fontSize": "0.875rem",
+  "borderRadius": "0",
+  "shadow": "0 2px 4px rgba(0,0,0,0.1)"
+}
+```
+
+**Property Guide:**
+
+| Property | Description | Example Values |
+|----------|-------------|----------------|
+| `backgroundColor` | Navigation bar background | `"#FFFFFF"`, `"rgba(255, 255, 255, 0.8)"` (frosted glass) |
+| `textColor` | Default text color | `"#000000"`, `"#FFFFFF"` |
+| `activeColor` | Active/selected item color | `"#2196F3"`, `"#FFFFFF"` |
+| `hoverColor` | Hover state overlay | `"rgba(33, 150, 243, 0.08)"` (semi-transparent) |
+| `borderColor` | Border/separator color | `"rgba(0, 0, 0, 0.12)"`, `"#D0D7DE"` |
+| `height` | Navigation bar height | `"64px"`, `"44px"` (iOS-style), `"72px"` (bold) |
+| `padding` | Internal padding | `"0 24px"`, `"0 16px"` |
+| `gap` | Space between items | `"16px"`, `"24px"` |
+| `fontWeight` | Text weight | `"400"` (normal), `"500"` (medium), `"600"` (semibold) |
+| `fontSize` | Text size | `"0.875rem"`, `"1rem"`, `"16px"` |
+| `borderRadius` | Corner rounding | `"0"` (square), `"6px"`, `"16px"` (very rounded) |
+| `shadow` | Shadow effect | `"none"`, `"0 2px 4px rgba(0,0,0,0.1)"` |
+
+**Navigation Patterns:**
+
+Specify your navigation pattern in `allowedTokens`:
+
+```json
+"allowedTokens": {
+  "navigationPattern": "topbar"
+}
+```
+
+Available patterns:
+- **`topbar`** - Horizontal navigation bar at top
+- **`sidebar`** - Vertical navigation on left side
+- **`minimal`** - Clean, minimal navigation (like Apple)
+- **`topbar-hamburger`** - Topbar with hamburger menu icon
+- **`sidebar-topbar`** - Combined sidebar and topbar
+
+**Design Tips:**
+
+1. **Semi-transparent colors** work great for modern effects:
+   ```json
+   "hoverColor": "rgba(33, 150, 243, 0.08)"  // 8% opacity overlay
+   "borderColor": "rgba(0, 0, 0, 0.12)"      // Subtle separator
+   ```
+
+2. **Match your brand** - navigation is prominent, make it distinctive:
+   ```json
+   // Bold yellow branding (Mailchimp style)
+   "backgroundColor": "#FFE01B"
+   
+   // Dark developer theme (GitHub style)
+   "backgroundColor": "#24292F",
+   "textColor": "#FFFFFF"
+   
+   // Frosted glass (Apple style)
+   "backgroundColor": "rgba(255, 255, 255, 0.8)"
+   ```
+
+3. **Height considerations**:
+   - `44px` - Compact (iOS navigation bars)
+   - `64px` - Standard (Material Design app bars)
+   - `72px` - Bold (makes a statement)
+
+4. **Avoid visual artifacts** - use semi-transparent borders on solid backgrounds:
+   ```json
+   // Good: subtle and blends well
+   "borderColor": "rgba(35, 30, 21, 0.1)"
+   
+   // Avoid: solid gray on vibrant background can look harsh
+   "borderColor": "#DBD9D2"
+   ```
+
+**Real Examples:**
+
+See these design systems for inspiration:
+- **Material Design**: White background, 64px height, blue accents
+- **Apple Inspired**: Frosted glass, 44px height, subtle effects
+- **GitHub Primer**: Dark background, white text, 6px border radius
+- **Tokens Studio**: Dark dramatic, cyan accents, 72px height
+- **Mailchimp**: Signature yellow, playful rounded corners, 68px height
+
 ### Grid System
 ```json
 "grid": {

@@ -19,14 +19,17 @@ This project serves as:
 - **Easy to Extend**: Add new design systems by creating JSON files
 - **Live Switching**: Instantly switch between design systems
 - **Comprehensive Components**: 8 common UI components showcased
+- **Navigation Patterns**: Customizable navigation styling for each design system
 - **Type-Safe**: Built with TypeScript for reliability
 - **Design Tokens**: CSS custom properties for all design values
 
 ## 📦 Included Design Systems
 
-1. **Material Design** - Google's design language with vibrant colors
-2. **Apple Inspired** - Clean, minimal aesthetic with refined spacing
-3. **GitHub Primer** - Developer-focused with neutral colors
+1. **Material Design** - Google's design language with vibrant colors and topbar navigation
+2. **Apple Inspired** - Clean, minimal aesthetic with refined spacing and subtle effects
+3. **GitHub Primer** - Developer-focused with neutral colors and dark navigation
+4. **Tokens Studio** - Vibrant, modern design with bold typography and bright accents
+5. **Mailchimp** - Playful yellow branding with warm earth tones and friendly personality
 
 ## 🛠 Technology Stack
 
@@ -71,7 +74,8 @@ Use the dropdown in the top-right corner to select a design system. The entire U
 
 ### Viewing Components
 
-Scroll through the page to see all 8 component types:
+Scroll through the page to see all 9 component types:
+- **Navigation** - Different navigation patterns (topbar, sidebar, minimal, etc.)
 - **Typography** - Headings and body text
 - **Buttons** - Various variants and sizes
 - **Inputs** - Form fields with different states
@@ -103,13 +107,30 @@ See [Creating Design Systems Guide](docs/CREATING_DESIGN_SYSTEMS.md) for a compr
   "id": "custom",
   "name": "Custom Design",
   "description": "My custom design system",
+  "allowedTokens": {
+    "navigationPattern": "topbar"
+  },
   "tokens": {
     "colors": { ... },
     "typography": { ... },
     "spacing": { ... },
     "borderRadius": { ... },
     "shadows": { ... },
-    "transitions": { ... }
+    "transitions": { ... },
+    "navigation": {
+      "backgroundColor": "#FFFFFF",
+      "textColor": "#000000",
+      "activeColor": "#0066CC",
+      "hoverColor": "rgba(0, 102, 204, 0.1)",
+      "borderColor": "rgba(0, 0, 0, 0.1)",
+      "height": "64px",
+      "padding": "0 24px",
+      "gap": "16px",
+      "fontWeight": "500",
+      "fontSize": "1rem",
+      "borderRadius": "0",
+      "shadow": "none"
+    }
   }
 }
 ```

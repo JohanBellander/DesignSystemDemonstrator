@@ -179,7 +179,7 @@
       "textColor": "#FFFFFF",
       "activeColor": "#FFFFFF",
       "hoverColor": "rgba(255, 255, 255, 0.1)",
-      "borderColor": "#D0D7DE",
+      "borderColor": "rgba(48, 54, 61, 1)",
       "height": "64px",
       "padding": "0 16px",
       "gap": "12px",

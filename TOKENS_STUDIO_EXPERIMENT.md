@@ -223,4 +223,36 @@ The Tokens Studio design system successfully displays:
 - ✅ Smooth transitions and rounded corners
 - ✅ All foundational tokens (grid, elevation, opacity, etc.)
 
-The demonstrator now supports **4 complete design systems**: Material Design, Apple Inspired, GitHub Primer, and Tokens Studio!
+The demonstrator now supports **5 complete design systems**: Material Design, Apple Inspired, GitHub Primer, Tokens Studio, and Mailchimp!
+
+## Navigation Styling Added ✨
+
+After the initial integration, we added a **navigation styling system** that allows each design system to customize its navigation appearance. Tokens Studio's navigation configuration:
+
+```json
+"navigation": {
+  "backgroundColor": "#0C0F0F",
+  "textColor": "#FFFFFF",
+  "activeColor": "#38E8F5",
+  "hoverColor": "rgba(56, 232, 245, 0.1)",
+  "borderColor": "#E0E3E4",
+  "height": "72px",
+  "padding": "0 32px",
+  "gap": "24px",
+  "fontWeight": "600",
+  "fontSize": "16px",
+  "borderRadius": "0",
+  "shadow": "0 4px 6px -1px rgba(12, 15, 15, 0.1)"
+}
+```
+
+**Navigation Pattern**: `topbar` (specified in allowedTokens)
+
+**Design Choices:**
+- **Dark background (#0C0F0F)** creates drama and makes the vibrant cyan pop
+- **Taller height (72px)** makes a bold statement
+- **Generous padding (32px)** provides breathing room
+- **Semibold weight (600)** matches the bold aesthetic
+- **Cyan active color (#38E8F5)** ties back to primary brand color
+
+This demonstrates how each design system can have a completely unique navigation appearance that matches its brand identity!
