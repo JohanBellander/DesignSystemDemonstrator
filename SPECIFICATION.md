@@ -96,6 +96,56 @@ Each design system is defined as a JSON file with the following structure:
 #### Transitions
 - **Duration**: fast, base, slow
 
+#### Grid *(Optional)*
+- **Columns**: Number of grid columns (typically 12)
+- **Gutter**: Space between grid columns
+- **Margin**: Outer margin for the grid
+
+#### Layout *(Optional)*
+- **Breakpoints**: Responsive breakpoint values (sm, md, lg, xl, 2xl)
+- **Containers**: Maximum container widths at each breakpoint
+- Defines page structure and responsive behavior
+
+#### Elevation *(Optional)*
+- **Levels**: Shadow definitions for elevation levels (0, 1, 2, 4, 6, 8, 12, 16, 24)
+- **Z-Index**: Layering values (dropdown, sticky, fixed, modal, popover, tooltip)
+- Creates depth and visual hierarchy
+
+#### Opacity *(Optional)*
+- **Disabled**: Opacity for disabled elements (e.g., 0.5)
+- **Hover**: Opacity overlay for hover states (e.g., 0.08)
+- **Active**: Opacity overlay for active states (e.g., 0.16)
+- **Overlay**: Background overlay opacity (e.g., 0.5)
+- **Divider**: Divider line opacity (e.g., 0.12)
+
+#### Borders *(Optional)*
+- **Widths**: Border thickness options (thin, medium, thick)
+- **Styles**: Border patterns (solid, dashed, dotted)
+
+#### Focus States *(Optional)*
+- **Ring Width**: Thickness of focus ring (e.g., 2px)
+- **Ring Offset**: Space between element and focus ring (e.g., 2px)
+- **Ring Color**: Color of the focus ring
+- **Outline Style**: Style of the outline (solid, dashed, etc.)
+
+#### Surfaces *(Optional)*
+- **Background Hierarchy**: Primary, secondary, tertiary background levels
+- **Surface Elevations**: Base, raised, and overlay surface colors
+- Defines layering and depth through background colors
+
+### Optional Properties
+
+All token categories marked as *(Optional)* are not required in a design system definition. Design systems can include only the properties that are relevant to their design language:
+
+- **Material Design** includes all optional properties (comprehensive system)
+- **Apple Inspired** includes layout, elevation, opacity, focus states, and surfaces
+- **GitHub Primer** includes layout, grid, borders, and focus states
+
+This flexibility allows design systems to:
+- Focus on their unique characteristics
+- Avoid unnecessary complexity
+- Maintain clarity about what's defined vs. inherited defaults
+
 ## Component Library
 
 ### Initial Components (MVP)
@@ -137,6 +187,39 @@ Each design system is defined as a JSON file with the following structure:
 8. **Divider**
    - Horizontal separator
    - Demonstrates: border colors, spacing
+
+9. **Layout & Grid System** *(New)*
+   - 12-column grid visualization
+   - Container width examples (sm, md, lg, xl, 2xl)
+   - Breakpoint reference list
+   - Demonstrates: grid system, layout tokens, responsive design
+
+10. **Elevation System** *(New)*
+    - Shadow level cards (0-24)
+    - Z-index layering reference
+    - Demonstrates: elevation shadows, z-index values, depth hierarchy
+
+11. **Opacity Scale** *(New)*
+    - Opacity value swatches
+    - Use case examples (disabled buttons, overlays, dividers)
+    - Demonstrates: transparency values, layering effects
+
+12. **Border System** *(New)*
+    - Border width examples (thin, medium, thick)
+    - Border style examples (solid, dashed, dotted)
+    - Border radius reminder (from existing tokens)
+    - Demonstrates: border properties, outline patterns
+
+13. **Focus States** *(New)*
+    - Interactive focus ring examples
+    - Focus property reference
+    - Demonstrates: keyboard navigation styling, accessibility features
+
+14. **Surfaces & Backgrounds** *(New)*
+    - Background hierarchy visualization
+    - Surface elevation examples
+    - Layering demonstration
+    - Demonstrates: background levels, surface colors, depth through color
 
 ### Extensibility
 
