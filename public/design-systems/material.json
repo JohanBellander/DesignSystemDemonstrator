@@ -2,6 +2,7 @@
   "id": "material",
   "name": "Material Design",
   "description": "Google's Material Design system with vibrant colors and elevated surfaces",
+  "status": "deprecated",
   "tokens": {
     "colors": {
       "primary": {

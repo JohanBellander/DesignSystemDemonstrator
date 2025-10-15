@@ -294,12 +294,18 @@ export interface DesignTokens {
 }
 
 /**
+ * Design system status
+ */
+export type DesignSystemStatus = 'active' | 'deprecated' | 'experimental';
+
+/**
  * Complete design system definition
  */
 export interface DesignSystem {
   id: string;
   name: string;
   description: string;
+  status?: DesignSystemStatus;
   tokens: DesignTokens;
 }
 

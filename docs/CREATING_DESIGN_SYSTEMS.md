@@ -258,6 +258,7 @@ These sections MUST be present in every design system:
 - ✅ `id` - Unique identifier (string)
 - ✅ `name` - Display name (string)
 - ✅ `description` - Brief description (string)
+- 🔵 `status` - System status (optional string: 'active', 'deprecated', or 'experimental')
 - ✅ `tokens` - Object containing all tokens
 
 ### Token Categories (inside `tokens`)
@@ -278,6 +279,34 @@ These sections MUST be present in every design system:
 ## Optional Properties
 
 These sections can be omitted entirely if you don't need them:
+
+### Design System Status
+
+The `status` field is optional and controls how the design system is displayed in the UI:
+
+```json
+{
+  "id": "my-system",
+  "name": "My System",
+  "description": "Description here",
+  "status": "experimental"  // Optional: 'active', 'deprecated', or 'experimental'
+}
+```
+
+**Status Options:**
+- **`active`** (default) - No badge shown, system is ready for production use
+- **`deprecated`** - Shows ⚠️ warning badge, discourages usage (use for old systems being phased out)
+- **`experimental`** - Shows 🧪 info badge, indicates testing phase (use for new/unfinished systems)
+
+**When to use:**
+- Omit the field entirely (or use `"active"`) for production-ready systems
+- Use `"deprecated"` when migrating away from an old design system
+- Use `"experimental"` for systems still in development or testing
+
+**Visual Indicators:**
+- Deprecated systems show a yellow warning badge with "⚠️ DEPRECATED"
+- Experimental systems show a blue info badge with "🧪 EXPERIMENTAL"
+- Badges appear in the dropdown and next to the selected system name
 
 ### Grid System
 ```json

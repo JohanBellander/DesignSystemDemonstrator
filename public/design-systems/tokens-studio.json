@@ -2,6 +2,7 @@
   "id": "tokens-studio",
   "name": "Tokens Studio",
   "description": "Design system inspired by tokens.studio website - vibrant, modern, and playful with bold typography and bright accent colors",
+  "status": "experimental",
   "tokens": {
     "colors": {
       "primary": {
