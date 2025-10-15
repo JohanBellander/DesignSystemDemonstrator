@@ -19,7 +19,7 @@ function AppContent() {
       <header className={styles.header}>
         <div className={styles.headerContent}>
           <div className={styles.titleSection}>
-            <h1 className={styles.title}>Design Studio Demonstrator</h1>
+            <h1 className={styles.title}>Design System Demonstrator</h1>
             {selectedSystem && (
               <p className={styles.description}>{selectedSystem.description}</p>
             )}

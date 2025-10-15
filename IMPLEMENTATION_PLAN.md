@@ -1,8 +1,8 @@
-# Implementation Plan - Design Studio Demonstrator
+# Implementation Plan - Design System Demonstrator
 
 ## Overview
 
-This document outlines the step-by-step implementation plan for building the Design Studio Demonstrator MVP. The plan is organized into phases, with each phase building upon the previous one.
+This document outlines the step-by-step implementation plan for building the Design System Demonstrator MVP. The plan is organized into phases, with each phase building upon the previous one.
 
 ---
 

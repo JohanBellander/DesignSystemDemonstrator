@@ -1,8 +1,8 @@
-# Design Studio Demonstrator
+# Design System Demonstrator
 
 A frontend-only application for demonstrating and comparing different design systems. Built for AI experimentation with design systems, providing a standardized format for defining and viewing design tokens and components.
 
-![Design Studio Demonstrator](https://img.shields.io/badge/version-1.0.0-blue)
+![Design System Demonstrator](https://img.shields.io/badge/version-1.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 ## 🎯 Purpose

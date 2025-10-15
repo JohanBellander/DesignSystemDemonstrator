@@ -1,4 +1,4 @@
-# Design Studio Demonstrator - Specification
+# Design System Demonstrator - Specification
 
 ## Project Overview
 
