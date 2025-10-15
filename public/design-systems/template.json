@@ -14,11 +14,6 @@
   "description": "A brief description of your design system's aesthetic and purpose",
   "//": "^ Shown below the design system selector",
   
-  "//": "--- STATUS (OPTIONAL) ---",
-  "status": "active",
-  "//": "^ Options: 'active' (default, omit if active), 'deprecated' (shows warning badge), 'experimental' (shows info badge)",
-  "//": "^ Use 'deprecated' to discourage usage, 'experimental' for systems in testing",
-  
   "//": "--- ALLOWED TOKENS (OPTIONAL) ---",
   "//": "Specify which tokens are allowed in this design system. Restricted tokens will be grayed out in the UI.",
   "//": "Omit this entire section if all tokens are allowed.",

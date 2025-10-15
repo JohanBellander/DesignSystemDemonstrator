@@ -10,13 +10,6 @@
   color: var(--color-text-primary);
 }
 
-.selectWrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-}
-
 .select {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-base);
@@ -37,30 +30,4 @@
   outline: none;
   border-color: var(--color-primary-500);
   box-shadow: 0 0 0 3px var(--color-primary-100);
-}
-
-/* Status Badge */
-.statusBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 4px 10px;
-  border-radius: var(--border-radius-md);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  white-space: nowrap;
-}
-
-.statusBadge.deprecated {
-  background-color: #FFF3CD;
-  color: #856404;
-  border: 1px solid #FFE69C;
-}
-
-.statusBadge.experimental {
-  background-color: #D1ECF1;
-  color: #0C5460;
-  border: 1px solid #BEE5EB;
 }

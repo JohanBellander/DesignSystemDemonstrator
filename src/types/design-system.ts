@@ -294,11 +294,6 @@ export interface DesignTokens {
 }
 
 /**
- * Design system status
- */
-export type DesignSystemStatus = 'active' | 'deprecated' | 'experimental';
-
-/**
  * Specifies which tokens are allowed to be used in this design system.
  * If specified, only the listed tokens should be used. Others are considered "not part of the system".
  */
@@ -359,7 +354,6 @@ export interface DesignSystem {
   id: string;
   name: string;
   description: string;
-  status?: DesignSystemStatus;
   allowedTokens?: AllowedTokens;
   tokens: DesignTokens;
 }

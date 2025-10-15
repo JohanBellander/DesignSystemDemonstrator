@@ -2,7 +2,6 @@
   "id": "material",
   "name": "Material Design",
   "description": "Google's Material Design system with vibrant colors and elevated surfaces",
-  "status": "deprecated",
   "allowedTokens": {
     "borderRadius": ["sm", "md", "lg"],
     "shadows": ["sm", "md", "lg", "xl"],
