@@ -45,27 +45,23 @@ export function ListShowcase() {
       id: '1', 
       title: 'Dashboard', 
       subtitle: 'View your analytics', 
-      icon: '📊',
       badge: 'New'
     },
     { 
       id: '2', 
       title: 'Projects', 
       subtitle: 'Manage your work', 
-      icon: '📁',
       badge: '5'
     },
     { 
       id: '3', 
       title: 'Team', 
-      subtitle: 'Collaborate with others', 
-      icon: '👥'
+      subtitle: 'Collaborate with others'
     },
     { 
       id: '4', 
       title: 'Settings', 
-      subtitle: 'Configure your account', 
-      icon: '⚙️'
+      subtitle: 'Configure your account'
     },
   ];
 
