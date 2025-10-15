@@ -1,3 +1,4 @@
+import { DesignSystemDemo } from './DesignSystemDemo';
 import { Typography } from '../demo/Typography';
 import { Button } from '../demo/Button';
 import { Input } from '../demo/Input';
@@ -17,6 +18,11 @@ import styles from './ComponentShowcase.module.css';
 export function ComponentShowcase() {
   return (
     <div className={styles.showcase}>
+      {/* Design System Preview */}
+      <DesignSystemDemo />
+
+      <Divider />
+
       {/* Typography Section */}
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>Typography</h2>
