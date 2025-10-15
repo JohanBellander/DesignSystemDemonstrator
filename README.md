@@ -83,9 +83,21 @@ Scroll through the page to see all 8 component types:
 
 ## 🎨 Adding a New Design System
 
-1. Create a new JSON file in `public/design-systems/` (e.g., `custom.json`)
+**Quick Start:**
+1. Copy `public/design-systems/template.json` to a new file
+2. Customize the colors, typography, and other tokens
+3. Add your file name to `src/utils/loadDesignSystems.ts`
+4. Reload the app!
 
-2. Follow this structure:
+**Detailed Guide:**
+See [Creating Design Systems Guide](docs/CREATING_DESIGN_SYSTEMS.md) for a comprehensive step-by-step tutorial including:
+- Structure explanation
+- Required vs optional properties
+- Common pitfalls
+- Validation checklist
+- Complete examples
+
+**Quick Reference Structure:**
 ```json
 {
   "id": "custom",
@@ -184,6 +196,9 @@ All demo components use CSS custom properties for styling, making them automatic
 
 ## 📄 Documentation
 
+- **[Creating Design Systems Guide](docs/CREATING_DESIGN_SYSTEMS.md)** - Step-by-step guide for adding new design systems
+- **[Template JSON](public/design-systems/template.json)** - Annotated template with all properties explained
+- **[Tokens Studio Experiment](TOKENS_STUDIO_EXPERIMENT.md)** - Real-world example of creating a design system
 - [SPECIFICATION.md](./SPECIFICATION.md) - Complete technical specification
 - [IMPLEMENTATION_PLAN.md](./IMPLEMENTATION_PLAN.md) - Development phases and roadmap
 

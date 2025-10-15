@@ -1,0 +1,281 @@
+{
+  "//": "=== DESIGN SYSTEM TEMPLATE ===",
+  "//": "This template shows all required and optional properties for creating a design system.",
+  "//": "Required fields are marked with (REQUIRED), optional fields with (OPTIONAL).",
+  "//": "Delete all comment lines (starting with //) before using.",
+  
+  "//": "--- METADATA (REQUIRED) ---",
+  "id": "my-design-system",
+  "//": "^ Unique identifier, lowercase-with-hyphens, used in URLs and file names",
+  
+  "name": "My Design System",
+  "//": "^ Display name shown in the UI",
+  
+  "description": "A brief description of your design system's aesthetic and purpose",
+  "//": "^ Shown below the design system selector",
+  
+  "//": "--- TOKENS OBJECT (REQUIRED) ---",
+  "tokens": {
+    
+    "//": "=== COLORS (REQUIRED) ===",
+    "//": "All color categories below are REQUIRED",
+    "colors": {
+      
+      "//": "--- Primary Colors (REQUIRED) ---",
+      "//": "Main brand color with 10 shades (50=lightest, 900=darkest)",
+      "primary": {
+        "50": "#E3F2FD",
+        "100": "#BBDEFB",
+        "200": "#90CAF9",
+        "300": "#64B5F6",
+        "400": "#42A5F5",
+        "500": "#2196F3",
+        "600": "#1E88E5",
+        "700": "#1976D2",
+        "800": "#1565C0",
+        "900": "#0D47A1"
+      },
+      
+      "//": "--- Secondary Colors (REQUIRED) ---",
+      "//": "Accent brand color with 10 shades",
+      "secondary": {
+        "50": "#FCE4EC",
+        "100": "#F8BBD0",
+        "200": "#F48FB1",
+        "300": "#F06292",
+        "400": "#EC407A",
+        "500": "#E91E63",
+        "600": "#D81B60",
+        "700": "#C2185B",
+        "800": "#AD1457",
+        "900": "#880E4F"
+      },
+      
+      "//": "--- Neutral Colors (REQUIRED) ---",
+      "//": "Grayscale palette with 10 shades",
+      "neutral": {
+        "50": "#FAFAFA",
+        "100": "#F5F5F5",
+        "200": "#EEEEEE",
+        "300": "#E0E0E0",
+        "400": "#BDBDBD",
+        "500": "#9E9E9E",
+        "600": "#757575",
+        "700": "#616161",
+        "800": "#424242",
+        "900": "#212121"
+      },
+      
+      "//": "--- Semantic Colors (REQUIRED) ---",
+      "//": "Status/feedback colors",
+      "semantic": {
+        "success": "#4CAF50",
+        "warning": "#FF9800",
+        "error": "#F44336",
+        "info": "#2196F3"
+      },
+      
+      "//": "--- Text Colors (REQUIRED) ---",
+      "text": {
+        "primary": "rgba(0, 0, 0, 0.87)",
+        "secondary": "rgba(0, 0, 0, 0.60)",
+        "disabled": "rgba(0, 0, 0, 0.38)"
+      },
+      
+      "//": "--- Background Colors (REQUIRED) ---",
+      "background": {
+        "default": "#FAFAFA",
+        "paper": "#FFFFFF",
+        "elevated": "#FFFFFF"
+      },
+      
+      "//": "--- Border Colors (REQUIRED) ---",
+      "border": {
+        "default": "rgba(0, 0, 0, 0.12)",
+        "light": "rgba(0, 0, 0, 0.06)"
+      }
+    },
+    
+    "//": "=== TYPOGRAPHY (REQUIRED) ===",
+    "typography": {
+      
+      "//": "--- Font Families (REQUIRED) ---",
+      "fontFamily": {
+        "primary": "'Roboto', 'Helvetica', 'Arial', sans-serif",
+        "monospace": "'Roboto Mono', 'Courier New', monospace"
+      },
+      
+      "//": "--- Font Sizes (REQUIRED) ---",
+      "//": "Use rem, px, or em units",
+      "fontSize": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "2rem",
+        "4xl": "2.5rem"
+      },
+      
+      "//": "--- Font Weights (REQUIRED) ---",
+      "//": "IMPORTANT: Use numbers, not strings!",
+      "fontWeight": {
+        "normal": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700
+      },
+      
+      "//": "--- Line Heights (REQUIRED) ---",
+      "//": "IMPORTANT: Use numbers, not strings!",
+      "lineHeight": {
+        "tight": 1.25,
+        "normal": 1.5,
+        "relaxed": 1.75
+      }
+    },
+    
+    "//": "=== SPACING (REQUIRED) ===",
+    "spacing": {
+      "xs": "0.25rem",
+      "sm": "0.5rem",
+      "md": "1rem",
+      "lg": "1.5rem",
+      "xl": "2rem",
+      "2xl": "3rem",
+      "3xl": "4rem",
+      "4xl": "6rem"
+    },
+    
+    "//": "=== BORDER RADIUS (REQUIRED) ===",
+    "borderRadius": {
+      "none": "0px",
+      "sm": "0.125rem",
+      "md": "0.25rem",
+      "lg": "0.5rem",
+      "full": "9999px"
+    },
+    
+    "//": "=== SHADOWS (REQUIRED) ===",
+    "shadows": {
+      "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+      "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+      "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+      "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1)"
+    },
+    
+    "//": "=== TRANSITIONS (REQUIRED) ===",
+    "transitions": {
+      "fast": "150ms ease-in-out",
+      "base": "250ms ease-in-out",
+      "slow": "350ms ease-in-out"
+    },
+    
+    "//": "========================================",
+    "//": "=== OPTIONAL PROPERTIES BELOW ===",
+    "//": "========================================",
+    "//": "Delete any sections you don't need.",
+    
+    "//": "=== GRID (OPTIONAL) ===",
+    "//": "Uncomment to add grid system",
+    "grid": {
+      "columns": 12,
+      "gutter": "16px",
+      "margin": "16px"
+    },
+    
+    "//": "=== LAYOUT (OPTIONAL) ===",
+    "//": "Uncomment to add responsive breakpoints",
+    "layout": {
+      "breakpoints": {
+        "sm": "640px",
+        "md": "768px",
+        "lg": "1024px",
+        "xl": "1280px",
+        "2xl": "1536px"
+      },
+      "containers": {
+        "sm": "640px",
+        "md": "768px",
+        "lg": "1024px",
+        "xl": "1280px",
+        "2xl": "1536px"
+      }
+    },
+    
+    "//": "=== ELEVATION (OPTIONAL) ===",
+    "//": "Uncomment to add elevation/shadow system",
+    "elevation": {
+      "levels": {
+        "0": "0 0 0 0 rgba(0, 0, 0, 0)",
+        "1": "0 1px 3px 0 rgba(0, 0, 0, 0.1)",
+        "2": "0 2px 6px 0 rgba(0, 0, 0, 0.1)",
+        "4": "0 4px 12px 0 rgba(0, 0, 0, 0.1)",
+        "6": "0 6px 16px 0 rgba(0, 0, 0, 0.1)",
+        "8": "0 8px 24px 0 rgba(0, 0, 0, 0.12)",
+        "12": "0 12px 32px 0 rgba(0, 0, 0, 0.15)",
+        "16": "0 16px 48px 0 rgba(0, 0, 0, 0.18)",
+        "24": "0 24px 64px 0 rgba(0, 0, 0, 0.22)"
+      },
+      "zIndex": {
+        "dropdown": 1000,
+        "sticky": 1100,
+        "fixed": 1200,
+        "modalBackdrop": 1300,
+        "modal": 1400,
+        "popover": 1500,
+        "tooltip": 1600
+      }
+    },
+    
+    "//": "=== OPACITY (OPTIONAL) ===",
+    "//": "Uncomment to add opacity values",
+    "opacity": {
+      "disabled": "0.38",
+      "hover": "0.08",
+      "active": "0.16",
+      "overlay": "0.5",
+      "divider": "0.12"
+    },
+    
+    "//": "=== BORDERS (OPTIONAL) ===",
+    "//": "Uncomment to add border system",
+    "borders": {
+      "widths": {
+        "thin": "1px",
+        "medium": "2px",
+        "thick": "4px"
+      },
+      "styles": {
+        "solid": "solid",
+        "dashed": "dashed",
+        "dotted": "dotted"
+      }
+    },
+    
+    "//": "=== FOCUS STATES (OPTIONAL) ===",
+    "//": "Uncomment to add focus ring styling",
+    "focusStates": {
+      "ringWidth": "2px",
+      "ringOffset": "2px",
+      "ringColor": "#2196F3",
+      "outlineStyle": "solid"
+    },
+    
+    "//": "=== SURFACES (OPTIONAL) ===",
+    "//": "Uncomment to add surface/background hierarchy",
+    "surfaces": {
+      "background": {
+        "primary": "#FFFFFF",
+        "secondary": "#FAFAFA",
+        "tertiary": "#F5F5F5"
+      },
+      "surface": {
+        "base": "#FFFFFF",
+        "raised": "#FAFAFA",
+        "overlay": "#FFFFFF"
+      }
+    }
+  }
+}

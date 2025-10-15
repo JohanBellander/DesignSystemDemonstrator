@@ -22,6 +22,12 @@ This project serves as:
 - Developers
 - Designers
 
+## Documentation Resources
+
+- **[Creating Design Systems Guide](docs/CREATING_DESIGN_SYSTEMS.md)** - Comprehensive tutorial for adding new design systems
+- **[Template JSON](public/design-systems/template.json)** - Annotated template with required and optional properties
+- **[Tokens Studio Experiment](TOKENS_STUDIO_EXPERIMENT.md)** - Real-world case study of design system creation
+
 ## Core Requirements
 
 ### 1. Architecture
