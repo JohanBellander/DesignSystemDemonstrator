@@ -1,0 +1,189 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+.description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-style: italic;
+  padding: var(--spacing-md);
+  background-color: var(--color-background-paper);
+  border-left: 3px solid var(--color-primary-500);
+  border-radius: var(--border-radius-sm);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.subtitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Focus Grid */
+.focusGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  background-color: var(--color-background-paper);
+  border-radius: var(--border-radius-md);
+}
+
+/* Focus Elements */
+.focusButton {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--color-primary-600);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.focusButton:hover {
+  background-color: var(--color-primary-700);
+}
+
+.focusButton:focus {
+  outline: var(--focus-ring-width, 2px) var(--focus-outline-style, solid) var(--focus-ring-color, var(--color-primary-500));
+  outline-offset: var(--focus-ring-offset, 2px);
+}
+
+.focusInput {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-base);
+}
+
+.focusInput:hover {
+  border-color: var(--color-primary-400);
+}
+
+.focusInput:focus {
+  outline: var(--focus-ring-width, 2px) var(--focus-outline-style, solid) var(--focus-ring-color, var(--color-primary-500));
+  outline-offset: var(--focus-ring-offset, 2px);
+  border-color: var(--color-primary-500);
+}
+
+.focusCard {
+  padding: var(--spacing-lg);
+  background-color: var(--color-background-default);
+  border: 2px solid var(--color-border-default);
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.focusCard:hover {
+  border-color: var(--color-primary-400);
+}
+
+.focusCard:focus {
+  outline: var(--focus-ring-width, 2px) var(--focus-outline-style, solid) var(--focus-ring-color, var(--color-primary-500));
+  outline-offset: var(--focus-ring-offset, 2px);
+  border-color: var(--color-primary-500);
+}
+
+.focusLink {
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--color-primary-600);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-base);
+  display: inline-block;
+}
+
+.focusLink:hover {
+  color: var(--color-primary-700);
+  text-decoration: underline;
+}
+
+.focusLink:focus {
+  outline: var(--focus-ring-width, 2px) var(--focus-outline-style, solid) var(--focus-ring-color, var(--color-primary-500));
+  outline-offset: var(--focus-ring-offset, 2px);
+}
+
+.focusButtonSecondary {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: transparent;
+  color: var(--color-primary-600);
+  border: 2px solid var(--color-primary-600);
+  border-radius: var(--border-radius-md);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.focusButtonSecondary:hover {
+  background-color: var(--color-primary-50);
+}
+
+.focusButtonSecondary:focus {
+  outline: var(--focus-ring-width, 2px) var(--focus-outline-style, solid) var(--focus-ring-color, var(--color-primary-500));
+  outline-offset: var(--focus-ring-offset, 2px);
+}
+
+.focusCustom {
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, var(--color-secondary-400) 0%, var(--color-secondary-600) 100%);
+  color: white;
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.focusCustom:focus {
+  outline: var(--focus-ring-width, 2px) var(--focus-outline-style, solid) var(--focus-ring-color, var(--color-primary-500));
+  outline-offset: var(--focus-ring-offset, 2px);
+  transform: scale(1.05);
+}
+
+/* Properties List */
+.propertiesList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.propertyItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background-color: var(--color-background-paper);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius-sm);
+}
+
+.propertyLabel {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.propertyValue {
+  font-family: var(--font-family-monospace);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}

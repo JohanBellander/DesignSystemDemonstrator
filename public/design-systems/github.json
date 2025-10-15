@@ -115,6 +115,45 @@
       "fast": "80ms cubic-bezier(0.33, 1, 0.68, 1)",
       "base": "200ms cubic-bezier(0.33, 1, 0.68, 1)",
       "slow": "350ms cubic-bezier(0.33, 1, 0.68, 1)"
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": "16px",
+      "margin": "24px"
+    },
+    "layout": {
+      "breakpoints": {
+        "sm": "544px",
+        "md": "768px",
+        "lg": "1012px",
+        "xl": "1280px",
+        "2xl": "1400px"
+      },
+      "containers": {
+        "sm": "544px",
+        "md": "768px",
+        "lg": "1012px",
+        "xl": "1280px",
+        "2xl": "1400px"
+      }
+    },
+    "borders": {
+      "widths": {
+        "thin": "1px",
+        "medium": "2px",
+        "thick": "4px"
+      },
+      "styles": {
+        "solid": "solid",
+        "dashed": "dashed",
+        "dotted": "dotted"
+      }
+    },
+    "focusStates": {
+      "ringWidth": "2px",
+      "ringOffset": "0px",
+      "ringColor": "rgba(9, 105, 218, 0.3)",
+      "outlineStyle": "solid"
     }
   }
 }

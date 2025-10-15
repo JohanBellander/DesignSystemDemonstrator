@@ -166,15 +166,131 @@ export interface Transitions {
 }
 
 /**
+ * Grid system configuration
+ */
+export interface Grid {
+  columns: number;
+  gutter: string;
+  margin: string;
+}
+
+/**
+ * Layout breakpoints and container widths
+ */
+export interface Layout {
+  breakpoints: {
+    sm: string;
+    md: string;
+    lg: string;
+    xl: string;
+    '2xl': string;
+  };
+  containers: {
+    sm: string;
+    md: string;
+    lg: string;
+    xl: string;
+    '2xl': string;
+  };
+}
+
+/**
+ * Elevation system with z-index and shadow levels
+ */
+export interface Elevation {
+  levels: {
+    '0': string;
+    '1': string;
+    '2': string;
+    '4': string;
+    '6': string;
+    '8': string;
+    '12': string;
+    '16': string;
+    '24': string;
+  };
+  zIndex: {
+    dropdown: number;
+    sticky: number;
+    fixed: number;
+    modal: number;
+    popover: number;
+    tooltip: number;
+  };
+}
+
+/**
+ * Opacity scale for various transparency needs
+ */
+export interface OpacityScale {
+  disabled: string;
+  hover: string;
+  active: string;
+  overlay: string;
+  divider: string;
+}
+
+/**
+ * Border system configuration
+ */
+export interface BorderSystem {
+  widths: {
+    thin: string;
+    medium: string;
+    thick: string;
+  };
+  styles: {
+    solid: string;
+    dashed: string;
+    dotted: string;
+  };
+}
+
+/**
+ * Focus state styling
+ */
+export interface FocusStates {
+  ringWidth: string;
+  ringOffset: string;
+  ringColor: string;
+  outlineStyle: string;
+}
+
+/**
+ * Surface and background colors for layering
+ */
+export interface Surfaces {
+  background: {
+    primary: string;
+    secondary: string;
+    tertiary: string;
+  };
+  surface: {
+    base: string;
+    raised: string;
+    overlay: string;
+  };
+}
+
+/**
  * All design tokens for a design system
+ * Note: All properties except colors, typography, and spacing are optional
+ * to allow flexibility in design system definitions
  */
 export interface DesignTokens {
   colors: Colors;
   typography: Typography;
   spacing: Spacing;
-  borderRadius: BorderRadius;
-  shadows: Shadows;
-  transitions: Transitions;
+  borderRadius?: BorderRadius;
+  shadows?: Shadows;
+  transitions?: Transitions;
+  grid?: Grid;
+  layout?: Layout;
+  elevation?: Elevation;
+  opacity?: OpacityScale;
+  borders?: BorderSystem;
+  focusStates?: FocusStates;
+  surfaces?: Surfaces;
 }
 
 /**

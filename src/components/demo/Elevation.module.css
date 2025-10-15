@@ -1,0 +1,134 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.subtitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Elevation Grid */
+.elevationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  background-color: var(--color-background-default);
+}
+
+.elevationCard {
+  aspect-ratio: 1;
+  background-color: var(--color-background-paper);
+  border-radius: var(--border-radius-md);
+  transition: transform var(--transition-base);
+}
+
+.elevationCard:hover {
+  transform: translateY(-4px);
+}
+
+/* Dynamic elevation based on data attribute */
+.elevationCard[data-elevation="0"] {
+  box-shadow: var(--elevation-0, none);
+}
+
+.elevationCard[data-elevation="1"] {
+  box-shadow: var(--elevation-1, var(--shadow-sm));
+}
+
+.elevationCard[data-elevation="2"] {
+  box-shadow: var(--elevation-2, var(--shadow-sm));
+}
+
+.elevationCard[data-elevation="4"] {
+  box-shadow: var(--elevation-4, var(--shadow-md));
+}
+
+.elevationCard[data-elevation="6"] {
+  box-shadow: var(--elevation-6, var(--shadow-md));
+}
+
+.elevationCard[data-elevation="8"] {
+  box-shadow: var(--elevation-8, var(--shadow-lg));
+}
+
+.elevationCard[data-elevation="12"] {
+  box-shadow: var(--elevation-12, var(--shadow-lg));
+}
+
+.elevationCard[data-elevation="16"] {
+  box-shadow: var(--elevation-16, var(--shadow-xl));
+}
+
+.elevationCard[data-elevation="24"] {
+  box-shadow: var(--elevation-24, var(--shadow-xl));
+}
+
+.elevationContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.elevationLevel {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-600);
+}
+
+.elevationLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Z-Index List */
+.zIndexList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.zIndexItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background-color: var(--color-background-paper);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-base);
+}
+
+.zIndexItem:hover {
+  border-color: var(--color-primary-400);
+  background-color: var(--color-primary-50);
+}
+
+.zIndexLabel {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  text-transform: capitalize;
+}
+
+.zIndexValue {
+  font-family: var(--font-family-monospace);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}

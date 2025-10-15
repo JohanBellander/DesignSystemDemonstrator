@@ -6,6 +6,12 @@ import { Alert } from '../demo/Alert';
 import { Badge } from '../demo/Badge';
 import { Avatar } from '../demo/Avatar';
 import { Divider } from '../demo/Divider';
+import { LayoutGrid } from '../demo/LayoutGrid';
+import { Elevation } from '../demo/Elevation';
+import { OpacityScale } from '../demo/OpacityScale';
+import { BorderSystem } from '../demo/BorderSystem';
+import { FocusStates } from '../demo/FocusStates';
+import { Surfaces } from '../demo/Surfaces';
 import styles from './ComponentShowcase.module.css';
 
 export function ComponentShowcase() {
@@ -139,6 +145,72 @@ export function ComponentShowcase() {
           <Avatar size="medium" initials="MD" />
           <Avatar size="large" initials="LG" />
         </div>
+      </section>
+
+      <Divider />
+
+      {/* Layout & Grid Section */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Layout & Grid System</h2>
+        <p className={styles.sectionDescription}>
+          Grid columns, container widths, and responsive breakpoints that define the page structure and layout behavior across different screen sizes.
+        </p>
+        <LayoutGrid />
+      </section>
+
+      <Divider />
+
+      {/* Elevation Section */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Elevation System</h2>
+        <p className={styles.sectionDescription}>
+          Shadow levels and z-index layering that create depth and visual hierarchy. Higher elevations indicate elements that are closer to the user.
+        </p>
+        <Elevation />
+      </section>
+
+      <Divider />
+
+      {/* Opacity Section */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Opacity Scale</h2>
+        <p className={styles.sectionDescription}>
+          Transparency values for various UI states like disabled, hover, active, overlays, and dividers. Controls element visibility and layering effects.
+        </p>
+        <OpacityScale />
+      </section>
+
+      <Divider />
+
+      {/* Border System Section */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Border System</h2>
+        <p className={styles.sectionDescription}>
+          Border widths, styles, and radius values that define element outlines and rounded corners. Includes solid, dashed, and dotted patterns.
+        </p>
+        <BorderSystem />
+      </section>
+
+      <Divider />
+
+      {/* Focus States Section */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Focus States</h2>
+        <p className={styles.sectionDescription}>
+          Focus ring styling for accessibility and keyboard navigation. Shows ring width, offset, color, and outline styles for interactive elements.
+        </p>
+        <FocusStates />
+      </section>
+
+      <Divider />
+
+      {/* Surfaces Section */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Surfaces & Backgrounds</h2>
+        <p className={styles.sectionDescription}>
+          Background hierarchies and surface elevations that create visual depth. Includes primary, secondary, and tertiary background levels with overlay support.
+        </p>
+        <Surfaces />
       </section>
     </div>
   );
