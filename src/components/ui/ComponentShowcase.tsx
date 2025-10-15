@@ -7,6 +7,8 @@ import { Alert } from '../demo/Alert';
 import { Badge } from '../demo/Badge';
 import { Avatar } from '../demo/Avatar';
 import { Divider } from '../demo/Divider';
+import { DropdownShowcase } from '../demo/Dropdown';
+import { ListShowcase } from '../demo/List';
 import { LayoutGrid } from '../demo/LayoutGrid';
 import { Elevation } from '../demo/Elevation';
 import { OpacityScale } from '../demo/OpacityScale';
@@ -153,6 +155,28 @@ export function ComponentShowcase() {
           <Avatar size="medium" initials="MD" />
           <Avatar size="large" initials="LG" />
         </div>
+      </section>
+
+      <Divider />
+
+      {/* Dropdowns Section */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Dropdowns</h2>
+        <p className={styles.sectionDescription}>
+          Select menus with options, sizes, states, and error handling. Demonstrates interactive elements with keyboard navigation support.
+        </p>
+        <DropdownShowcase />
+      </section>
+
+      <Divider />
+
+      {/* Lists Section */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Lists</h2>
+        <p className={styles.sectionDescription}>
+          Organized collections of items with icons, subtitles, and badges. Shows different variants including bordered, divided, and card layouts.
+        </p>
+        <ListShowcase />
       </section>
 
       <Divider />
