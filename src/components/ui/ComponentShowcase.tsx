@@ -28,19 +28,30 @@ export function ComponentShowcase() {
         <p className={styles.sectionDescription}>
           Primary actions with multiple variants, sizes, and states. Demonstrates colors, spacing, borders, shadows, and transitions.
         </p>
-        <div className={styles.componentGrid}>
-          <Button variant="primary">Primary</Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button variant="outline">Outline</Button>
-          <Button variant="ghost">Ghost</Button>
-        </div>
-        <div className={styles.componentGrid}>
-          <Button variant="primary" size="small">Small</Button>
-          <Button variant="primary" size="medium">Medium</Button>
-          <Button variant="primary" size="large">Large</Button>
-        </div>
-        <div className={styles.componentGrid}>
-          <Button variant="primary" disabled>Disabled</Button>
+        <div className={styles.buttonGroup}>
+          <div>
+            <div className={styles.buttonRowLabel}>Variants</div>
+            <div className={styles.buttonRow}>
+              <Button variant="primary">Primary</Button>
+              <Button variant="secondary">Secondary</Button>
+              <Button variant="outline">Outline</Button>
+              <Button variant="ghost">Ghost</Button>
+            </div>
+          </div>
+          <div>
+            <div className={styles.buttonRowLabel}>Sizes</div>
+            <div className={styles.buttonRow}>
+              <Button variant="primary" size="small">Small</Button>
+              <Button variant="primary" size="medium">Medium</Button>
+              <Button variant="primary" size="large">Large</Button>
+            </div>
+          </div>
+          <div>
+            <div className={styles.buttonRowLabel}>States</div>
+            <div className={styles.buttonRow}>
+              <Button variant="primary" disabled>Disabled</Button>
+            </div>
+          </div>
         </div>
       </section>
 
