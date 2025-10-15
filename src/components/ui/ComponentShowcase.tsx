@@ -13,6 +13,8 @@ import { OpacityScale } from '../demo/OpacityScale';
 import { BorderSystem } from '../demo/BorderSystem';
 import { FocusStates } from '../demo/FocusStates';
 import { Surfaces } from '../demo/Surfaces';
+import { NavigationDemo } from '../demo/Navigation';
+import { ColorPalette } from '../demo/ColorPalette';
 import styles from './ComponentShowcase.module.css';
 
 export function ComponentShowcase() {
@@ -217,6 +219,28 @@ export function ComponentShowcase() {
           Background hierarchies and surface elevations that create visual depth. Includes primary, secondary, and tertiary background levels with overlay support.
         </p>
         <Surfaces />
+      </section>
+
+      <Divider />
+
+      {/* Color Palette Section */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Color Palette</h2>
+        <p className={styles.sectionDescription}>
+          Complete color system organized by category (primary, secondary, neutral). Shows all shades from light to dark with hex values for each color token.
+        </p>
+        <ColorPalette />
+      </section>
+
+      <Divider />
+
+      {/* Navigation Section */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Navigation Patterns</h2>
+        <p className={styles.sectionDescription}>
+          Common navigation patterns for websites and applications: top bar, sidebar, hamburger menu, and combinations. Shows how navigation adapts across different layouts and screen sizes.
+        </p>
+        <NavigationDemo />
       </section>
     </div>
   );

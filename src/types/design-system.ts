@@ -345,6 +345,7 @@ export interface AllowedTokens {
     background?: string[];    // e.g., ["primary", "secondary"] - only these surface backgrounds
     surface?: string[];       // e.g., ["base", "raised"] - only these surface types
   };
+  navigationPattern?: 'topbar' | 'sidebar' | 'hamburger' | 'topbar-hamburger' | 'sidebar-topbar' | 'minimal';
 }
 
 /**

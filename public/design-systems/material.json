@@ -9,13 +9,20 @@
       "fontWeight": ["normal", "medium", "bold"],
       "fontSize": ["sm", "base", "lg", "xl", "2xl", "3xl"]
     },
+    "colors": {
+      "primary": ["200", "300", "400", "500", "600", "700"],
+      "secondary": ["300", "400", "500", "600", "700"],
+      "neutral": ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+    },
     "elevation": {
       "levels": ["0", "1", "2", "4", "6", "8"],
       "zIndex": ["dropdown", "modal", "tooltip"]
     },
     "borders": {
+      "widths": ["thin", "medium"],
       "styles": ["solid"]
-    }
+    },
+    "navigationPattern": "topbar-hamburger"
   },
   "tokens": {
     "colors": {

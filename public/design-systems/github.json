@@ -18,7 +18,8 @@
       "widths": ["thin", "medium"],
       "styles": ["solid", "dashed"]
     },
-    "transitions": ["fast", "base"]
+    "transitions": ["fast", "base"],
+    "navigationPattern": "sidebar-topbar"
   },
   "tokens": {
     "colors": {
