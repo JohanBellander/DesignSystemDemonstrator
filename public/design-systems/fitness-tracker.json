@@ -1,0 +1,208 @@
+{
+  "id": "fitness-tracker",
+  "name": "Fitness Tracker",
+  "description": "A vibrant, data-focused design system inspired by modern fitness and activity tracking apps with bold colors and rounded cards",
+  "allowedTokens": {
+    "colors": {
+      "primary": ["400", "500", "600", "700"],
+      "secondary": ["400", "500", "600", "700"],
+      "neutral": ["50", "100", "200", "300", "400", "500", "600", "700", "800", "900"]
+    },
+    "typography": {
+      "fontWeight": ["normal", "medium", "semibold", "bold"],
+      "fontSize": ["xs", "sm", "base", "lg", "xl", "2xl", "3xl", "4xl"]
+    },
+    "spacing": ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"],
+    "borderRadius": ["md", "lg", "xl", "2xl", "full"],
+    "shadows": ["sm", "md", "lg", "xl"],
+    "transitions": ["fast", "base"],
+    "surfaces": {
+      "background": ["primary", "secondary", "tertiary"],
+      "surface": ["base", "raised", "overlay"]
+    }
+  },
+  "tokens": {
+    "colors": {
+      "primary": {
+        "50": "#FFF4ED",
+        "100": "#FFE8DB",
+        "200": "#FFCDB3",
+        "300": "#FFB08A",
+        "400": "#FF8A52",
+        "500": "#FF6B35",
+        "600": "#E85A28",
+        "700": "#C44A1F",
+        "800": "#9E3C1A",
+        "900": "#7A2E14"
+      },
+      "secondary": {
+        "50": "#EFF6FF",
+        "100": "#DBEAFE",
+        "200": "#BFDBFE",
+        "300": "#93C5FD",
+        "400": "#60A5FA",
+        "500": "#4E7FD9",
+        "600": "#3B66C7",
+        "700": "#2C4FA3",
+        "800": "#1E3A78",
+        "900": "#142851"
+      },
+      "neutral": {
+        "50": "#FAFAFA",
+        "100": "#F5F5F5",
+        "200": "#E8E8E8",
+        "300": "#D4D4D4",
+        "400": "#A3A3A3",
+        "500": "#737373",
+        "600": "#525252",
+        "700": "#404040",
+        "800": "#262626",
+        "900": "#171717"
+      },
+      "semantic": {
+        "success": "#22C55E",
+        "warning": "#F59E0B",
+        "error": "#EF4444",
+        "info": "#3B82F6"
+      },
+      "text": {
+        "primary": "#171717",
+        "secondary": "#525252",
+        "disabled": "#A3A3A3"
+      },
+      "background": {
+        "default": "#FFFFFF",
+        "paper": "#FAFAFA",
+        "elevated": "#F5F5F5"
+      },
+      "border": {
+        "default": "#E8E8E8",
+        "light": "#F5F5F5"
+      }
+    },
+    "typography": {
+      "fontFamily": {
+        "primary": "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif",
+        "monospace": "'SF Mono', 'Roboto Mono', 'Menlo', 'Courier New', monospace"
+      },
+      "fontSize": {
+        "xs": "0.6875rem",
+        "sm": "0.8125rem",
+        "base": "0.9375rem",
+        "lg": "1.0625rem",
+        "xl": "1.25rem",
+        "2xl": "1.75rem",
+        "3xl": "2.25rem",
+        "4xl": "3rem",
+        "5xl": "3.75rem"
+      },
+      "fontWeight": {
+        "normal": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700,
+        "extrabold": 800
+      },
+      "lineHeight": {
+        "tight": 1.15,
+        "snug": 1.3,
+        "normal": 1.5,
+        "relaxed": 1.65,
+        "loose": 1.8
+      }
+    },
+    "spacing": {
+      "xs": "0.25rem",
+      "sm": "0.5rem",
+      "md": "0.75rem",
+      "lg": "1rem",
+      "xl": "1.25rem",
+      "2xl": "1.75rem",
+      "3xl": "2.5rem",
+      "4xl": "3.5rem",
+      "5xl": "5rem"
+    },
+    "borderRadius": {
+      "none": "0px",
+      "sm": "0.375rem",
+      "md": "0.625rem",
+      "lg": "1rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "full": "9999px"
+    },
+    "shadows": {
+      "none": "none",
+      "sm": "0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06)",
+      "md": "0 4px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06)",
+      "lg": "0 12px 24px rgba(0, 0, 0, 0.10), 0 4px 8px rgba(0, 0, 0, 0.08)",
+      "xl": "0 20px 40px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.10)",
+      "2xl": "0 25px 50px rgba(0, 0, 0, 0.15)"
+    },
+    "transitions": {
+      "fast": "150ms cubic-bezier(0.4, 0, 0.2, 1)",
+      "base": "250ms cubic-bezier(0.4, 0, 0.2, 1)",
+      "slow": "350ms cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "borders": {
+      "widths": {
+        "thin": "1px",
+        "medium": "2px",
+        "thick": "3px"
+      },
+      "styles": {
+        "solid": "solid",
+        "dashed": "dashed",
+        "dotted": "dotted"
+      }
+    },
+    "opacity": {
+      "disabled": 0.4,
+      "hover": 0.08,
+      "selected": 0.12,
+      "focus": 0.16,
+      "overlay": 0.5,
+      "divider": 0.1
+    },
+    "elevation": {
+      "0": "none",
+      "1": "0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06)",
+      "2": "0 4px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06)",
+      "3": "0 8px 16px rgba(0, 0, 0, 0.10), 0 4px 8px rgba(0, 0, 0, 0.08)",
+      "4": "0 12px 24px rgba(0, 0, 0, 0.10), 0 4px 8px rgba(0, 0, 0, 0.08)",
+      "5": "0 20px 40px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.10)"
+    },
+    "focusStates": {
+      "ringWidth": "3px",
+      "ringOffset": "2px",
+      "ringColor": "rgba(255, 107, 53, 0.4)",
+      "outlineStyle": "solid"
+    },
+    "surfaces": {
+      "background": {
+        "primary": "#FFFFFF",
+        "secondary": "#FAFAFA",
+        "tertiary": "#F5F5F5"
+      },
+      "surface": {
+        "base": "#FFFFFF",
+        "raised": "#FFFFFF",
+        "overlay": "rgba(255, 255, 255, 0.95)"
+      }
+    },
+    "navigation": {
+      "height": "64px",
+      "backgroundColor": "#FFFFFF",
+      "textColor": "#171717",
+      "activeColor": "#FF6B35",
+      "hoverColor": "rgba(255, 107, 53, 0.08)",
+      "borderColor": "#E8E8E8",
+      "padding": "0 20px",
+      "gap": "24px",
+      "fontWeight": "500",
+      "fontSize": "0.9375rem",
+      "borderRadius": "0",
+      "shadow": "0 1px 3px rgba(0, 0, 0, 0.08)"
+    }
+  }
+}
