@@ -2,6 +2,24 @@
   "id": "github",
   "name": "GitHub Primer",
   "description": "Developer-focused design system with neutral colors and clear hierarchy",
+  "allowedTokens": {
+    "borderRadius": ["sm", "md"],
+    "shadows": ["sm", "md", "lg"],
+    "spacing": ["xs", "sm", "md", "lg", "xl"],
+    "typography": {
+      "fontWeight": ["normal", "semibold", "bold"],
+      "fontSize": ["xs", "sm", "base", "lg", "xl", "2xl"]
+    },
+    "colors": {
+      "primary": ["500", "600", "700"],
+      "neutral": ["50", "100", "200", "300", "400", "500", "600", "700", "800", "900"]
+    },
+    "borders": {
+      "widths": ["thin", "medium"],
+      "styles": ["solid", "dashed"]
+    },
+    "transitions": ["fast", "base"]
+  },
   "tokens": {
     "colors": {
       "primary": {

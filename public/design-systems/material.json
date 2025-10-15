@@ -3,6 +3,21 @@
   "name": "Material Design",
   "description": "Google's Material Design system with vibrant colors and elevated surfaces",
   "status": "deprecated",
+  "allowedTokens": {
+    "borderRadius": ["sm", "md", "lg"],
+    "shadows": ["sm", "md", "lg", "xl"],
+    "typography": {
+      "fontWeight": ["normal", "medium", "bold"],
+      "fontSize": ["sm", "base", "lg", "xl", "2xl", "3xl"]
+    },
+    "elevation": {
+      "levels": ["0", "1", "2", "4", "6", "8"],
+      "zIndex": ["dropdown", "modal", "tooltip"]
+    },
+    "borders": {
+      "styles": ["solid"]
+    }
+  },
   "tokens": {
     "colors": {
       "primary": {

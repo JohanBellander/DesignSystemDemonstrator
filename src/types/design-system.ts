@@ -301,7 +301,6 @@ export type DesignSystemStatus = 'active' | 'deprecated' | 'experimental';
 /**
  * Specifies which tokens are allowed to be used in this design system.
  * If specified, only the listed tokens should be used. Others are considered "not part of the system".
- * Use dot notation to specify nested tokens (e.g., "borderRadius.md", "colors.primary.500")
  */
 export interface AllowedTokens {
   colors?: {
@@ -309,20 +308,48 @@ export interface AllowedTokens {
     secondary?: string[];
     neutral?: string[];
     semantic?: string[];      // e.g., ["success", "error"] - only these semantic colors
-    text?: string[];
-    background?: string[];
-    border?: string[];
+    text?: string[];          // e.g., ["primary", "secondary"] - only these text colors
+    background?: string[];    // e.g., ["default", "paper"] - only these background colors
+    border?: string[];        // e.g., ["default"] - only these border colors
   };
   typography?: {
     fontFamily?: string[];    // e.g., ["primary"] - only primary font allowed
     fontSize?: string[];      // e.g., ["sm", "base", "lg"] - only these sizes
     fontWeight?: string[];    // e.g., ["normal", "bold"] - only these weights
-    lineHeight?: string[];
+    lineHeight?: string[];    // e.g., ["normal", "relaxed"] - only these line heights
   };
   spacing?: string[];         // e.g., ["sm", "md", "lg"] - only these spacing values
   borderRadius?: string[];    // e.g., ["md", "lg"] - only these radii allowed
-  shadows?: string[];
-  transitions?: string[];
+  shadows?: string[];         // e.g., ["sm", "md"] - only these shadows
+  transitions?: string[];     // e.g., ["base", "slow"] - only these transitions
+  grid?: {
+    columns?: boolean;        // Allow/disallow grid columns
+    gutter?: boolean;         // Allow/disallow grid gutter
+    margin?: boolean;         // Allow/disallow grid margin
+  };
+  layout?: {
+    breakpoints?: string[];   // e.g., ["md", "lg", "xl"] - only these breakpoints
+    containers?: string[];    // e.g., ["md", "lg", "xl"] - only these containers
+  };
+  elevation?: {
+    levels?: string[];        // e.g., ["0", "1", "2", "4"] - only these elevation levels
+    zIndex?: string[];        // e.g., ["dropdown", "modal"] - only these z-index values
+  };
+  opacity?: string[];         // e.g., ["disabled", "hover"] - only these opacity values
+  borders?: {
+    widths?: string[];        // e.g., ["thin", "medium"] - only these border widths
+    styles?: string[];        // e.g., ["solid"] - only these border styles
+  };
+  focusStates?: {
+    ringWidth?: boolean;
+    ringOffset?: boolean;
+    ringColor?: boolean;
+    outlineStyle?: boolean;
+  };
+  surfaces?: {
+    background?: string[];    // e.g., ["primary", "secondary"] - only these surface backgrounds
+    surface?: string[];       // e.g., ["base", "raised"] - only these surface types
+  };
 }
 
 /**

@@ -2,6 +2,21 @@
   "id": "apple",
   "name": "Apple Inspired",
   "description": "Clean, minimal design inspired by Apple's aesthetic with refined spacing and typography",
+  "allowedTokens": {
+    "borderRadius": ["sm", "md", "lg", "xl"],
+    "shadows": ["sm", "md"],
+    "spacing": ["xs", "sm", "md", "lg", "xl", "2xl"],
+    "typography": {
+      "fontWeight": ["normal", "medium", "semibold"],
+      "lineHeight": ["tight", "normal"]
+    },
+    "opacity": ["hover", "active"],
+    "borders": {
+      "widths": ["thin"],
+      "styles": ["solid"]
+    },
+    "transitions": ["base", "slow"]
+  },
   "tokens": {
     "colors": {
       "primary": {

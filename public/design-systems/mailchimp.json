@@ -6,7 +6,13 @@
     "borderRadius": ["lg", "xl", "full"],
     "spacing": ["sm", "md", "lg", "xl", "2xl"],
     "typography": {
-      "fontWeight": ["regular", "semibold", "bold"]
+      "fontWeight": ["regular", "semibold", "bold"],
+      "fontSize": ["sm", "base", "lg", "xl", "2xl", "3xl", "4xl"]
+    },
+    "shadows": ["md", "lg", "xl"],
+    "borders": {
+      "widths": ["thin", "medium"],
+      "styles": ["solid"]
     }
   },
   "tokens": {
