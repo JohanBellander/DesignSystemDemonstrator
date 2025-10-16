@@ -202,3 +202,350 @@
     width: 100%;
   }
 }
+
+/* New Sections Styling */
+.section {
+  margin-top: var(--spacing-3xl);
+  padding-top: var(--spacing-xl);
+  border-top: 2px solid var(--color-border-light);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.sectionDescription {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-xl) 0;
+  line-height: 1.6;
+}
+
+/* Semantic Colors */
+.semanticGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.semanticCard {
+  display: flex;
+  gap: var(--spacing-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.semanticCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.semanticCard.restricted {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.semanticColor {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--border-radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.semanticInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  flex: 1;
+}
+
+.semanticName {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.semanticValue {
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family-monospace);
+  color: var(--color-text-secondary);
+  background: var(--color-background-elevated);
+  padding: 2px 6px;
+  border-radius: var(--border-radius-sm);
+  display: inline-block;
+  width: fit-content;
+}
+
+.semanticUsage {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-top: var(--spacing-xs);
+}
+
+/* Text Colors */
+.textColorDemo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.textColorRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+}
+
+.textColorRow.restricted {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.textColorLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.textColorName {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.textColorValue {
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family-monospace);
+  color: var(--color-text-secondary);
+  background: var(--color-background-elevated);
+  padding: 4px 8px;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.textColorValue:hover {
+  background: var(--color-primary-100);
+  color: var(--color-primary-700);
+}
+
+.inlineCopied {
+  color: var(--color-semantic-success);
+  font-weight: bold;
+}
+
+.textColorSamples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.textSample {
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  text-align: center;
+  border: 1px solid var(--color-border-light);
+}
+
+/* Background Colors */
+.backgroundDemo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.backgroundCard {
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  min-height: 200px;
+}
+
+.backgroundCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.backgroundCard.restricted {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.backgroundLabel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.backgroundName {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.backgroundValue {
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family-monospace);
+  color: var(--color-text-secondary);
+  background: rgba(0, 0, 0, 0.05);
+  padding: 4px 8px;
+  border-radius: var(--border-radius-sm);
+  display: inline-block;
+  width: fit-content;
+}
+
+.backgroundContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.backgroundBox {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+}
+
+.backgroundBox p {
+  margin: 0 0 var(--spacing-sm) 0;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+}
+
+.backgroundSubtext {
+  font-size: var(--font-size-xs) !important;
+  color: var(--color-text-secondary) !important;
+  font-style: italic;
+}
+
+/* Border Colors */
+.borderDemo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.borderCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.borderCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.borderCard.restricted {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.borderLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.borderName {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.borderValue {
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family-monospace);
+  color: var(--color-text-secondary);
+  background: var(--color-background-elevated);
+  padding: 4px 8px;
+  border-radius: var(--border-radius-sm);
+}
+
+.borderSamples {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.borderBox {
+  border: 2px solid;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.borderDivider {
+  border-top: 1px solid;
+  width: 100%;
+}
+
+.borderInput {
+  border: 1px solid;
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  background: var(--color-background-paper);
+}
+
+.borderUsage {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--color-border-light);
+  line-height: 1.5;
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 768px) {
+  .semanticGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .textColorSamples {
+    grid-template-columns: 1fr;
+  }
+
+  .backgroundDemo {
+    grid-template-columns: 1fr;
+  }
+
+  .borderDemo {
+    grid-template-columns: 1fr;
+  }
+}
+
