@@ -138,6 +138,11 @@
       "base": "200ms ease-in-out",
       "slow": "300ms ease-in-out"
     },
+    "grid": {
+      "columns": 12,
+      "gutter": "20px",
+      "margin": "20px"
+    },
     "layout": {
       "breakpoints": {
         "sm": "640px",
@@ -181,6 +186,18 @@
       "active": "0.16",
       "overlay": "0.6",
       "divider": "0.1"
+    },
+    "borders": {
+      "widths": {
+        "thin": "1px",
+        "medium": "2px",
+        "thick": "4px"
+      },
+      "styles": {
+        "solid": "solid",
+        "dashed": "dashed",
+        "dotted": "dotted"
+      }
     },
     "focusStates": {
       "ringWidth": "3px",

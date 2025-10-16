@@ -168,11 +168,51 @@
         "dotted": "dotted"
       }
     },
+    "elevation": {
+      "levels": {
+        "0": "none",
+        "1": "0 1px 0 rgba(27, 31, 36, 0.04)",
+        "2": "0 3px 6px rgba(140, 149, 159, 0.15)",
+        "4": "0 6px 12px rgba(140, 149, 159, 0.15)",
+        "6": "0 8px 24px rgba(140, 149, 159, 0.2)",
+        "8": "0 12px 28px rgba(140, 149, 159, 0.2)",
+        "12": "0 16px 32px rgba(140, 149, 159, 0.25)",
+        "16": "0 20px 40px rgba(140, 149, 159, 0.3)",
+        "24": "0 24px 48px rgba(140, 149, 159, 0.35)"
+      },
+      "zIndex": {
+        "dropdown": 100,
+        "sticky": 101,
+        "fixed": 102,
+        "modal": 103,
+        "popover": 104,
+        "tooltip": 105
+      }
+    },
+    "opacity": {
+      "disabled": "0.5",
+      "hover": "0.1",
+      "active": "0.2",
+      "overlay": "0.5",
+      "divider": "0.06"
+    },
     "focusStates": {
       "ringWidth": "2px",
       "ringOffset": "0px",
       "ringColor": "rgba(9, 105, 218, 0.3)",
       "outlineStyle": "solid"
+    },
+    "surfaces": {
+      "background": {
+        "primary": "#FFFFFF",
+        "secondary": "#F6F8FA",
+        "tertiary": "#EFF2F5"
+      },
+      "surface": {
+        "base": "#FFFFFF",
+        "raised": "#FFFFFF",
+        "overlay": "rgba(255, 255, 255, 0.95)"
+      }
     },
     "navigation": {
       "backgroundColor": "#24292F",
