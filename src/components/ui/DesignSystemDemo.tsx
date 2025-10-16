@@ -13,12 +13,15 @@ export function DesignSystemDemo() {
 
   return (
     <div className={styles.demoContainer}>
-      <h2 className={styles.demoTitle}>Design System Preview</h2>
-      <p className={styles.demoDescription}>
-        A realistic webpage showing how this design system looks in action
-      </p>
+      <div className={styles.demoHeader}>
+        <h2 className={styles.demoTitle}>Design System Preview</h2>
+        <p className={styles.demoDescription}>
+          A realistic webpage showing how this design system looks in action
+        </p>
+      </div>
       
       <div className={styles.demo}>
+        <div className={styles.demoInner}>
         {/* Navigation - Dynamic based on pattern */}
         {(navigationPattern === 'topbar' || navigationPattern === 'topbar-hamburger') && (
           <nav className={styles.nav}>
@@ -222,6 +225,8 @@ export function DesignSystemDemo() {
         </footer>
         </div>
         {/* End Content Wrapper */}
+        </div>
+        {/* End Demo Inner */}
       </div>
     </div>
   );
