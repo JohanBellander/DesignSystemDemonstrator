@@ -1,6 +1,21 @@
 import { DesignSystem } from '../types/design-system';
 
 /**
+ * Convert hex color to RGB values
+ */
+function hexToRgb(hex: string): string {
+  // Remove # if present
+  hex = hex.replace('#', '');
+  
+  // Parse hex to RGB
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
+  
+  return `${r}, ${g}, ${b}`;
+}
+
+/**
  * Apply design tokens as CSS custom properties to the document root
  */
 export function applyDesignTokens(designSystem: DesignSystem): void {
@@ -10,10 +25,18 @@ export function applyDesignTokens(designSystem: DesignSystem): void {
   // Apply color tokens
   Object.entries(tokens.colors.primary).forEach(([key, value]) => {
     root.style.setProperty(`--color-primary-${key}`, value);
+    // Set RGB value for the main color (500 or 600)
+    if (key === '500' || key === '600') {
+      root.style.setProperty(`--color-primary-rgb`, hexToRgb(value));
+    }
   });
 
   Object.entries(tokens.colors.secondary).forEach(([key, value]) => {
     root.style.setProperty(`--color-secondary-${key}`, value);
+    // Set RGB value for the main color (500 or 600)
+    if (key === '500' || key === '600') {
+      root.style.setProperty(`--color-secondary-rgb`, hexToRgb(value));
+    }
   });
 
   Object.entries(tokens.colors.neutral).forEach(([key, value]) => {
@@ -22,6 +45,8 @@ export function applyDesignTokens(designSystem: DesignSystem): void {
 
   Object.entries(tokens.colors.semantic).forEach(([key, value]) => {
     root.style.setProperty(`--color-semantic-${key}`, value);
+    // Set RGB values for semantic colors
+    root.style.setProperty(`--color-semantic-${key}-rgb`, hexToRgb(value));
   });
 
   Object.entries(tokens.colors.text).forEach(([key, value]) => {
