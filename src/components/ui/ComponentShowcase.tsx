@@ -25,27 +25,37 @@ type TabId = 'typography' | 'buttons' | 'inputs' | 'cards' | 'alerts' | 'badges'
 interface Tab {
   id: TabId;
   label: string;
+  category: 'foundations' | 'components' | 'layout';
 }
 
 const tabs: Tab[] = [
-  { id: 'typography', label: 'Typography' },
-  { id: 'buttons', label: 'Buttons' },
-  { id: 'inputs', label: 'Inputs' },
-  { id: 'cards', label: 'Cards' },
-  { id: 'alerts', label: 'Alerts' },
-  { id: 'badges', label: 'Badges' },
-  { id: 'avatars', label: 'Avatars' },
-  { id: 'dropdowns', label: 'Dropdowns' },
-  { id: 'lists', label: 'Lists' },
-  { id: 'layout', label: 'Layout & Grid' },
-  { id: 'elevation', label: 'Elevation' },
-  { id: 'opacity', label: 'Opacity' },
-  { id: 'borders', label: 'Border System' },
-  { id: 'focus', label: 'Focus States' },
-  { id: 'surfaces', label: 'Surfaces' },
-  { id: 'colors', label: 'Color Palette' },
-  { id: 'navigation', label: 'Navigation' },
+  // Foundations
+  { id: 'typography', label: 'Typography', category: 'foundations' },
+  { id: 'colors', label: 'Color Palette', category: 'foundations' },
+  { id: 'elevation', label: 'Elevation', category: 'foundations' },
+  { id: 'opacity', label: 'Opacity', category: 'foundations' },
+  { id: 'borders', label: 'Border System', category: 'foundations' },
+  { id: 'surfaces', label: 'Surfaces', category: 'foundations' },
+  // Components
+  { id: 'buttons', label: 'Buttons', category: 'components' },
+  { id: 'inputs', label: 'Inputs', category: 'components' },
+  { id: 'cards', label: 'Cards', category: 'components' },
+  { id: 'alerts', label: 'Alerts', category: 'components' },
+  { id: 'badges', label: 'Badges', category: 'components' },
+  { id: 'avatars', label: 'Avatars', category: 'components' },
+  { id: 'dropdowns', label: 'Dropdowns', category: 'components' },
+  { id: 'lists', label: 'Lists', category: 'components' },
+  // Layout
+  { id: 'layout', label: 'Layout & Grid', category: 'layout' },
+  { id: 'navigation', label: 'Navigation', category: 'layout' },
+  { id: 'focus', label: 'Focus States', category: 'layout' },
 ];
+
+const tabCategories = [
+  { key: 'foundations', label: 'Foundations' },
+  { key: 'components', label: 'Components' },
+  { key: 'layout', label: 'Layout' },
+] as const;
 
 export function ComponentShowcase() {
   const [activeTab, setActiveTab] = useState<TabId>('typography');
@@ -59,14 +69,23 @@ export function ComponentShowcase() {
 
       {/* Tab Navigation */}
       <div className={styles.tabNav}>
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            className={`${styles.tabButton} ${activeTab === tab.id ? styles.active : ''}`}
-            onClick={() => setActiveTab(tab.id)}
-          >
-            {tab.label}
-          </button>
+        {tabCategories.map((category) => (
+          <div key={category.key} className={styles.tabGroup}>
+            <div className={styles.tabGroupLabel}>{category.label}</div>
+            <div className={styles.tabGroupButtons}>
+              {tabs
+                .filter((tab) => tab.category === category.key)
+                .map((tab) => (
+                  <button
+                    key={tab.id}
+                    className={`${styles.tabButton} ${activeTab === tab.id ? styles.active : ''}`}
+                    onClick={() => setActiveTab(tab.id)}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+            </div>
+          </div>
         ))}
       </div>
 

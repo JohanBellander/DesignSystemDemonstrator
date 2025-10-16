@@ -61,49 +61,86 @@
 
 .tabNav {
   display: flex;
-  gap: var(--spacing-xs);
-  border-bottom: 2px solid var(--color-border-default);
+  flex-direction: column;
+  gap: var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
-  overflow-x: auto;
+  background: var(--color-background-paper, #fff);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.tabGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.tabGroup:not(:last-child) {
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border-light, var(--color-border-default));
+}
+
+.tabGroupLabel {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--color-text-secondary);
+  padding: 0 var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+}
+
+.tabGroupButtons {
+  display: flex;
   flex-wrap: wrap;
+  gap: var(--spacing-sm);
 }
 
 .tabButton {
-  padding: var(--spacing-md) var(--spacing-lg);
-  background: none;
-  border: none;
-  border-bottom: 3px solid transparent;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--color-background-default, #fafafa);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius-md);
   color: var(--color-text-secondary);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   cursor: pointer;
-  transition: var(--transition-colors), 
-              border-color var(--transition-duration-normal) var(--transition-easing-default),
+  transition: var(--transition-colors),
+              box-shadow var(--transition-duration-normal) var(--transition-easing-default),
               transform var(--transition-duration-fast) var(--transition-easing-default);
   white-space: nowrap;
   position: relative;
 }
 
-.tabButton:hover {
+.tabButton:hover:not(.active) {
   color: var(--color-text-primary);
-  background-color: var(--color-surface-secondary);
+  background-color: var(--color-background-paper, #fff);
+  border-color: var(--color-primary-300, #90CAF9);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .tabButton:focus-visible {
   outline: none;
   box-shadow: var(--focus-ring);
-  border-radius: var(--border-radius-sm, 4px);
 }
 
-.tabButton:active {
+.tabButton:active:not(.active) {
   transform: translateY(1px);
 }
 
 .tabButton.active {
-  color: var(--color-primary);
-  border-bottom-color: var(--color-primary);
-  font-weight: var(--font-weight-semibold);
-  background-color: rgba(var(--color-primary-rgb, 33, 150, 243), 0.04);
+  color: var(--color-primary-700, #1976D2);
+  background: linear-gradient(135deg, 
+    rgba(var(--color-primary-rgb, 33, 150, 243), 0.12), 
+    rgba(var(--color-primary-rgb, 33, 150, 243), 0.08));
+  border-color: var(--color-primary-500, #2196F3);
+  border-width: 2px;
+  font-weight: var(--font-weight-bold);
+  box-shadow: 0 2px 4px rgba(var(--color-primary-rgb, 33, 150, 243), 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  padding: calc(var(--spacing-sm) - 1px) calc(var(--spacing-lg) - 1px);
 }
 
 .tabContent {
