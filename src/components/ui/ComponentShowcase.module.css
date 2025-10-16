@@ -77,8 +77,11 @@
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-colors), 
+              border-color var(--transition-duration-normal) var(--transition-easing-default),
+              transform var(--transition-duration-fast) var(--transition-easing-default);
   white-space: nowrap;
+  position: relative;
 }
 
 .tabButton:hover {
@@ -86,10 +89,21 @@
   background-color: var(--color-surface-secondary);
 }
 
+.tabButton:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--border-radius-sm, 4px);
+}
+
+.tabButton:active {
+  transform: translateY(1px);
+}
+
 .tabButton.active {
   color: var(--color-primary);
   border-bottom-color: var(--color-primary);
   font-weight: var(--font-weight-semibold);
+  background-color: rgba(var(--color-primary-rgb, 33, 150, 243), 0.04);
 }
 
 .tabContent {

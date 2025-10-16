@@ -41,7 +41,7 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
-  transition: background-color var(--transition-fast);
+  transition: var(--transition-colors);
   background-color: var(--color-background-paper);
 }
 
@@ -65,6 +65,12 @@
 
 .list.interactive .listItem:hover {
   background-color: var(--color-primary-50, rgba(66, 153, 225, 0.05));
+}
+
+.list.interactive .listItem:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--border-radius-sm, 4px);
 }
 
 .list.interactive .listItem:active {

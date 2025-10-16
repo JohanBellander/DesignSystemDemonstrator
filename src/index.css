@@ -4,6 +4,46 @@
   padding: 0;
 }
 
+:root {
+  /* Spacing System - 8pt Grid */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 40px;
+  --spacing-3xl: 48px;
+  --spacing-4xl: 64px;
+  --spacing-5xl: 80px;
+  --spacing-6xl: 96px;
+
+  /* Transition System */
+  --transition-duration-fast: 150ms;
+  --transition-duration-normal: 200ms;
+  --transition-duration-slow: 300ms;
+  --transition-duration-slower: 400ms;
+  
+  --transition-easing-default: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --transition-easing-in: cubic-bezier(0.4, 0.0, 1, 1);
+  --transition-easing-out: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --transition-easing-in-out: cubic-bezier(0.4, 0.0, 0.2, 1);
+
+  /* Common Transitions */
+  --transition-all: all var(--transition-duration-normal) var(--transition-easing-default);
+  --transition-colors: color var(--transition-duration-normal) var(--transition-easing-default),
+                       background-color var(--transition-duration-normal) var(--transition-easing-default),
+                       border-color var(--transition-duration-normal) var(--transition-easing-default);
+  --transition-transform: transform var(--transition-duration-normal) var(--transition-easing-default);
+  --transition-opacity: opacity var(--transition-duration-normal) var(--transition-easing-default);
+
+  /* Focus Ring */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color: var(--color-primary-500, #2196F3);
+  --focus-ring: 0 0 0 var(--focus-ring-offset) transparent,
+                0 0 0 calc(var(--focus-ring-width) + var(--focus-ring-offset)) var(--focus-ring-color);
+}
+
 body {
   font-family: var(--font-family-primary);
   background-color: var(--color-background-default);
@@ -11,6 +51,7 @@ body {
   line-height: var(--line-height-normal);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 #root {

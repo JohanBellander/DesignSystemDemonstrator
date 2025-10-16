@@ -69,12 +69,17 @@
   font-size: var(--nav-font-size, var(--font-size-sm));
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--nav-border-radius, var(--border-radius-sm));
-  transition: color var(--transition-fast), background-color var(--transition-fast);
+  transition: var(--transition-colors);
 }
 
 .navLink:hover {
   color: var(--nav-active-color, var(--color-primary-600));
   background: var(--nav-hover-color, var(--color-primary-50));
+}
+
+.navLink:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 
 .navActions {

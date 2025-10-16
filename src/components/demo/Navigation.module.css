@@ -116,12 +116,17 @@
   font-size: var(--nav-font-size, var(--font-size-sm));
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--nav-border-radius, var(--border-radius-sm));
-  transition: color var(--transition-fast), background-color var(--transition-fast);
+  transition: var(--transition-colors);
 }
 
 .navLink:hover {
   color: var(--nav-active-color, var(--color-primary-600));
   background: var(--nav-hover-color, var(--color-primary-50));
+}
+
+.navLink:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 
 .navActions {
@@ -179,13 +184,18 @@
   font-size: var(--nav-font-size, var(--font-size-sm));
   font-weight: var(--nav-font-weight, var(--font-weight-medium));
   border-radius: var(--nav-border-radius, var(--border-radius-sm));
-  transition: background-color var(--transition-fast), color var(--transition-fast);
+  transition: var(--transition-colors);
   white-space: nowrap;
 }
 
 .sidebarLink:hover {
   background: var(--nav-hover-color, var(--color-primary-50));
   color: var(--nav-active-color, var(--color-primary-700));
+}
+
+.sidebarLink:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 
 .sidebarLink.active {

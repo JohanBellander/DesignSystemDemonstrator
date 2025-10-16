@@ -7,11 +7,22 @@
   border-radius: var(--border-radius-md);
   border: 1px solid transparent;
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: var(--transition-colors),
+              transform var(--transition-duration-fast) var(--transition-easing-default),
+              box-shadow var(--transition-duration-normal) var(--transition-easing-default);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-sm);
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(1px);
 }
 
 .button:disabled {
