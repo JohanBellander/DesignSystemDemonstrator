@@ -9,6 +9,9 @@ export function NavigationDemo() {
   const allowedPattern = selectedSystem?.allowedTokens?.navigationPattern || 'topbar-hamburger';
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [copiedToken, setCopiedToken] = useState<string | null>(null);
+
+  const navigation = selectedSystem?.tokens.navigation;
 
   const patternLabels: Record<string, string> = {
     'topbar': 'Top Bar',
@@ -17,6 +20,12 @@ export function NavigationDemo() {
     'topbar-hamburger': 'Top Bar + Hamburger (Responsive)',
     'sidebar-topbar': 'Sidebar + Top Bar',
     'minimal': 'Minimal / No Navigation'
+  };
+
+  const handleCopyToken = (tokenName: string, value: string) => {
+    navigator.clipboard.writeText(value);
+    setCopiedToken(tokenName);
+    setTimeout(() => setCopiedToken(null), 2000);
   };
 
   return (
@@ -57,6 +66,324 @@ export function NavigationDemo() {
           <MinimalNavigation />
         )}
       </div>
+
+      {/* Token Values Section */}
+      {navigation && (
+        <div className={styles.tokenSection}>
+          <h3 className={styles.tokenSectionTitle}>Navigation Token Values</h3>
+          <p className={styles.tokenSectionDescription}>
+            Below are all the navigation-specific design tokens and their computed values for this design system.
+          </p>
+          
+          <div className={styles.tokenTable}>
+            <div className={styles.tokenTableHeader}>
+              <div className={styles.tokenTableCell}>Token Name</div>
+              <div className={styles.tokenTableCell}>Value</div>
+              <div className={styles.tokenTableCell}>Preview</div>
+            </div>
+            
+            {navigation.backgroundColor && (
+              <div className={styles.tokenTableRow}>
+                <div className={styles.tokenTableCell}>
+                  <code className={styles.tokenName}>backgroundColor</code>
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <code 
+                    className={styles.tokenValue}
+                    onClick={() => handleCopyToken('backgroundColor', navigation.backgroundColor!)}
+                  >
+                    {navigation.backgroundColor}
+                  </code>
+                  {copiedToken === 'backgroundColor' && (
+                    <span className={styles.copiedIndicator}>✓</span>
+                  )}
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <div 
+                    className={styles.colorPreview}
+                    style={{ backgroundColor: navigation.backgroundColor }}
+                  />
+                </div>
+              </div>
+            )}
+            
+            {navigation.textColor && (
+              <div className={styles.tokenTableRow}>
+                <div className={styles.tokenTableCell}>
+                  <code className={styles.tokenName}>textColor</code>
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <code 
+                    className={styles.tokenValue}
+                    onClick={() => handleCopyToken('textColor', navigation.textColor!)}
+                  >
+                    {navigation.textColor}
+                  </code>
+                  {copiedToken === 'textColor' && (
+                    <span className={styles.copiedIndicator}>✓</span>
+                  )}
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <div 
+                    className={styles.colorPreview}
+                    style={{ backgroundColor: navigation.textColor }}
+                  />
+                </div>
+              </div>
+            )}
+            
+            {navigation.activeColor && (
+              <div className={styles.tokenTableRow}>
+                <div className={styles.tokenTableCell}>
+                  <code className={styles.tokenName}>activeColor</code>
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <code 
+                    className={styles.tokenValue}
+                    onClick={() => handleCopyToken('activeColor', navigation.activeColor!)}
+                  >
+                    {navigation.activeColor}
+                  </code>
+                  {copiedToken === 'activeColor' && (
+                    <span className={styles.copiedIndicator}>✓</span>
+                  )}
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <div 
+                    className={styles.colorPreview}
+                    style={{ backgroundColor: navigation.activeColor }}
+                  />
+                </div>
+              </div>
+            )}
+            
+            {navigation.hoverColor && (
+              <div className={styles.tokenTableRow}>
+                <div className={styles.tokenTableCell}>
+                  <code className={styles.tokenName}>hoverColor</code>
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <code 
+                    className={styles.tokenValue}
+                    onClick={() => handleCopyToken('hoverColor', navigation.hoverColor!)}
+                  >
+                    {navigation.hoverColor}
+                  </code>
+                  {copiedToken === 'hoverColor' && (
+                    <span className={styles.copiedIndicator}>✓</span>
+                  )}
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <div 
+                    className={styles.colorPreview}
+                    style={{ backgroundColor: navigation.hoverColor }}
+                  />
+                </div>
+              </div>
+            )}
+            
+            {navigation.borderColor && (
+              <div className={styles.tokenTableRow}>
+                <div className={styles.tokenTableCell}>
+                  <code className={styles.tokenName}>borderColor</code>
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <code 
+                    className={styles.tokenValue}
+                    onClick={() => handleCopyToken('borderColor', navigation.borderColor!)}
+                  >
+                    {navigation.borderColor}
+                  </code>
+                  {copiedToken === 'borderColor' && (
+                    <span className={styles.copiedIndicator}>✓</span>
+                  )}
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <div 
+                    className={styles.colorPreview}
+                    style={{ backgroundColor: navigation.borderColor }}
+                  />
+                </div>
+              </div>
+            )}
+            
+            {navigation.height && (
+              <div className={styles.tokenTableRow}>
+                <div className={styles.tokenTableCell}>
+                  <code className={styles.tokenName}>height</code>
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <code 
+                    className={styles.tokenValue}
+                    onClick={() => handleCopyToken('height', navigation.height!)}
+                  >
+                    {navigation.height}
+                  </code>
+                  {copiedToken === 'height' && (
+                    <span className={styles.copiedIndicator}>✓</span>
+                  )}
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <div className={styles.dimensionPreview}>
+                    <div 
+                      className={styles.dimensionBar}
+                      style={{ height: navigation.height, width: '100%' }}
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
+            
+            {navigation.padding && (
+              <div className={styles.tokenTableRow}>
+                <div className={styles.tokenTableCell}>
+                  <code className={styles.tokenName}>padding</code>
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <code 
+                    className={styles.tokenValue}
+                    onClick={() => handleCopyToken('padding', navigation.padding!)}
+                  >
+                    {navigation.padding}
+                  </code>
+                  {copiedToken === 'padding' && (
+                    <span className={styles.copiedIndicator}>✓</span>
+                  )}
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <span className={styles.textPreview}>{navigation.padding}</span>
+                </div>
+              </div>
+            )}
+            
+            {navigation.gap && (
+              <div className={styles.tokenTableRow}>
+                <div className={styles.tokenTableCell}>
+                  <code className={styles.tokenName}>gap</code>
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <code 
+                    className={styles.tokenValue}
+                    onClick={() => handleCopyToken('gap', navigation.gap!)}
+                  >
+                    {navigation.gap}
+                  </code>
+                  {copiedToken === 'gap' && (
+                    <span className={styles.copiedIndicator}>✓</span>
+                  )}
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <span className={styles.textPreview}>{navigation.gap}</span>
+                </div>
+              </div>
+            )}
+            
+            {navigation.fontWeight && (
+              <div className={styles.tokenTableRow}>
+                <div className={styles.tokenTableCell}>
+                  <code className={styles.tokenName}>fontWeight</code>
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <code 
+                    className={styles.tokenValue}
+                    onClick={() => handleCopyToken('fontWeight', navigation.fontWeight!)}
+                  >
+                    {navigation.fontWeight}
+                  </code>
+                  {copiedToken === 'fontWeight' && (
+                    <span className={styles.copiedIndicator}>✓</span>
+                  )}
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <span 
+                    className={styles.textPreview}
+                    style={{ fontWeight: navigation.fontWeight }}
+                  >
+                    Navigation
+                  </span>
+                </div>
+              </div>
+            )}
+            
+            {navigation.fontSize && (
+              <div className={styles.tokenTableRow}>
+                <div className={styles.tokenTableCell}>
+                  <code className={styles.tokenName}>fontSize</code>
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <code 
+                    className={styles.tokenValue}
+                    onClick={() => handleCopyToken('fontSize', navigation.fontSize!)}
+                  >
+                    {navigation.fontSize}
+                  </code>
+                  {copiedToken === 'fontSize' && (
+                    <span className={styles.copiedIndicator}>✓</span>
+                  )}
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <span 
+                    className={styles.textPreview}
+                    style={{ fontSize: navigation.fontSize }}
+                  >
+                    Navigation
+                  </span>
+                </div>
+              </div>
+            )}
+            
+            {navigation.borderRadius && (
+              <div className={styles.tokenTableRow}>
+                <div className={styles.tokenTableCell}>
+                  <code className={styles.tokenName}>borderRadius</code>
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <code 
+                    className={styles.tokenValue}
+                    onClick={() => handleCopyToken('borderRadius', navigation.borderRadius!)}
+                  >
+                    {navigation.borderRadius}
+                  </code>
+                  {copiedToken === 'borderRadius' && (
+                    <span className={styles.copiedIndicator}>✓</span>
+                  )}
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <div 
+                    className={styles.radiusPreview}
+                    style={{ borderRadius: navigation.borderRadius }}
+                  />
+                </div>
+              </div>
+            )}
+            
+            {navigation.shadow && (
+              <div className={styles.tokenTableRow}>
+                <div className={styles.tokenTableCell}>
+                  <code className={styles.tokenName}>shadow</code>
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <code 
+                    className={styles.tokenValue}
+                    onClick={() => handleCopyToken('shadow', navigation.shadow!)}
+                  >
+                    {navigation.shadow}
+                  </code>
+                  {copiedToken === 'shadow' && (
+                    <span className={styles.copiedIndicator}>✓</span>
+                  )}
+                </div>
+                <div className={styles.tokenTableCell}>
+                  <div 
+                    className={styles.shadowPreview}
+                    style={{ boxShadow: navigation.shadow }}
+                  />
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
     </div>
   );

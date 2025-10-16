@@ -428,3 +428,199 @@
     width: 60px;
   }
 }
+
+/* Token Values Section */
+.tokenSection {
+  padding: var(--spacing-xl);
+  background: var(--color-background-paper, #FFFFFF);
+  border-radius: var(--border-radius-lg);
+  border: var(--border-width-thin) solid var(--color-neutral-200);
+}
+
+.tokenSectionTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-900);
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.tokenSectionDescription {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-600);
+  margin: 0 0 var(--spacing-xl) 0;
+  line-height: 1.5;
+}
+
+.tokenTable {
+  display: flex;
+  flex-direction: column;
+  border: var(--border-width-thin) solid var(--color-neutral-200);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.tokenTableHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 150px;
+  background: var(--color-neutral-100);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-700);
+  border-bottom: var(--border-width-medium) solid var(--color-neutral-300);
+}
+
+.tokenTableRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 150px;
+  border-bottom: var(--border-width-thin) solid var(--color-neutral-200);
+  transition: background-color var(--transition-base);
+}
+
+.tokenTableRow:last-child {
+  border-bottom: none;
+}
+
+.tokenTableRow:hover {
+  background: var(--color-neutral-50);
+}
+
+.tokenTableCell {
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  min-height: 50px;
+}
+
+.tokenName {
+  font-family: var(--font-family-monospace);
+  font-size: var(--font-size-sm);
+  color: var(--color-primary-700);
+  background: var(--color-primary-50);
+  padding: 2px 6px;
+  border-radius: var(--border-radius-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.tokenValue {
+  font-family: var(--font-family-monospace);
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-700);
+  background: var(--color-neutral-100);
+  padding: 4px 8px;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: all;
+}
+
+.tokenValue:hover {
+  background: var(--color-neutral-200);
+  color: var(--color-neutral-900);
+}
+
+.copiedIndicator {
+  color: var(--color-semantic-success, #4CAF50);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Token Preview Styles */
+.colorPreview {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-sm);
+  border: var(--border-width-thin) solid var(--color-neutral-300);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.dimensionPreview {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dimensionBar {
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-600) 100%);
+  border-radius: var(--border-radius-sm);
+  max-height: 40px;
+  min-height: 4px;
+}
+
+.textPreview {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-700);
+  font-family: var(--font-family-primary);
+}
+
+.radiusPreview {
+  width: 40px;
+  height: 40px;
+  background: var(--color-primary-500);
+  border: var(--border-width-thin) solid var(--color-neutral-300);
+}
+
+.shadowPreview {
+  width: 40px;
+  height: 40px;
+  background: var(--color-background-paper, #FFFFFF);
+  border-radius: var(--border-radius-sm);
+}
+
+/* Responsive adjustments for token table */
+@media (max-width: 768px) {
+  .tokenSection {
+    padding: var(--spacing-lg);
+  }
+
+  .tokenTable {
+    border: none;
+  }
+
+  .tokenTableHeader {
+    display: none;
+  }
+
+  .tokenTableRow {
+    grid-template-columns: 1fr;
+    border: var(--border-width-thin) solid var(--color-neutral-200);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-sm);
+  }
+
+  .tokenTableRow:last-child {
+    margin-bottom: 0;
+  }
+
+  .tokenTableCell {
+    padding: var(--spacing-xs) 0;
+    min-height: auto;
+  }
+
+  .tokenTableCell:first-child {
+    padding-bottom: var(--spacing-xs);
+    border-bottom: var(--border-width-thin) solid var(--color-neutral-200);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .colorPreview,
+  .radiusPreview,
+  .shadowPreview {
+    width: 60px;
+    height: 60px;
+  }
+}
