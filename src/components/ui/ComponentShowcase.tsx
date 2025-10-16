@@ -18,9 +18,10 @@ import { FocusStates } from '../demo/FocusStates';
 import { Surfaces } from '../demo/Surfaces';
 import { NavigationDemo } from '../demo/Navigation';
 import { ColorPalette } from '../demo/ColorPalette';
+import { Spacing } from '../demo/Spacing';
 import styles from './ComponentShowcase.module.css';
 
-type TabId = 'typography' | 'buttons' | 'inputs' | 'cards' | 'alerts' | 'badges' | 'avatars' | 'dropdowns' | 'lists' | 'layout' | 'elevation' | 'opacity' | 'borders' | 'focus' | 'surfaces' | 'colors' | 'navigation';
+type TabId = 'typography' | 'spacing' | 'buttons' | 'inputs' | 'cards' | 'alerts' | 'badges' | 'avatars' | 'dropdowns' | 'lists' | 'layout' | 'elevation' | 'opacity' | 'borders' | 'focus' | 'surfaces' | 'colors' | 'navigation';
 
 interface Tab {
   id: TabId;
@@ -31,6 +32,7 @@ interface Tab {
 const tabs: Tab[] = [
   // Foundations
   { id: 'typography', label: 'Typography', category: 'foundations' },
+  { id: 'spacing', label: 'Spacing', category: 'foundations' },
   { id: 'colors', label: 'Color Palette', category: 'foundations' },
   { id: 'elevation', label: 'Elevation', category: 'foundations' },
   { id: 'opacity', label: 'Opacity', category: 'foundations' },
@@ -99,6 +101,17 @@ export function ComponentShowcase() {
               Font families, sizes, weights, and line heights that define the text hierarchy and readability.
             </p>
             <Typography />
+          </section>
+        )}
+
+        {/* Spacing Section */}
+        {activeTab === 'spacing' && (
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Spacing</h2>
+            <p className={styles.sectionDescription}>
+              A consistent spacing scale that creates rhythm and hierarchy throughout your interface.
+            </p>
+            <Spacing />
           </section>
         )}
 
