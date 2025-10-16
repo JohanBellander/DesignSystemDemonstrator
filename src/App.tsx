@@ -3,6 +3,7 @@ import { DesignSystemProvider, useDesignSystem } from './context/DesignSystemCon
 import { DesignSystemSelector } from './components/ui/DesignSystemSelector';
 import { ComponentShowcase } from './components/ui/ComponentShowcase';
 import { ExportModal } from './components/ui/ExportModal';
+import { ScrollProgress } from './components/ui/ScrollProgress';
 import { DownloadIcon } from './assets/icons/DownloadIcon';
 import styles from './App.module.css';
 
@@ -20,6 +21,7 @@ function AppContent() {
 
   return (
     <div className={styles.app}>
+      <ScrollProgress />
       <header className={styles.header}>
         <div className={styles.headerContent}>
           <div className={styles.titleSection}>

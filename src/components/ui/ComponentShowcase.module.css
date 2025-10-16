@@ -9,7 +9,20 @@
   padding: var(--spacing-xl) 0;
   position: relative;
   transition: background var(--transition-duration-slow) var(--transition-easing-out),
-              transform var(--transition-duration-slow) var(--transition-easing-out);
+              transform var(--transition-duration-slow) var(--transition-easing-out),
+              opacity var(--transition-duration-normal) var(--transition-easing-out);
+  animation: fadeInSection 0.4s ease-out;
+}
+
+@keyframes fadeInSection {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .section:nth-child(even) {
@@ -173,9 +186,29 @@
   cursor: pointer;
   transition: var(--transition-colors),
               box-shadow var(--transition-duration-normal) var(--transition-easing-default),
-              transform var(--transition-duration-fast) var(--transition-easing-default);
+              transform var(--transition-duration-fast) var(--transition-easing-default),
+              border-color var(--transition-duration-fast) var(--transition-easing-default);
   white-space: nowrap;
   position: relative;
+  overflow: hidden;
+}
+
+.tabButton::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(var(--color-primary-rgb, 33, 150, 243), 0.15);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease-out, height 0.6s ease-out;
+}
+
+.tabButton:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .tabButton:hover:not(.active) {
@@ -183,6 +216,7 @@
   background-color: var(--color-background-paper, #fff);
   border-color: var(--color-primary-300, #90CAF9);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
 }
 
 .tabButton:focus-visible {
@@ -191,7 +225,7 @@
 }
 
 .tabButton:active:not(.active) {
-  transform: translateY(1px);
+  transform: translateY(0) scale(0.98);
 }
 
 .tabButton.active {
@@ -205,6 +239,11 @@
   box-shadow: 0 2px 4px rgba(var(--color-primary-rgb, 33, 150, 243), 0.2),
               inset 0 1px 0 rgba(255, 255, 255, 0.3);
   padding: calc(var(--spacing-sm) - 1px) calc(var(--spacing-lg) - 1px);
+  transform: none;
+}
+
+.tabButton.active::before {
+  display: none;
 }
 
 .tabContent {
