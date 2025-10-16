@@ -98,12 +98,26 @@ export function applyDesignTokens(designSystem: DesignSystem): void {
 
   // Apply elevation tokens (optional)
   if (tokens.elevation) {
-    Object.entries(tokens.elevation.levels).forEach(([key, value]) => {
-      root.style.setProperty(`--elevation-${key}`, value);
-    });
-    Object.entries(tokens.elevation.zIndex).forEach(([key, value]) => {
-      root.style.setProperty(`--z-index-${key}`, String(value));
-    });
+    // Check if elevation has nested levels structure or is flat
+    if ('levels' in tokens.elevation && typeof tokens.elevation.levels === 'object') {
+      Object.entries(tokens.elevation.levels).forEach(([key, value]) => {
+        root.style.setProperty(`--elevation-${key}`, value);
+      });
+    } else {
+      // Handle flat elevation structure (e.g., pliability)
+      Object.entries(tokens.elevation).forEach(([key, value]) => {
+        if (key !== 'zIndex' && typeof value === 'string') {
+          root.style.setProperty(`--elevation-${key}`, value);
+        }
+      });
+    }
+    
+    // Apply zIndex if available
+    if ('zIndex' in tokens.elevation && typeof tokens.elevation.zIndex === 'object') {
+      Object.entries(tokens.elevation.zIndex).forEach(([key, value]) => {
+        root.style.setProperty(`--z-index-${key}`, String(value));
+      });
+    }
   }
 
   // Apply opacity tokens (optional)
@@ -115,20 +129,30 @@ export function applyDesignTokens(designSystem: DesignSystem): void {
 
   // Apply border system tokens (optional)
   if (tokens.borders) {
-    Object.entries(tokens.borders.widths).forEach(([key, value]) => {
-      root.style.setProperty(`--border-width-${key}`, value);
-    });
-    Object.entries(tokens.borders.styles).forEach(([key, value]) => {
-      root.style.setProperty(`--border-style-${key}`, value);
-    });
+    if (tokens.borders.widths) {
+      Object.entries(tokens.borders.widths).forEach(([key, value]) => {
+        root.style.setProperty(`--border-width-${key}`, value);
+      });
+    }
+    if (tokens.borders.styles) {
+      Object.entries(tokens.borders.styles).forEach(([key, value]) => {
+        root.style.setProperty(`--border-style-${key}`, value);
+      });
+    }
   }
 
   // Apply focus state tokens (optional)
   if (tokens.focusStates) {
-    root.style.setProperty(`--focus-ring-width`, tokens.focusStates.ringWidth);
-    root.style.setProperty(`--focus-ring-offset`, tokens.focusStates.ringOffset);
-    root.style.setProperty(`--focus-ring-color`, tokens.focusStates.ringColor);
-    root.style.setProperty(`--focus-outline-style`, tokens.focusStates.outlineStyle);
+    // Support both naming conventions
+    const ringWidth = (tokens.focusStates as any).ringWidth || (tokens.focusStates as any).outlineWidth;
+    const ringOffset = (tokens.focusStates as any).ringOffset || (tokens.focusStates as any).outlineOffset;
+    const ringColor = (tokens.focusStates as any).ringColor || (tokens.focusStates as any).outlineColor;
+    const outlineStyle = tokens.focusStates.outlineStyle;
+    
+    if (ringWidth) root.style.setProperty(`--focus-ring-width`, ringWidth);
+    if (ringOffset) root.style.setProperty(`--focus-ring-offset`, ringOffset);
+    if (ringColor) root.style.setProperty(`--focus-ring-color`, ringColor);
+    if (outlineStyle) root.style.setProperty(`--focus-outline-style`, outlineStyle);
   }
 
   // Apply surface tokens (optional)
