@@ -19,9 +19,10 @@ import { Surfaces } from '../demo/Surfaces';
 import { NavigationDemo } from '../demo/Navigation';
 import { ColorPalette } from '../demo/ColorPalette';
 import { Spacing } from '../demo/Spacing';
+import { Transitions } from '../demo/Transitions';
 import styles from './ComponentShowcase.module.css';
 
-type TabId = 'typography' | 'spacing' | 'buttons' | 'inputs' | 'cards' | 'alerts' | 'badges' | 'avatars' | 'dropdowns' | 'lists' | 'layout' | 'elevation' | 'opacity' | 'borders' | 'focus' | 'surfaces' | 'colors' | 'navigation';
+type TabId = 'typography' | 'spacing' | 'transitions' | 'buttons' | 'inputs' | 'cards' | 'alerts' | 'badges' | 'avatars' | 'dropdowns' | 'lists' | 'layout' | 'elevation' | 'opacity' | 'borders' | 'focus' | 'surfaces' | 'colors' | 'navigation';
 
 interface Tab {
   id: TabId;
@@ -34,6 +35,7 @@ const tabs: Tab[] = [
   { id: 'typography', label: 'Typography', category: 'foundations' },
   { id: 'spacing', label: 'Spacing', category: 'foundations' },
   { id: 'colors', label: 'Color Palette', category: 'foundations' },
+  { id: 'transitions', label: 'Transitions', category: 'foundations' },
   { id: 'elevation', label: 'Elevation', category: 'foundations' },
   { id: 'opacity', label: 'Opacity', category: 'foundations' },
   { id: 'borders', label: 'Border System', category: 'foundations' },
@@ -332,6 +334,17 @@ export function ComponentShowcase() {
               Complete color system organized by category (primary, secondary, neutral). Shows all shades from light to dark with hex values for each color token.
             </p>
             <ColorPalette />
+          </section>
+        )}
+
+        {/* Transitions Section */}
+        {activeTab === 'transitions' && (
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Transitions</h2>
+            <p className={styles.sectionDescription}>
+              Animation timing and easing functions that control motion in the interface. Compare fast, base, and slow transition speeds with interactive examples.
+            </p>
+            <Transitions />
           </section>
         )}
 

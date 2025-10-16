@@ -1,0 +1,452 @@
+.container {
+  padding: var(--spacing-md);
+}
+
+.section {
+  margin-bottom: var(--spacing-4xl);
+}
+
+.subtitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-sm) 0;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  margin: 0 0 var(--spacing-xl) 0;
+  line-height: var(--line-height-relaxed);
+}
+
+.description code {
+  background: var(--color-primary-100);
+  padding: 2px 6px;
+  border-radius: var(--border-radius-sm);
+  font-family: var(--font-family-monospace);
+  font-size: 0.9em;
+}
+
+/* Speed Comparison Section */
+.triggerButton {
+  background: var(--color-primary-500);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  margin-bottom: var(--spacing-xl);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.triggerButton:hover {
+  background: var(--color-primary-600);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.triggerButton:active {
+  transform: translateY(0);
+}
+
+.comparisonGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.comparisonItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.comparisonLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comparisonName {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.comparisonValue {
+  font-family: var(--font-family-monospace);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  background: var(--background-paper);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+}
+
+.animationTrack {
+  background: var(--background-paper);
+  border: 1px solid var(--border-default);
+  border-radius: var(--border-radius-md);
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.animationBox {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-600));
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.box-fast.animated {
+  animation: slideAcross var(--transition-fast) ease-in-out;
+}
+
+.box-base.animated {
+  animation: slideAcross var(--transition-base) ease-in-out;
+}
+
+.box-slow.animated {
+  animation: slideAcross var(--transition-slow) ease-in-out;
+}
+
+@keyframes slideAcross {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 50px);
+  }
+}
+
+/* Easing Functions Section */
+.easingDemo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2xl);
+  align-items: center;
+}
+
+.easingGraph {
+  background: var(--background-paper);
+  border: 1px solid var(--border-default);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+}
+
+.easingSvg {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+}
+
+.easingLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.easingDescription {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.easingDescription p {
+  margin: 0;
+  line-height: var(--line-height-relaxed);
+  color: var(--text-primary);
+}
+
+.easingDescription strong {
+  color: var(--color-primary-600);
+  font-family: var(--font-family-monospace);
+}
+
+/* Real-World Examples Section */
+.examplesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.exampleCard {
+  background: var(--background-paper);
+  border: 1px solid var(--border-default);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.exampleTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  font-size: var(--font-size-lg);
+}
+
+.exampleSpeed {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.exampleTiming {
+  font-family: var(--font-family-monospace);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  background: var(--color-primary-100);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+}
+
+.exampleDesc {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.exampleDemo {
+  background: var(--background-elevated);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-xl);
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.exampleNote {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Fast Example - Button */
+.demoButton {
+  background: var(--color-primary-500);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.demoButton:hover {
+  background: var(--color-primary-600);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.demoButton:active {
+  transform: translateY(0);
+}
+
+/* Base Example - Modal */
+.modalTrigger {
+  background: var(--color-primary-500);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.modalTrigger:hover {
+  background: var(--color-primary-600);
+}
+
+.modalOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-md);
+  animation: fadeIn var(--transition-base) ease-in-out;
+}
+
+.modalContent {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-xl);
+  animation: scaleIn var(--transition-base) ease-in-out;
+  min-width: 200px;
+  text-align: center;
+}
+
+.modalHeader {
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.modalContent p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slow Example - Slide Panel */
+.panelTrigger {
+  background: var(--color-primary-500);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.panelTrigger:hover {
+  background: var(--color-primary-600);
+}
+
+.slidePanel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  background: var(--color-primary-500);
+  border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+  transform: translateX(100%);
+  transition: transform var(--transition-slow) ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.slidePanel.panelOpen {
+  transform: translateX(0);
+}
+
+.panelContent {
+  color: white;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+}
+
+.panelContent p {
+  margin: var(--spacing-xs) 0;
+}
+
+/* Best Practices Section */
+.practicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.practiceCard {
+  background: var(--background-paper);
+  border: 1px solid var(--border-default);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.practiceCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-300);
+}
+
+.practiceIcon {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.practiceCard h4 {
+  margin: 0 0 var(--spacing-md) 0;
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.practiceCard ul {
+  margin: 0;
+  padding-left: var(--spacing-lg);
+  color: var(--text-secondary);
+}
+
+.practiceCard li {
+  margin-bottom: var(--spacing-xs);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .easingDemo {
+    grid-template-columns: 1fr;
+  }
+  
+  .examplesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .practicesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Token Restrictions (grayed out) */
+.comparisonItem.restricted,
+.exampleCard.restricted {
+  opacity: 0.4;
+  pointer-events: none;
+}
