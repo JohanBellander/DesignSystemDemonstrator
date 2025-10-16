@@ -55,8 +55,8 @@
 .componentGrid {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-md);
-  align-items: center;
+  gap: var(--spacing-xl);
+  align-items: flex-start;
   animation: fadeInSlide 0.4s ease-out;
   animation-delay: 0.1s;
   animation-fill-mode: both;
@@ -65,7 +65,14 @@
 .componentColumn {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: var(--spacing-xl);
+  flex: 1;
+  min-width: 280px;
+  background: var(--color-background-paper, #fff);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .sectionDescription {
@@ -80,13 +87,27 @@
 .buttonGroup {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-xl);
+}
+
+.buttonGroup > div {
+  background: var(--color-background-paper, #fff);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow var(--transition-duration-normal) var(--transition-easing-default);
+}
+
+.buttonGroup > div:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .buttonRow {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
   align-items: center;
 }
 
@@ -96,8 +117,10 @@
   color: var(--color-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
   opacity: 0.8;
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 2px solid var(--color-border-light, var(--color-border-default));
 }
 
 .tabNav {
