@@ -3,6 +3,7 @@ import { DesignSystemProvider, useDesignSystem } from './context/DesignSystemCon
 import { DesignSystemSelector } from './components/ui/DesignSystemSelector';
 import { ComponentShowcase } from './components/ui/ComponentShowcase';
 import { ExportModal } from './components/ui/ExportModal';
+import { DownloadIcon } from './assets/icons/DownloadIcon';
 import styles from './App.module.css';
 
 function AppContent() {
@@ -34,13 +35,17 @@ function AppContent() {
               disabled={!selectedSystem}
               title="Export design system for AI implementation"
             >
-              <span>📦</span>
+              <DownloadIcon size={18} />
               <span>Export</span>
             </button>
-            <DesignSystemSelector />
           </div>
         </div>
       </header>
+      <div className={styles.toolbar}>
+        <div className={styles.toolbarContent}>
+          <DesignSystemSelector />
+        </div>
+      </div>
       <main className={styles.main}>
         <ComponentShowcase />
       </main>
