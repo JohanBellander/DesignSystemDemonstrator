@@ -40,7 +40,7 @@
 }
 
 .sectionTitle {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   margin-bottom: var(--spacing-md);
@@ -48,6 +48,8 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
 }
 
 .componentGrid {
@@ -69,8 +71,10 @@
 .sectionDescription {
   font-size: var(--font-size-base);
   color: var(--color-text-secondary);
-  margin-bottom: var(--spacing-md);
-  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.7;
+  opacity: 0.85;
+  max-width: 800px;
 }
 
 .buttonGroup {
@@ -87,12 +91,13 @@
 }
 
 .buttonRowLabel {
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
   color: var(--color-text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   margin-bottom: var(--spacing-xs);
+  opacity: 0.8;
 }
 
 .tabNav {

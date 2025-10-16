@@ -108,6 +108,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.5;
 }
 
 .list.small .title {
@@ -116,6 +117,7 @@
 
 .list.large .title {
   font-size: var(--font-size-lg);
+  letter-spacing: -0.1px;
 }
 
 .subtitle {
@@ -124,6 +126,8 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.5;
+  opacity: 0.85;
 }
 
 .list.small .subtitle {
