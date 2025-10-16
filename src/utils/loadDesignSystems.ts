@@ -4,7 +4,7 @@ import { DesignSystem } from '../types/design-system';
  * Load all design systems from the public/design-systems directory
  */
 export async function loadDesignSystems(): Promise<DesignSystem[]> {
-  const designSystemFiles = ['material', 'apple', 'github', 'tokens-studio', 'mailchimp', 'pliability', 'fitness-tracker'];
+  const designSystemFiles = ['material', 'apple', 'github', 'tokens-studio', 'mailchimp', 'pliability', 'fitness-tracker', 'vibrant'];
   
   const designSystems = await Promise.all(
     designSystemFiles.map(async (id) => {
