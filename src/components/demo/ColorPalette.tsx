@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useDesignSystem } from '../../context/DesignSystemContext';
 import { useTokenRestrictions } from '../../hooks/useTokenRestrictions';
 import styles from './ColorPalette.module.css';
@@ -16,10 +17,21 @@ export function ColorPalette() {
   const { selectedSystem } = useDesignSystem();
   const { getTokenClass } = useTokenRestrictions();
   const colors = selectedSystem?.tokens.colors;
+  const [copiedColor, setCopiedColor] = useState<string | null>(null);
 
   if (!colors) {
     return <div>No colors defined</div>;
   }
+
+  const copyToClipboard = async (value: string, identifier: string) => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopiedColor(identifier);
+      setTimeout(() => setCopiedColor(null), 1500);
+    } catch (err) {
+      console.error('Failed to copy color:', err);
+    }
+  };
 
   const colorGroups: ColorGroup[] = [];
 
@@ -53,17 +65,25 @@ export function ColorPalette() {
           <div className={styles.colorGrid}>
             {group.shades.map((shade) => {
               const restrictionClass = getTokenClass('colors', group.name, shade.shade);
+              const colorId = `${group.name}-${shade.shade}`;
               return (
-                <div key={shade.shade} className={`${styles.colorSwatch} ${restrictionClass}`}>
+                <div 
+                  key={shade.shade} 
+                  className={`${styles.colorSwatch} ${restrictionClass}`}
+                  onClick={() => copyToClipboard(shade.value, colorId)}
+                  title={`Click to copy ${shade.value}`}
+                >
                   <div
                     className={styles.colorBox}
                     style={{ backgroundColor: shade.value }}
-                    title={shade.value}
                   />
                   <div className={styles.colorInfo}>
                     <div className={styles.colorShade}>{shade.shade}</div>
                     <div className={styles.colorValue}>{shade.value}</div>
                   </div>
+                  {copiedColor === colorId && (
+                    <div className={styles.copiedFeedback}>Copied!</div>
+                  )}
                 </div>
               );
             })}
@@ -79,10 +99,21 @@ export function ColorPaletteCompact() {
   const { selectedSystem } = useDesignSystem();
   const { getTokenClass } = useTokenRestrictions();
   const colors = selectedSystem?.tokens.colors;
+  const [copiedColor, setCopiedColor] = useState<string | null>(null);
 
   if (!colors) {
     return null;
   }
+
+  const copyToClipboard = async (value: string, identifier: string) => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopiedColor(identifier);
+      setTimeout(() => setCopiedColor(null), 1500);
+    } catch (err) {
+      console.error('Failed to copy color:', err);
+    }
+  };
 
   return (
     <div className={styles.colorPaletteCompact}>
@@ -98,12 +129,14 @@ export function ColorPaletteCompact() {
               {Object.entries(shades).map(([shade, value]) => {
                 if (typeof value !== 'string') return null;
                 const restrictionClass = getTokenClass('colors', category, shade);
+                const colorId = `compact-${category}-${shade}`;
                 return (
                   <div
                     key={shade}
                     className={`${styles.compactSwatch} ${restrictionClass}`}
                     style={{ backgroundColor: value }}
-                    title={`${category}-${shade}: ${value}`}
+                    title={`Click to copy ${category}-${shade}: ${value}`}
+                    onClick={() => copyToClipboard(value, colorId)}
                   />
                 );
               })}
