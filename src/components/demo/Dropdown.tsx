@@ -3,7 +3,7 @@ import { useDesignSystem } from '../../context/DesignSystemContext';
 import { useAnimation } from '../../hooks/useAnimation';
 import { isComponentPropertyAllowed } from '../../utils/tokenRestrictions';
 import styles from './Dropdown.module.css';
-import animationStyles from '../../styles/animations.module.css';
+import '../../styles/animations.css';
 
 interface DropdownOption {
   value: string;
@@ -54,9 +54,9 @@ export function Dropdown({
     styles[size],
     error ? styles.error : '',
     isOpen ? styles.open : '',
-    animationClasses.hover && animationStyles[animationClasses.hover],
-    animationClasses.active && animationStyles[animationClasses.active],
-    animationClasses.focus && animationStyles[animationClasses.focus]
+    animationClasses.hover,
+    animationClasses.active,
+    animationClasses.focus
   ].filter(Boolean).join(' ');
 
   return (

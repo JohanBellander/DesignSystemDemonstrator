@@ -1,7 +1,7 @@
 import { InputHTMLAttributes } from 'react';
 import { useAnimation } from '../../hooks/useAnimation';
 import styles from './Input.module.css';
-import animationStyles from '../../styles/animations.module.css';
+import '../../styles/animations.css';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
@@ -15,9 +15,9 @@ export function Input({ label, error, className, style, ...props }: InputProps) 
   const inputClasses = [
     styles.input,
     error ? styles.error : '',
-    animationClasses.hover && animationStyles[animationClasses.hover],
-    animationClasses.active && animationStyles[animationClasses.active],
-    animationClasses.focus && animationStyles[animationClasses.focus],
+    animationClasses.hover,
+    animationClasses.active,
+    animationClasses.focus,
     className
   ].filter(Boolean).join(' ');
   

@@ -5,12 +5,12 @@ import { Card } from './Card';
 import { Input } from './Input';
 import type { AnimationType, AnimationIntensity } from '../../types/design-system';
 import styles from './AnimationShowcase.module.css';
+import '../../styles/animations.css';
 
 export function AnimationShowcase() {
   const { selectedSystem } = useDesignSystem();
-  const [activeAnimation, setActiveAnimation] = useState<AnimationType | null>(null);
+  const [activeAnimation, setActiveAnimation] = useState<AnimationType>('scale');
   const selectedIntensity: AnimationIntensity = 'medium';
-  const [interactionState, setInteractionState] = useState<'hover' | 'active' | 'focus'>('hover');
 
   const animationTypes: AnimationType[] = [
     'ripple', 'lift', 'scale', 'glow', 'slide', 
@@ -30,11 +30,6 @@ export function AnimationShowcase() {
   };
 
   const allowedTypes = getAllowedTypes();
-
-  const triggerAnimation = (type: AnimationType) => {
-    setActiveAnimation(type);
-    setTimeout(() => setActiveAnimation(null), 1000);
-  };
 
   return (
     <div className={styles.container}>
@@ -67,23 +62,21 @@ export function AnimationShowcase() {
       <div className={styles.section}>
         <h3 className={styles.subtitle}>Animation Types</h3>
         <p className={styles.description}>
-          Click on any animation card to see it in action. Available animations are based on the current design system.
+          <strong>Hover over each card</strong> to see the animation in action. Available animations are based on the current design system.
         </p>
 
         <div className={styles.animationGrid}>
           {animationTypes.map((type) => {
             const isAllowed = allowedTypes.indexOf(type) !== -1;
-            const isActive = activeAnimation === type;
             
             return (
               <div
                 key={type}
-                className={`${styles.animationCard} ${!isAllowed ? styles.disabled : ''} ${isActive ? styles.active : ''}`}
-                onClick={() => isAllowed && triggerAnimation(type)}
+                className={`${styles.animationCard} ${!isAllowed ? styles.disabled : ''}`}
               >
                 <div className={styles.animationPreview}>
-                  <div className={`${styles.previewBox} animation-${type}-${selectedIntensity} ${isActive ? styles.animate : ''}`}>
-                    {type === 'none' ? '—' : ''}
+                  <div className={`${styles.previewBox} animation-${type}-${selectedIntensity}`}>
+                    {type === 'none' ? '—' : '★'}
                   </div>
                 </div>
                 <div className={styles.animationInfo}>
@@ -100,14 +93,14 @@ export function AnimationShowcase() {
       <div className={styles.section}>
         <h3 className={styles.subtitle}>Intensity Levels</h3>
         <p className={styles.description}>
-          Compare how the same animation looks at different intensity levels.
+          Compare how the same animation looks at different intensity levels. <strong>Hover over each box</strong> to see the difference.
         </p>
 
         <div className={styles.intensityControls}>
           <label className={styles.label}>Animation Type:</label>
           <select 
             className={styles.select}
-            value={activeAnimation || 'scale'}
+            value={activeAnimation}
             onChange={(e) => setActiveAnimation(e.target.value as AnimationType)}
           >
             {allowedTypes.map(type => (
@@ -122,9 +115,7 @@ export function AnimationShowcase() {
               <div className={styles.intensityLabel}>{intensity}</div>
               <div className={styles.intensityPreview}>
                 <div 
-                  className={`${styles.intensityBox} animation-${activeAnimation || 'scale'}-${intensity}`}
-                  onMouseEnter={(e) => e.currentTarget.classList.add(styles.hover)}
-                  onMouseLeave={(e) => e.currentTarget.classList.remove(styles.hover)}
+                  className={`${styles.intensityBox} animation-${activeAnimation}-${intensity}`}
                 >
                   Hover me
                 </div>
@@ -138,29 +129,18 @@ export function AnimationShowcase() {
       <div className={styles.section}>
         <h3 className={styles.subtitle}>Interaction States</h3>
         <p className={styles.description}>
-          See how animations differ across hover, active, and focus states.
+          Different animations can be triggered for hover, active (click), and focus states. <strong>Try hovering, clicking, and tabbing</strong> to this box.
         </p>
-
-        <div className={styles.stateControls}>
-          {(['hover', 'active', 'focus'] as const).map((state) => (
-            <button
-              key={state}
-              className={`${styles.stateButton} ${interactionState === state ? styles.stateActive : ''}`}
-              onClick={() => setInteractionState(state)}
-            >
-              {state}
-            </button>
-          ))}
-        </div>
 
         <div className={styles.stateDemo}>
           <div className={styles.stateDemoBox}>
-            <div 
+            <button 
               className={`${styles.stateDemoElement} animation-scale-${selectedIntensity}`}
-              data-state={interactionState}
+              tabIndex={0}
             >
-              {interactionState} state
-            </div>
+              Interact with me
+            </button>
+            <p className={styles.stateHint}>Hover • Click • Tab to focus</p>
           </div>
         </div>
       </div>

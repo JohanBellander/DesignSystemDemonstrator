@@ -1,7 +1,7 @@
 import { ReactNode, CSSProperties } from 'react';
 import { useAnimation } from '../../hooks/useAnimation';
 import styles from './Card.module.css';
-import animationStyles from '../../styles/animations.module.css';
+import '../../styles/animations.css';
 
 interface CardProps {
   title?: string;
@@ -17,9 +17,9 @@ export function Card({ title, children, footer, className, style }: CardProps) {
   
   const classNames = [
     styles.card,
-    animationClasses.hover && animationStyles[animationClasses.hover],
-    animationClasses.active && animationStyles[animationClasses.active],
-    animationClasses.focus && animationStyles[animationClasses.focus],
+    animationClasses.hover,
+    animationClasses.active,
+    animationClasses.focus,
     className
   ].filter(Boolean).join(' ');
   

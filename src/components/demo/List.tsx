@@ -2,7 +2,7 @@ import { useDesignSystem } from '../../context/DesignSystemContext';
 import { useAnimation } from '../../hooks/useAnimation';
 import { isComponentPropertyAllowed } from '../../utils/tokenRestrictions';
 import styles from './List.module.css';
-import animationStyles from '../../styles/animations.module.css';
+import '../../styles/animations.css';
 
 interface ListItem {
   id: string;
@@ -37,8 +37,8 @@ export function List({
   
   const itemClasses = [
     styles.listItem,
-    interactive && animationClasses.hover ? animationStyles[animationClasses.hover] : '',
-    interactive && animationClasses.active ? animationStyles[animationClasses.active] : '',
+    interactive ? animationClasses.hover : '',
+    interactive ? animationClasses.active : '',
   ].filter(Boolean).join(' ');
   
   return (
