@@ -33,11 +33,11 @@ export function ColorPalette() {
     }
   };
 
-  // Get computed color values
-  const getComputedColor = (property: string) => {
-    const rootStyles = getComputedStyle(document.documentElement);
-    return rootStyles.getPropertyValue(`--color-${property}`).trim();
-  };
+  // Get computed color values (currently unused but kept for potential future use)
+  // const getComputedColor = (property: string) => {
+  //   const rootStyles = getComputedStyle(document.documentElement);
+  //   return rootStyles.getPropertyValue(`--color-${property}`).trim();
+  // };
 
   const colorGroups: ColorGroup[] = [];
 
@@ -67,10 +67,10 @@ export function ColorPalette() {
   });
 
   // Extract semantic colors
-  const semanticColors = colors.semantic as Record<string, string> | undefined;
-  const textColors = colors.text as Record<string, string> | undefined;
-  const backgroundColors = colors.background as Record<string, string> | undefined;
-  const borderColors = colors.border as Record<string, string> | undefined;
+  const semanticColors = colors.semantic as unknown as Record<string, string> | undefined;
+  const textColors = colors.text as unknown as Record<string, string> | undefined;
+  const backgroundColors = colors.background as unknown as Record<string, string> | undefined;
+  const borderColors = colors.border as unknown as Record<string, string> | undefined;
 
   return (
     <div className={styles.colorPalette}>
@@ -283,17 +283,17 @@ export function ColorPaletteCompact() {
   const { selectedSystem } = useDesignSystem();
   const { getTokenClass } = useTokenRestrictions();
   const colors = selectedSystem?.tokens.colors;
-  const [copiedColor, setCopiedColor] = useState<string | null>(null);
+  // const [copiedColor, setCopiedColor] = useState<string | null>(null);
 
   if (!colors) {
     return null;
   }
 
-  const copyToClipboard = async (value: string, identifier: string) => {
+  const copyToClipboard = async (value: string, _identifier: string) => {
     try {
       await navigator.clipboard.writeText(value);
-      setCopiedColor(identifier);
-      setTimeout(() => setCopiedColor(null), 1500);
+      // setCopiedColor(identifier);
+      // setTimeout(() => setCopiedColor(null), 1500);
     } catch (err) {
       console.error('Failed to copy color:', err);
     }

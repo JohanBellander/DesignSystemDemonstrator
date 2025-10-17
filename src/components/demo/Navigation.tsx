@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import { Button } from './Button';
 import { useDesignSystem } from '../../context/DesignSystemContext';
-import { useAnimation } from '../../hooks/useAnimation';
 import styles from './Navigation.module.css';
-import animationStyles from '../../styles/animations.module.css';
 
 // Navigation patterns showcase component
 export function NavigationDemo() {
