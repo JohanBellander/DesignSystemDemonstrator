@@ -14,7 +14,8 @@ export async function loadDesignSystems(): Promise<DesignSystem[]> {
           throw new Error(`Failed to load ${id} design system`);
         }
         const data: DesignSystem = await response.json();
-        return data;
+        // Add the id to the design system object
+        return { ...data, id };
       } catch (error) {
         console.error(`Error loading design system ${id}:`, error);
         return null;
