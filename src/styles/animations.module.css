@@ -1,0 +1,558 @@
+/**
+ * Animation System CSS Module
+ * 
+ * This module contains all animation styles for the design system.
+ * Each animation has three intensity levels: subtle, medium, and bold.
+ * 
+ * Animation Types:
+ * - none: No animation
+ * - ripple: Material-style ripple effect
+ * - lift: Elevation increase (transform + shadow)
+ * - scale: Scale up/down
+ * - glow: Glowing border/shadow
+ * - slide: Subtle slide movement
+ * - bounce: Bouncy spring animation
+ * - fade: Opacity change
+ * - shimmer: Shimmer/shine effect
+ * - rotate: Rotation effect
+ * - pulse: Pulsing scale/opacity
+ */
+
+/* ========================================
+   LIFT ANIMATIONS
+   Elevate element with shadow on hover
+   ======================================== */
+
+.animation-lift-subtle {
+  transition: transform var(--animation-duration, var(--transition-base)),
+              box-shadow var(--animation-duration, var(--transition-base));
+}
+
+.animation-lift-subtle:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.animation-lift-medium {
+  transition: transform var(--animation-duration, var(--transition-base)),
+              box-shadow var(--animation-duration, var(--transition-base));
+}
+
+.animation-lift-medium:hover:not(:disabled) {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.animation-lift-bold {
+  transition: transform var(--animation-duration, var(--transition-base)),
+              box-shadow var(--animation-duration, var(--transition-base));
+}
+
+.animation-lift-bold:hover:not(:disabled) {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* ========================================
+   SCALE ANIMATIONS
+   Scale element on interaction
+   ======================================== */
+
+.animation-scale-subtle {
+  transition: transform var(--animation-duration, var(--transition-fast));
+}
+
+.animation-scale-subtle:hover:not(:disabled) {
+  transform: scale(1.02);
+}
+
+.animation-scale-subtle:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.animation-scale-medium {
+  transition: transform var(--animation-duration, var(--transition-fast));
+}
+
+.animation-scale-medium:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.animation-scale-medium:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.animation-scale-bold {
+  transition: transform var(--animation-duration, var(--transition-fast));
+}
+
+.animation-scale-bold:hover:not(:disabled) {
+  transform: scale(1.1);
+}
+
+.animation-scale-bold:active:not(:disabled) {
+  transform: scale(0.9);
+}
+
+/* ========================================
+   GLOW ANIMATIONS
+   Glowing border/shadow effect
+   ======================================== */
+
+.animation-glow-subtle {
+  transition: box-shadow var(--animation-duration, var(--transition-base));
+}
+
+.animation-glow-subtle:hover:not(:disabled),
+.animation-glow-subtle:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-primary-200);
+}
+
+.animation-glow-medium {
+  transition: box-shadow var(--animation-duration, var(--transition-base));
+}
+
+.animation-glow-medium:hover:not(:disabled),
+.animation-glow-medium:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-primary-300),
+              0 0 12px var(--color-primary-300);
+}
+
+.animation-glow-bold {
+  transition: box-shadow var(--animation-duration, var(--transition-base));
+}
+
+.animation-glow-bold:hover:not(:disabled),
+.animation-glow-bold:focus-visible {
+  box-shadow: 0 0 0 4px var(--color-primary-400),
+              0 0 20px var(--color-primary-400);
+}
+
+/* ========================================
+   RIPPLE ANIMATIONS
+   Material Design ripple effect
+   ======================================== */
+
+.animation-ripple-subtle,
+.animation-ripple-medium,
+.animation-ripple-bold {
+  position: relative;
+  overflow: hidden;
+}
+
+.animation-ripple-subtle::after,
+.animation-ripple-medium::after,
+.animation-ripple-bold::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width var(--animation-duration, 0.6s) ease-out,
+              height var(--animation-duration, 0.6s) ease-out,
+              opacity var(--animation-duration, 0.6s) ease-out;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.animation-ripple-subtle:hover:not(:disabled)::after {
+  width: 200px;
+  height: 200px;
+  opacity: 0.2;
+}
+
+.animation-ripple-subtle:active:not(:disabled)::after {
+  width: 200px;
+  height: 200px;
+  opacity: 0.3;
+  transition: width 0s, height 0s, opacity 0s;
+}
+
+.animation-ripple-medium:hover:not(:disabled)::after {
+  width: 300px;
+  height: 300px;
+  opacity: 0.3;
+}
+
+.animation-ripple-medium:active:not(:disabled)::after {
+  width: 300px;
+  height: 300px;
+  opacity: 0.4;
+  transition: width 0s, height 0s, opacity 0s;
+}
+
+.animation-ripple-bold:hover:not(:disabled)::after {
+  width: 400px;
+  height: 400px;
+  opacity: 0.4;
+}
+
+.animation-ripple-bold:active:not(:disabled)::after {
+  width: 400px;
+  height: 400px;
+  opacity: 0.6;
+  transition: width 0s, height 0s, opacity 0s;
+}
+
+/* ========================================
+   SLIDE ANIMATIONS
+   Subtle horizontal slide
+   ======================================== */
+
+.animation-slide-subtle {
+  transition: transform var(--animation-duration, var(--transition-base));
+}
+
+.animation-slide-subtle:hover:not(:disabled) {
+  transform: translateX(2px);
+}
+
+.animation-slide-medium {
+  transition: transform var(--animation-duration, var(--transition-base));
+}
+
+.animation-slide-medium:hover:not(:disabled) {
+  transform: translateX(4px);
+}
+
+.animation-slide-bold {
+  transition: transform var(--animation-duration, var(--transition-base));
+}
+
+.animation-slide-bold:hover:not(:disabled) {
+  transform: translateX(8px);
+}
+
+/* ========================================
+   BOUNCE ANIMATIONS
+   Playful bounce effect
+   ======================================== */
+
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes bounce-medium {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes bounce-bold {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.animation-bounce-subtle:hover:not(:disabled) {
+  animation: bounce-subtle 0.5s var(--animation-easing, ease-in-out);
+}
+
+.animation-bounce-medium:hover:not(:disabled) {
+  animation: bounce-medium 0.6s var(--animation-easing, ease-in-out);
+}
+
+.animation-bounce-bold:hover:not(:disabled) {
+  animation: bounce-bold 0.7s var(--animation-easing, ease-in-out);
+}
+
+/* ========================================
+   FADE ANIMATIONS
+   Opacity transition
+   ======================================== */
+
+.animation-fade-subtle {
+  transition: opacity var(--animation-duration, var(--transition-base));
+}
+
+.animation-fade-subtle:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.animation-fade-medium {
+  transition: opacity var(--animation-duration, var(--transition-base));
+}
+
+.animation-fade-medium:hover:not(:disabled) {
+  opacity: 0.7;
+}
+
+.animation-fade-bold {
+  transition: opacity var(--animation-duration, var(--transition-base));
+}
+
+.animation-fade-bold:hover:not(:disabled) {
+  opacity: 0.5;
+}
+
+/* ========================================
+   SHIMMER ANIMATIONS
+   Shimmer/shine effect
+   ======================================== */
+
+@keyframes shimmer {
+  0% { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animation-shimmer-subtle,
+.animation-shimmer-medium,
+.animation-shimmer-bold {
+  position: relative;
+  overflow: hidden;
+}
+
+.animation-shimmer-subtle::before,
+.animation-shimmer-medium::before,
+.animation-shimmer-bold::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.animation-shimmer-subtle:hover:not(:disabled)::before {
+  opacity: 0.3;
+}
+
+.animation-shimmer-medium:hover:not(:disabled)::before {
+  opacity: 0.5;
+}
+
+.animation-shimmer-bold:hover:not(:disabled)::before {
+  opacity: 0.8;
+}
+
+/* ========================================
+   PULSE ANIMATIONS
+   Pulsing scale and opacity
+   ======================================== */
+
+@keyframes pulse-subtle {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.02); opacity: 0.9; }
+}
+
+@keyframes pulse-medium {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.85; }
+}
+
+@keyframes pulse-bold {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+}
+
+.animation-pulse-subtle:hover:not(:disabled) {
+  animation: pulse-subtle 1s var(--animation-easing, ease-in-out) infinite;
+}
+
+.animation-pulse-medium:hover:not(:disabled) {
+  animation: pulse-medium 1s var(--animation-easing, ease-in-out) infinite;
+}
+
+.animation-pulse-bold:hover:not(:disabled) {
+  animation: pulse-bold 1s var(--animation-easing, ease-in-out) infinite;
+}
+
+/* ========================================
+   ROTATE ANIMATIONS
+   Rotation effect
+   ======================================== */
+
+.animation-rotate-subtle {
+  transition: transform var(--animation-duration, var(--transition-base));
+}
+
+.animation-rotate-subtle:hover:not(:disabled) {
+  transform: rotate(2deg);
+}
+
+.animation-rotate-medium {
+  transition: transform var(--animation-duration, var(--transition-base));
+}
+
+.animation-rotate-medium:hover:not(:disabled) {
+  transform: rotate(5deg);
+}
+
+.animation-rotate-bold {
+  transition: transform var(--animation-duration, var(--transition-base));
+}
+
+.animation-rotate-bold:hover:not(:disabled) {
+  transform: rotate(10deg);
+}
+
+/* ========================================
+   NONE ANIMATION
+   Explicitly no animations
+   ======================================== */
+
+.animation-none-subtle,
+.animation-none-medium,
+.animation-none-bold {
+  /* No animations applied - placeholder for consistency */
+  animation: none;
+  transition: none;
+}
+
+/* ========================================
+   ACCESSIBILITY
+   Respect user's motion preferences
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  /* Disable all animations and transitions */
+  .animation-lift-subtle,
+  .animation-lift-medium,
+  .animation-lift-bold,
+  .animation-scale-subtle,
+  .animation-scale-medium,
+  .animation-scale-bold,
+  .animation-glow-subtle,
+  .animation-glow-medium,
+  .animation-glow-bold,
+  .animation-ripple-subtle,
+  .animation-ripple-medium,
+  .animation-ripple-bold,
+  .animation-slide-subtle,
+  .animation-slide-medium,
+  .animation-slide-bold,
+  .animation-bounce-subtle,
+  .animation-bounce-medium,
+  .animation-bounce-bold,
+  .animation-fade-subtle,
+  .animation-fade-medium,
+  .animation-fade-bold,
+  .animation-shimmer-subtle,
+  .animation-shimmer-medium,
+  .animation-shimmer-bold,
+  .animation-pulse-subtle,
+  .animation-pulse-medium,
+  .animation-pulse-bold,
+  .animation-rotate-subtle,
+  .animation-rotate-medium,
+  .animation-rotate-bold {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Reset transforms */
+  .animation-lift-subtle:hover:not(:disabled),
+  .animation-lift-medium:hover:not(:disabled),
+  .animation-lift-bold:hover:not(:disabled),
+  .animation-scale-subtle:hover:not(:disabled),
+  .animation-scale-medium:hover:not(:disabled),
+  .animation-scale-bold:hover:not(:disabled),
+  .animation-scale-subtle:active:not(:disabled),
+  .animation-scale-medium:active:not(:disabled),
+  .animation-scale-bold:active:not(:disabled),
+  .animation-slide-subtle:hover:not(:disabled),
+  .animation-slide-medium:hover:not(:disabled),
+  .animation-slide-bold:hover:not(:disabled),
+  .animation-rotate-subtle:hover:not(:disabled),
+  .animation-rotate-medium:hover:not(:disabled),
+  .animation-rotate-bold:hover:not(:disabled) {
+    transform: none !important;
+  }
+  
+  /* Keep shadows but remove transform */
+  .animation-lift-subtle:hover:not(:disabled) {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .animation-lift-medium:hover:not(:disabled) {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .animation-lift-bold:hover:not(:disabled) {
+    box-shadow: var(--shadow-xl);
+  }
+  
+  /* Keep glow but remove animation */
+  .animation-glow-subtle:hover:not(:disabled),
+  .animation-glow-subtle:focus-visible {
+    box-shadow: 0 0 0 2px var(--color-primary-200);
+  }
+  
+  .animation-glow-medium:hover:not(:disabled),
+  .animation-glow-medium:focus-visible {
+    box-shadow: 0 0 0 3px var(--color-primary-300);
+  }
+  
+  .animation-glow-bold:hover:not(:disabled),
+  .animation-glow-bold:focus-visible {
+    box-shadow: 0 0 0 4px var(--color-primary-400);
+  }
+  
+  /* Disable pseudo-element animations */
+  .animation-ripple-subtle::after,
+  .animation-ripple-medium::after,
+  .animation-ripple-bold::after,
+  .animation-shimmer-subtle::before,
+  .animation-shimmer-medium::before,
+  .animation-shimmer-bold::before {
+    display: none !important;
+  }
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+   Use will-change for better performance
+   ======================================== */
+
+.animation-lift-subtle:hover,
+.animation-lift-medium:hover,
+.animation-lift-bold:hover {
+  will-change: transform, box-shadow;
+}
+
+.animation-scale-subtle:hover,
+.animation-scale-medium:hover,
+.animation-scale-bold:hover {
+  will-change: transform;
+}
+
+.animation-glow-subtle:hover,
+.animation-glow-medium:hover,
+.animation-glow-bold:hover,
+.animation-glow-subtle:focus-visible,
+.animation-glow-medium:focus-visible,
+.animation-glow-bold:focus-visible {
+  will-change: box-shadow;
+}
+
+.animation-slide-subtle:hover,
+.animation-slide-medium:hover,
+.animation-slide-bold:hover {
+  will-change: transform;
+}
+
+.animation-fade-subtle:hover,
+.animation-fade-medium:hover,
+.animation-fade-bold:hover {
+  will-change: opacity;
+}
+
+.animation-rotate-subtle:hover,
+.animation-rotate-medium:hover,
+.animation-rotate-bold:hover {
+  will-change: transform;
+}
