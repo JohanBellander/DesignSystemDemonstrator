@@ -335,12 +335,12 @@
         },
         "navigation": {
           "hover": {
-            "type": "bounce",
-            "intensity": "subtle"
+            "type": "shimmer",
+            "intensity": "medium"
           },
           "active": {
             "type": "pulse",
-            "intensity": "medium"
+            "intensity": "bold"
           }
         }
       },

@@ -267,8 +267,8 @@
             "intensity": "medium"
           },
           "active": {
-            "type": "scale",
-            "intensity": "medium"
+            "type": "bounce",
+            "intensity": "subtle"
           },
           "focus": {
             "type": "glow",
@@ -290,30 +290,30 @@
         "dropdown": {
           "hover": {
             "type": "slide",
-            "intensity": "subtle"
+            "intensity": "medium"
           },
           "active": {
-            "type": "scale",
+            "type": "bounce",
             "intensity": "subtle"
           }
         },
         "list": {
           "hover": {
             "type": "slide",
-            "intensity": "subtle"
+            "intensity": "medium"
           },
           "active": {
-            "type": "scale",
+            "type": "bounce",
             "intensity": "subtle"
           }
         },
         "navigation": {
           "hover": {
             "type": "lift",
-            "intensity": "subtle"
+            "intensity": "medium"
           },
           "active": {
-            "type": "scale",
+            "type": "bounce",
             "intensity": "subtle"
           }
         }

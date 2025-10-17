@@ -273,7 +273,7 @@
           },
           "active": {
             "type": "pulse",
-            "intensity": "medium"
+            "intensity": "bold"
           },
           "focus": {
             "type": "glow",
@@ -283,7 +283,7 @@
         "card": {
           "hover": {
             "type": "lift",
-            "intensity": "medium"
+            "intensity": "bold"
           }
         },
         "input": {
@@ -295,11 +295,11 @@
         "dropdown": {
           "hover": {
             "type": "slide",
-            "intensity": "subtle"
+            "intensity": "medium"
           },
           "active": {
-            "type": "scale",
-            "intensity": "subtle"
+            "type": "pulse",
+            "intensity": "medium"
           }
         },
         "list": {
@@ -309,17 +309,17 @@
           },
           "active": {
             "type": "pulse",
-            "intensity": "subtle"
+            "intensity": "medium"
           }
         },
         "navigation": {
           "hover": {
-            "type": "scale",
-            "intensity": "subtle"
+            "type": "fade",
+            "intensity": "medium"
           },
           "active": {
             "type": "pulse",
-            "intensity": "subtle"
+            "intensity": "medium"
           }
         }
       },

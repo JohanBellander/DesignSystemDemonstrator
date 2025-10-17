@@ -261,10 +261,10 @@
         "button": {
           "hover": {
             "type": "bounce",
-            "intensity": "subtle"
+            "intensity": "medium"
           },
           "active": {
-            "type": "scale",
+            "type": "pulse",
             "intensity": "medium"
           },
           "focus": {
@@ -286,31 +286,31 @@
         },
         "dropdown": {
           "hover": {
-            "type": "bounce",
+            "type": "shimmer",
             "intensity": "subtle"
           },
           "active": {
-            "type": "scale",
+            "type": "bounce",
             "intensity": "subtle"
           }
         },
         "list": {
           "hover": {
             "type": "slide",
-            "intensity": "subtle"
+            "intensity": "medium"
           },
           "active": {
-            "type": "scale",
+            "type": "bounce",
             "intensity": "subtle"
           }
         },
         "navigation": {
           "hover": {
-            "type": "bounce",
+            "type": "shimmer",
             "intensity": "subtle"
           },
           "active": {
-            "type": "scale",
+            "type": "bounce",
             "intensity": "subtle"
           }
         }
