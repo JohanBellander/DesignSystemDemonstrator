@@ -20,7 +20,12 @@
       "widths": ["medium", "thick"],
       "styles": ["solid"]
     },
-    "navigationPattern": "topbar"
+    "navigationPattern": "topbar",
+    "animations": {
+      "types": ["shimmer", "pulse", "glow", "lift", "slide"],
+      "intensities": ["subtle", "medium", "bold"],
+      "components": ["button", "card", "input", "dropdown", "list", "navigation"]
+    }
   },
   "tokens": {
     "colors": {
@@ -268,6 +273,81 @@
       "fontSize": "16px",
       "borderRadius": "0",
       "shadow": "0 4px 6px -1px rgba(12, 15, 15, 0.1)"
+    },
+    "animations": {
+      "default": {
+        "hover": {
+          "type": "shimmer",
+          "intensity": "medium"
+        },
+        "active": {
+          "type": "pulse",
+          "intensity": "bold"
+        },
+        "focus": {
+          "type": "glow",
+          "intensity": "bold"
+        }
+      },
+      "components": {
+        "button": {
+          "hover": {
+            "type": "shimmer",
+            "intensity": "medium"
+          },
+          "active": {
+            "type": "pulse",
+            "intensity": "bold"
+          },
+          "focus": {
+            "type": "glow",
+            "intensity": "bold"
+          }
+        },
+        "card": {
+          "hover": {
+            "type": "lift",
+            "intensity": "bold"
+          }
+        },
+        "input": {
+          "focus": {
+            "type": "glow",
+            "intensity": "bold"
+          }
+        },
+        "dropdown": {
+          "hover": {
+            "type": "shimmer",
+            "intensity": "subtle"
+          },
+          "active": {
+            "type": "pulse",
+            "intensity": "medium"
+          }
+        },
+        "list": {
+          "hover": {
+            "type": "slide",
+            "intensity": "medium"
+          },
+          "active": {
+            "type": "pulse",
+            "intensity": "medium"
+          }
+        },
+        "navigation": {
+          "hover": {
+            "type": "shimmer",
+            "intensity": "subtle"
+          },
+          "active": {
+            "type": "pulse",
+            "intensity": "medium"
+          }
+        }
+      },
+      "respectReducedMotion": true
     }
   }
 }

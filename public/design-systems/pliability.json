@@ -29,6 +29,11 @@
         "sizes": ["medium", "large"],
         "interactive": true
       }
+    },
+    "animations": {
+      "types": ["lift", "scale", "glow", "slide"],
+      "intensities": ["subtle", "medium"],
+      "components": ["button", "card", "input", "dropdown", "list", "navigation"]
     }
   },
   "tokens": {
@@ -239,6 +244,81 @@
       "backgroundColor": "rgba(3, 3, 3, 0.95)",
       "borderColor": "rgba(255, 255, 255, 0.08)",
       "shadowOnScroll": "0 4px 12px rgba(0, 0, 0, 0.3)"
+    },
+    "animations": {
+      "default": {
+        "hover": {
+          "type": "lift",
+          "intensity": "medium"
+        },
+        "active": {
+          "type": "scale",
+          "intensity": "medium"
+        },
+        "focus": {
+          "type": "glow",
+          "intensity": "medium"
+        }
+      },
+      "components": {
+        "button": {
+          "hover": {
+            "type": "lift",
+            "intensity": "medium"
+          },
+          "active": {
+            "type": "scale",
+            "intensity": "medium"
+          },
+          "focus": {
+            "type": "glow",
+            "intensity": "medium"
+          }
+        },
+        "card": {
+          "hover": {
+            "type": "lift",
+            "intensity": "medium"
+          }
+        },
+        "input": {
+          "focus": {
+            "type": "glow",
+            "intensity": "bold"
+          }
+        },
+        "dropdown": {
+          "hover": {
+            "type": "slide",
+            "intensity": "subtle"
+          },
+          "active": {
+            "type": "scale",
+            "intensity": "subtle"
+          }
+        },
+        "list": {
+          "hover": {
+            "type": "slide",
+            "intensity": "subtle"
+          },
+          "active": {
+            "type": "scale",
+            "intensity": "subtle"
+          }
+        },
+        "navigation": {
+          "hover": {
+            "type": "lift",
+            "intensity": "subtle"
+          },
+          "active": {
+            "type": "scale",
+            "intensity": "subtle"
+          }
+        }
+      },
+      "respectReducedMotion": true
     }
   }
 }

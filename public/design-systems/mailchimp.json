@@ -19,7 +19,12 @@
       "widths": ["thin", "medium"],
       "styles": ["solid"]
     },
-    "navigationPattern": "sidebar"
+    "navigationPattern": "sidebar",
+    "animations": {
+      "types": ["bounce", "scale", "glow", "lift", "slide"],
+      "intensities": ["subtle", "medium"],
+      "components": ["button", "card", "input", "dropdown", "list", "navigation"]
+    }
   },
   "tokens": {
     "colors": {
@@ -236,6 +241,81 @@
       "fontSize": "1rem",
       "borderRadius": "16px",
       "shadow": "0 4px 8px rgba(35, 30, 21, 0.12)"
+    },
+    "animations": {
+      "default": {
+        "hover": {
+          "type": "bounce",
+          "intensity": "subtle"
+        },
+        "active": {
+          "type": "scale",
+          "intensity": "medium"
+        },
+        "focus": {
+          "type": "glow",
+          "intensity": "medium"
+        }
+      },
+      "components": {
+        "button": {
+          "hover": {
+            "type": "bounce",
+            "intensity": "subtle"
+          },
+          "active": {
+            "type": "scale",
+            "intensity": "medium"
+          },
+          "focus": {
+            "type": "glow",
+            "intensity": "medium"
+          }
+        },
+        "card": {
+          "hover": {
+            "type": "lift",
+            "intensity": "medium"
+          }
+        },
+        "input": {
+          "focus": {
+            "type": "glow",
+            "intensity": "medium"
+          }
+        },
+        "dropdown": {
+          "hover": {
+            "type": "bounce",
+            "intensity": "subtle"
+          },
+          "active": {
+            "type": "scale",
+            "intensity": "subtle"
+          }
+        },
+        "list": {
+          "hover": {
+            "type": "slide",
+            "intensity": "subtle"
+          },
+          "active": {
+            "type": "scale",
+            "intensity": "subtle"
+          }
+        },
+        "navigation": {
+          "hover": {
+            "type": "bounce",
+            "intensity": "subtle"
+          },
+          "active": {
+            "type": "scale",
+            "intensity": "subtle"
+          }
+        }
+      },
+      "respectReducedMotion": true
     }
   }
 }

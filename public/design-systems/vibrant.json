@@ -29,6 +29,11 @@
         "sizes": ["medium", "large"],
         "interactive": true
       }
+    },
+    "animations": {
+      "types": ["bounce", "pulse", "glow", "shimmer", "slide", "lift"],
+      "intensities": ["subtle", "medium", "bold"],
+      "components": ["button", "card", "input", "dropdown", "list", "navigation"]
     }
   },
   "tokens": {
@@ -265,6 +270,81 @@
       "fontSize": "1rem",
       "borderRadius": "0",
       "shadow": "0 4px 0 #FF0066"
+    },
+    "animations": {
+      "default": {
+        "hover": {
+          "type": "bounce",
+          "intensity": "medium"
+        },
+        "active": {
+          "type": "pulse",
+          "intensity": "bold"
+        },
+        "focus": {
+          "type": "glow",
+          "intensity": "bold"
+        }
+      },
+      "components": {
+        "button": {
+          "hover": {
+            "type": "bounce",
+            "intensity": "medium"
+          },
+          "active": {
+            "type": "pulse",
+            "intensity": "bold"
+          },
+          "focus": {
+            "type": "glow",
+            "intensity": "bold"
+          }
+        },
+        "card": {
+          "hover": {
+            "type": "lift",
+            "intensity": "bold"
+          }
+        },
+        "input": {
+          "focus": {
+            "type": "glow",
+            "intensity": "bold"
+          }
+        },
+        "dropdown": {
+          "hover": {
+            "type": "shimmer",
+            "intensity": "medium"
+          },
+          "active": {
+            "type": "pulse",
+            "intensity": "bold"
+          }
+        },
+        "list": {
+          "hover": {
+            "type": "slide",
+            "intensity": "medium"
+          },
+          "active": {
+            "type": "pulse",
+            "intensity": "medium"
+          }
+        },
+        "navigation": {
+          "hover": {
+            "type": "bounce",
+            "intensity": "subtle"
+          },
+          "active": {
+            "type": "pulse",
+            "intensity": "medium"
+          }
+        }
+      },
+      "respectReducedMotion": true
     }
   }
 }

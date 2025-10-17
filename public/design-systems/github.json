@@ -19,7 +19,12 @@
       "styles": ["solid", "dashed"]
     },
     "transitions": ["fast", "base"],
-    "navigationPattern": "sidebar-topbar"
+    "navigationPattern": "sidebar-topbar",
+    "animations": {
+      "types": ["fade", "scale", "lift", "glow", "none"],
+      "intensities": ["subtle", "medium"],
+      "components": ["button", "card", "input", "dropdown", "list", "navigation"]
+    }
   },
   "tokens": {
     "colors": {
@@ -227,6 +232,81 @@
       "fontSize": "0.875rem",
       "borderRadius": "6px",
       "shadow": "0 1px 0 rgba(27, 31, 36, 0.04)"
+    },
+    "animations": {
+      "default": {
+        "hover": {
+          "type": "fade",
+          "intensity": "subtle"
+        },
+        "active": {
+          "type": "scale",
+          "intensity": "subtle"
+        },
+        "focus": {
+          "type": "glow",
+          "intensity": "medium"
+        }
+      },
+      "components": {
+        "button": {
+          "hover": {
+            "type": "lift",
+            "intensity": "subtle"
+          },
+          "active": {
+            "type": "scale",
+            "intensity": "subtle"
+          },
+          "focus": {
+            "type": "glow",
+            "intensity": "medium"
+          }
+        },
+        "card": {
+          "hover": {
+            "type": "lift",
+            "intensity": "subtle"
+          }
+        },
+        "input": {
+          "focus": {
+            "type": "glow",
+            "intensity": "medium"
+          }
+        },
+        "dropdown": {
+          "hover": {
+            "type": "fade",
+            "intensity": "subtle"
+          },
+          "active": {
+            "type": "scale",
+            "intensity": "subtle"
+          }
+        },
+        "list": {
+          "hover": {
+            "type": "fade",
+            "intensity": "subtle"
+          },
+          "active": {
+            "type": "none",
+            "intensity": "subtle"
+          }
+        },
+        "navigation": {
+          "hover": {
+            "type": "fade",
+            "intensity": "subtle"
+          },
+          "active": {
+            "type": "none",
+            "intensity": "subtle"
+          }
+        }
+      },
+      "respectReducedMotion": true
     }
   }
 }
