@@ -347,7 +347,7 @@
           }
         }
       },
-      "respectReducedMotion": true
+      "reduceMotion": true
     }
   }
 }

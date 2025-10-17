@@ -306,7 +306,7 @@
           }
         }
       },
-      "respectReducedMotion": true
+      "reduceMotion": true
     }
   }
 }

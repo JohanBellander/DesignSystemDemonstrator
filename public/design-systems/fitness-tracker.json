@@ -323,7 +323,7 @@
           }
         }
       },
-      "respectReducedMotion": true
+      "reduceMotion": true
     }
   }
 }

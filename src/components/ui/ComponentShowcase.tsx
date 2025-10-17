@@ -20,9 +20,10 @@ import { NavigationDemo } from '../demo/Navigation';
 import { ColorPalette } from '../demo/ColorPalette';
 import { Spacing } from '../demo/Spacing';
 import { Transitions } from '../demo/Transitions';
+import { AnimationShowcase } from '../demo/AnimationShowcase';
 import styles from './ComponentShowcase.module.css';
 
-type TabId = 'typography' | 'spacing' | 'transitions' | 'buttons' | 'inputs' | 'cards' | 'alerts' | 'badges' | 'avatars' | 'dropdowns' | 'lists' | 'layout' | 'elevation' | 'opacity' | 'borders' | 'focus' | 'surfaces' | 'colors' | 'navigation';
+type TabId = 'typography' | 'spacing' | 'transitions' | 'animations' | 'buttons' | 'inputs' | 'cards' | 'alerts' | 'badges' | 'avatars' | 'dropdowns' | 'lists' | 'layout' | 'elevation' | 'opacity' | 'borders' | 'focus' | 'surfaces' | 'colors' | 'navigation';
 
 interface Tab {
   id: TabId;
@@ -36,6 +37,7 @@ const tabs: Tab[] = [
   { id: 'spacing', label: 'Spacing', category: 'foundations' },
   { id: 'colors', label: 'Color Palette', category: 'foundations' },
   { id: 'transitions', label: 'Transitions', category: 'foundations' },
+  { id: 'animations', label: 'Animations', category: 'foundations' },
   { id: 'elevation', label: 'Elevation', category: 'foundations' },
   { id: 'opacity', label: 'Opacity', category: 'foundations' },
   { id: 'borders', label: 'Border System', category: 'foundations' },
@@ -345,6 +347,17 @@ export function ComponentShowcase() {
               Animation timing and easing functions that control motion in the interface. Compare fast, base, and slow transition speeds with interactive examples.
             </p>
             <Transitions />
+          </section>
+        )}
+
+        {/* Animations Section */}
+        {activeTab === 'animations' && (
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Animations</h2>
+            <p className={styles.sectionDescription}>
+              Interactive animation system demonstrating all animation types, intensity levels, and interaction states. See how animations are applied to components and configured per design system.
+            </p>
+            <AnimationShowcase />
           </section>
         )}
 
