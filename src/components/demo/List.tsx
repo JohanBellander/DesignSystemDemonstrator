@@ -1,6 +1,8 @@
 import { useDesignSystem } from '../../context/DesignSystemContext';
+import { useAnimation } from '../../hooks/useAnimation';
 import { isComponentPropertyAllowed } from '../../utils/tokenRestrictions';
 import styles from './List.module.css';
+import animationStyles from '../../styles/animations.module.css';
 
 interface ListItem {
   id: string;
@@ -23,10 +25,26 @@ export function List({
   size = 'medium',
   interactive = false 
 }: ListProps) {
+  const { getAnimationClasses, getAnimationProps } = useAnimation('list');
+  const animationClasses = getAnimationClasses();
+  
+  const listClasses = [
+    styles.list,
+    styles[variant],
+    styles[size],
+    interactive ? styles.interactive : ''
+  ].filter(Boolean).join(' ');
+  
+  const itemClasses = [
+    styles.listItem,
+    interactive && animationClasses.hover ? animationStyles[animationClasses.hover] : '',
+    interactive && animationClasses.active ? animationStyles[animationClasses.active] : '',
+  ].filter(Boolean).join(' ');
+  
   return (
-    <ul className={`${styles.list} ${styles[variant]} ${styles[size]} ${interactive ? styles.interactive : ''}`}>
+    <ul className={listClasses}>
       {items.map((item) => (
-        <li key={item.id} className={styles.listItem}>
+        <li key={item.id} className={itemClasses} style={interactive ? getAnimationProps() : undefined}>
           {item.icon && <span className={styles.icon}>{item.icon}</span>}
           <div className={styles.content}>
             <div className={styles.title}>{item.title}</div>

@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useDesignSystem } from '../../context/DesignSystemContext';
+import { useAnimation } from '../../hooks/useAnimation';
 import { isComponentPropertyAllowed } from '../../utils/tokenRestrictions';
 import styles from './Dropdown.module.css';
+import animationStyles from '../../styles/animations.module.css';
 
 interface DropdownOption {
   value: string;
@@ -27,6 +29,8 @@ export function Dropdown({
 }: DropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<DropdownOption | null>(null);
+  const { getAnimationClasses, getAnimationProps } = useAnimation('dropdown');
+  const animationClasses = getAnimationClasses();
 
   const handleToggle = () => {
     if (!disabled) {
@@ -44,12 +48,23 @@ export function Dropdown({
       setIsOpen(false);
     }
   };
+  
+  const dropdownClasses = [
+    styles.dropdown,
+    styles[size],
+    error ? styles.error : '',
+    isOpen ? styles.open : '',
+    animationClasses.hover && animationStyles[animationClasses.hover],
+    animationClasses.active && animationStyles[animationClasses.active],
+    animationClasses.focus && animationStyles[animationClasses.focus]
+  ].filter(Boolean).join(' ');
 
   return (
     <div className={`${styles.dropdownWrapper} ${disabled ? styles.disabled : ''}`}>
       {label && <label className={styles.label}>{label}</label>}
       <div 
-        className={`${styles.dropdown} ${styles[size]} ${error ? styles.error : ''} ${isOpen ? styles.open : ''}`}
+        className={dropdownClasses}
+        style={getAnimationProps()}
         onClick={handleToggle}
         onKeyDown={handleKeyDown}
         tabIndex={disabled ? -1 : 0}
