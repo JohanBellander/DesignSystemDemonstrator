@@ -838,10 +838,145 @@ With all optional properties:
         "raised": "#FAFAFA",
         "overlay": "#FFFFFF"
       }
+    },
+    "animations": {
+      "default": {
+        "hover": { "type": "scale", "intensity": "medium" },
+        "active": { "type": "scale", "intensity": "bold" },
+        "focus": { "type": "glow", "intensity": "medium" }
+      },
+      "components": {
+        "button": {
+          "hover": { "type": "lift", "intensity": "medium" },
+          "active": { "type": "ripple", "intensity": "bold" }
+        },
+        "card": {
+          "hover": { "type": "lift", "intensity": "subtle" }
+        },
+        "input": {
+          "focus": { "type": "glow", "intensity": "bold" }
+        }
+      },
+      "reduceMotion": true
     }
   }
 }
 ```
+
+## Adding Animations (Optional)
+
+Animations add interactive motion to your design system. They're completely optional but can enhance user experience.
+
+### Quick Animation Setup
+
+Add an `animations` section to your `tokens`:
+
+```json
+{
+  "tokens": {
+    "colors": { ... },
+    "typography": { ... },
+    "animations": {
+      "default": {
+        "hover": {
+          "type": "scale",
+          "intensity": "medium"
+        }
+      },
+      "reduceMotion": true
+    }
+  }
+}
+```
+
+### Animation Types
+
+Choose from 11 animation types:
+
+| Type | Best For | Visual Effect |
+|------|----------|---------------|
+| `ripple` | Buttons, clicks | Material Design ripple |
+| `lift` | Cards, buttons | Elevation increase |
+| `scale` | Buttons, icons | Size increase |
+| `glow` | Focus states | Glowing border |
+| `slide` | List items, links | Horizontal movement |
+| `bounce` | Playful UIs | Spring physics |
+| `fade` | Subtle effects | Opacity change |
+| `shimmer` | Loading, highlights | Light sweep |
+| `rotate` | Icons, refresh | Rotation |
+| `pulse` | Notifications | Rhythmic scale |
+| `none` | Minimal UIs | No animation |
+
+### Intensity Levels
+
+- **`subtle`** - Barely noticeable, professional
+- **`medium`** - Balanced, standard
+- **`bold`** - Prominent, expressive
+
+### Component Overrides
+
+Override default animations for specific components:
+
+```json
+{
+  "animations": {
+    "default": {
+      "hover": { "type": "fade", "intensity": "subtle" }
+    },
+    "components": {
+      "button": {
+        "hover": { "type": "lift", "intensity": "medium" },
+        "active": { "type": "ripple", "intensity": "bold" },
+        "focus": { "type": "glow", "intensity": "medium" }
+      },
+      "card": {
+        "hover": { "type": "lift", "intensity": "subtle" }
+      },
+      "input": {
+        "focus": { "type": "glow", "intensity": "bold" }
+      },
+      "dropdown": {
+        "hover": { "type": "slide", "intensity": "subtle" }
+      },
+      "list": {
+        "hover": { "type": "slide", "intensity": "subtle" }
+      },
+      "navigation": {
+        "hover": { "type": "fade", "intensity": "subtle" }
+      }
+    },
+    "reduceMotion": true
+  }
+}
+```
+
+### Token Restrictions
+
+Define which animations are allowed in your system:
+
+```json
+{
+  "allowedTokens": {
+    "animations": {
+      "types": ["ripple", "lift", "glow", "scale"],
+      "intensities": ["subtle", "medium", "bold"],
+      "components": ["button", "card", "input", "dropdown", "list", "navigation"]
+    }
+  }
+}
+```
+
+### Animation Best Practices
+
+1. **Match your brand** - Playful brands use bounce/shimmer, professional use fade/slide
+2. **Be consistent** - Use 2-4 animation types, not all 11
+3. **Reserve bold for CTAs** - Use bold intensity sparingly
+4. **Always set `reduceMotion: true`** - Respects accessibility preferences
+5. **Test with reduced motion** - Ensure animations disable properly
+
+### Complete Animation Example
+
+See the **[Animation System Documentation](ANIMATION_SYSTEM.md)** for complete guide with all options and examples.
 
 ## Need Help?
 

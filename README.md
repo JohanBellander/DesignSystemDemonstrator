@@ -19,9 +19,11 @@ This project serves as:
 - **Easy to Extend**: Add new design systems by creating JSON files
 - **Live Switching**: Instantly switch between design systems
 - **Comprehensive Components**: 8 common UI components showcased
+- **Interactive Animations**: 11 animation types for hover, active, and focus states
 - **Navigation Patterns**: Customizable navigation styling for each design system
 - **Type-Safe**: Built with TypeScript for reliability
 - **Design Tokens**: CSS custom properties for all design values
+- **Accessibility First**: Respects reduced motion preferences
 
 ## 📦 Included Design Systems
 
@@ -74,7 +76,7 @@ Use the dropdown in the top-right corner to select a design system. The entire U
 
 ### Viewing Components
 
-Scroll through the page to see all 9 component types:
+Scroll through the page to see all component types:
 - **Navigation** - Different navigation patterns (topbar, sidebar, minimal, etc.)
 - **Typography** - Headings and body text
 - **Buttons** - Various variants and sizes
@@ -84,6 +86,18 @@ Scroll through the page to see all 9 component types:
 - **Badges** - Small labels
 - **Avatars** - User profile placeholders
 - **Dividers** - Section separators
+- **Animations** - Interactive motion showcase with 11 animation types
+
+### Animation System
+
+The demonstrator includes a comprehensive animation system with:
+- **11 Animation Types**: ripple, lift, scale, glow, slide, bounce, fade, shimmer, rotate, pulse, none
+- **3 Intensity Levels**: subtle, medium, bold
+- **3 Interaction States**: hover, active, focus
+- **Component Overrides**: Different animations per component
+- **Accessibility**: Automatically respects `prefers-reduced-motion`
+
+See the [Animation System Guide](docs/ANIMATION_SYSTEM.md) for complete documentation.
 
 ## 🎨 Adding a New Design System
 
@@ -218,6 +232,7 @@ All demo components use CSS custom properties for styling, making them automatic
 ## 📄 Documentation
 
 - **[Creating Design Systems Guide](docs/CREATING_DESIGN_SYSTEMS.md)** - Step-by-step guide for adding new design systems
+- **[Animation System Guide](docs/ANIMATION_SYSTEM.md)** - Complete animation system documentation
 - **[Template JSON](public/design-systems/template.json)** - Annotated template with all properties explained
 - **[Tokens Studio Experiment](TOKENS_STUDIO_EXPERIMENT.md)** - Real-world example of creating a design system
 - [SPECIFICATION.md](./SPECIFICATION.md) - Complete technical specification
