@@ -291,6 +291,85 @@ export interface NavigationStyle {
 }
 
 /**
+ * Animation effect type
+ */
+export type AnimationType = 
+  | 'none'           // No animation
+  | 'ripple'         // Material-style ripple effect
+  | 'lift'           // Elevation increase (transform + shadow)
+  | 'scale'          // Scale up/down
+  | 'glow'           // Glowing border/shadow
+  | 'slide'          // Subtle slide movement
+  | 'bounce'         // Bouncy spring animation
+  | 'fade'           // Opacity change
+  | 'shimmer'        // Shimmer/shine effect
+  | 'rotate'         // Rotation effect
+  | 'pulse';         // Pulsing scale/opacity
+
+/**
+ * Animation intensity level
+ */
+export type AnimationIntensity = 'subtle' | 'medium' | 'bold';
+
+/**
+ * Interaction state
+ */
+export type InteractionState = 'hover' | 'active' | 'focus';
+
+/**
+ * Configuration for a single animation
+ */
+export interface AnimationConfig {
+  type: AnimationType;
+  intensity?: AnimationIntensity;
+  duration?: string; // Reference to transition token or custom value
+  easing?: string;   // CSS easing function
+}
+
+/**
+ * State-specific animation mapping
+ */
+export interface StateAnimations {
+  hover?: AnimationConfig;
+  active?: AnimationConfig;
+  focus?: AnimationConfig;
+}
+
+/**
+ * Component-specific animation configurations
+ */
+export interface ComponentAnimations {
+  button?: StateAnimations;
+  card?: StateAnimations;
+  input?: StateAnimations;
+  navigation?: StateAnimations;
+  list?: StateAnimations;
+  dropdown?: StateAnimations;
+}
+
+/**
+ * Complete animation system for a design system
+ */
+export interface Animations {
+  // Default animations for all components (can be overridden)
+  default?: StateAnimations;
+  
+  // Component-specific overrides
+  components?: ComponentAnimations;
+  
+  // Global animation settings
+  reduceMotion?: boolean; // Honor prefers-reduced-motion
+  
+  // Custom animation definitions (advanced)
+  custom?: {
+    [key: string]: {
+      keyframes: string; // CSS keyframe definition
+      config: AnimationConfig;
+    };
+  };
+}
+
+/**
  * All design tokens for a design system
  * Note: All properties except colors, typography, and spacing are optional
  * to allow flexibility in design system definitions
@@ -310,6 +389,7 @@ export interface DesignTokens {
   focusStates?: FocusStates;
   surfaces?: Surfaces;
   navigation?: NavigationStyle;
+  animations?: Animations;
 }
 
 /**
@@ -365,6 +445,11 @@ export interface AllowedTokens {
     surface?: string[];       // e.g., ["base", "raised"] - only these surface types
   };
   navigationPattern?: 'topbar' | 'sidebar' | 'hamburger' | 'topbar-hamburger' | 'sidebar-topbar' | 'minimal';
+  animations?: {
+    types?: AnimationType[];         // e.g., ["lift", "scale", "glow"] - only these animation types allowed
+    intensities?: AnimationIntensity[]; // e.g., ["subtle", "medium"] - only these intensities
+    components?: string[];           // e.g., ["button", "card"] - only these components can have custom animations
+  };
   components?: {
     dropdown?: {
       sizes?: ('small' | 'medium' | 'large')[];     // e.g., ["medium", "large"] - only these sizes

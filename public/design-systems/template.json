@@ -32,6 +32,14 @@
       "primary": ["500", "600", "700"],
       "//": "^ Only these primary color shades allowed",
       "secondary": ["400", "500", "600"]
+    },
+    "animations": {
+      "//": "^ Only these animation types allowed",
+      "types": ["lift", "scale", "glow"],
+      "//": "^ Only these animation intensities allowed",
+      "intensities": ["subtle", "medium"],
+      "//": "^ Only these components can have custom animations",
+      "components": ["button", "card"]
     }
   },
   "//": "^ DELETE the entire allowedTokens section if you want all tokens to be available",
@@ -297,6 +305,112 @@
         "base": "#FFFFFF",
         "raised": "#FAFAFA",
         "overlay": "#FFFFFF"
+      }
+    },
+    
+    "//": "=== ANIMATIONS (OPTIONAL) ===",
+    "//": "Define interaction animations for hover, click, and focus states",
+    "//": "DELETE this entire section if you don't want custom animations",
+    "animations": {
+      "//": "--- Default Animations ---",
+      "//": "Applied to all components unless overridden",
+      "default": {
+        "hover": {
+          "//": "^ Animation type: none, ripple, lift, scale, glow, slide, bounce, fade, shimmer, rotate, pulse",
+          "type": "lift",
+          "//": "^ Intensity: subtle, medium, bold",
+          "intensity": "subtle",
+          "//": "^ Duration: fast, base, slow (references transitions) or custom like '300ms'",
+          "duration": "base",
+          "//": "^ Easing function: ease, ease-in, ease-out, ease-in-out, or custom cubic-bezier",
+          "easing": "ease-out"
+        },
+        "active": {
+          "type": "scale",
+          "intensity": "subtle",
+          "duration": "fast",
+          "easing": "ease-in-out"
+        },
+        "focus": {
+          "type": "glow",
+          "intensity": "medium",
+          "duration": "base"
+        }
+      },
+      
+      "//": "--- Component-Specific Animations ---",
+      "//": "Override default animations for specific components",
+      "components": {
+        "button": {
+          "//": "^ Ripple effect on hover (Material Design style)",
+          "hover": {
+            "type": "ripple",
+            "intensity": "medium",
+            "duration": "base"
+          },
+          "//": "^ Scale down slightly when clicked",
+          "active": {
+            "type": "scale",
+            "intensity": "subtle",
+            "duration": "fast"
+          }
+        },
+        "card": {
+          "//": "^ Lift up with shadow on hover",
+          "hover": {
+            "type": "lift",
+            "intensity": "medium",
+            "duration": "slow"
+          }
+        },
+        "input": {
+          "//": "^ Glowing border on focus",
+          "focus": {
+            "type": "glow",
+            "intensity": "medium",
+            "duration": "base"
+          }
+        },
+        "navigation": {
+          "//": "^ Subtle slide animation",
+          "hover": {
+            "type": "slide",
+            "intensity": "subtle",
+            "duration": "base"
+          }
+        },
+        "list": {
+          "//": "^ Fade background on hover",
+          "hover": {
+            "type": "fade",
+            "intensity": "subtle",
+            "duration": "fast"
+          }
+        },
+        "dropdown": {
+          "hover": {
+            "type": "scale",
+            "intensity": "subtle",
+            "duration": "base"
+          }
+        }
+      },
+      
+      "//": "--- Global Settings ---",
+      "//": "^ If true, animations will be disabled when user has prefers-reduced-motion enabled",
+      "reduceMotion": true,
+      
+      "//": "--- Custom Animations (Advanced) ---",
+      "//": "Define custom keyframe animations - DELETE if not needed",
+      "custom": {
+        "wiggle": {
+          "keyframes": "@keyframes wiggle { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }",
+          "config": {
+            "type": "rotate",
+            "intensity": "medium",
+            "duration": "500ms"
+          }
+        }
       }
     }
   }
