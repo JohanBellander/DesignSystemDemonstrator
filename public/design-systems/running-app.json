@@ -1,0 +1,448 @@
+{
+  "name": "Running App",
+  "description": "A vibrant fitness tracking design system with bold colors, high contrast, and energetic interactions. Features neon lime green, soft pastels (pink, mint, lavender), and dark navy backgrounds for optimal readability during exercise.",
+  "version": "1.0.0",
+  "tokens": {
+    "colors": {
+      "primary": {
+        "50": "#f7fee7",
+        "100": "#ecfccb",
+        "200": "#d9f99d",
+        "300": "#bef264",
+        "400": "#a3e635",
+        "500": "#84cc16",
+        "600": "#65a30d",
+        "700": "#4d7c0f",
+        "800": "#3f6212",
+        "900": "#365314"
+      },
+      "secondary": {
+        "50": "#fdf4ff",
+        "100": "#fae8ff",
+        "200": "#f5d0fe",
+        "300": "#f0abfc",
+        "400": "#e879f9",
+        "500": "#d946ef",
+        "600": "#c026d3",
+        "700": "#a21caf",
+        "800": "#86198f",
+        "900": "#701a75"
+      },
+      "accent": {
+        "50": "#ecfeff",
+        "100": "#cffafe",
+        "200": "#a5f3fc",
+        "300": "#67e8f9",
+        "400": "#22d3ee",
+        "500": "#06b6d4",
+        "600": "#0891b2",
+        "700": "#0e7490",
+        "800": "#155e75",
+        "900": "#164e63"
+      },
+      "neutral": {
+        "50": "#f8fafc",
+        "100": "#f1f5f9",
+        "200": "#e2e8f0",
+        "300": "#cbd5e1",
+        "400": "#94a3b8",
+        "500": "#64748b",
+        "600": "#475569",
+        "700": "#334155",
+        "800": "#1e293b",
+        "900": "#0f172a"
+      },
+      "semantic": {
+        "success": "#84cc16",
+        "warning": "#f59e0b",
+        "error": "#ef4444",
+        "info": "#06b6d4"
+      },
+      "surface": {
+        "background": "#0f172a",
+        "card": "#1e293b",
+        "overlay": "#334155"
+      },
+      "text": {
+        "primary": "#f8fafc",
+        "secondary": "#cbd5e1",
+        "tertiary": "#94a3b8",
+        "inverse": "#0f172a"
+      },
+      "background": {
+        "default": "#0f172a",
+        "paper": "#1e293b",
+        "elevated": "#334155"
+      },
+      "border": {
+        "default": "#334155",
+        "light": "#475569"
+      }
+    },
+    "typography": {
+      "fontFamily": {
+        "primary": "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif",
+        "secondary": "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif",
+        "mono": "'SF Mono', 'Consolas', 'Monaco', monospace"
+      },
+      "fontSize": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.875rem",
+        "4xl": "2.25rem",
+        "5xl": "3rem",
+        "6xl": "3.75rem"
+      },
+      "fontWeight": {
+        "light": "300",
+        "normal": "400",
+        "medium": "500",
+        "semibold": "600",
+        "bold": "700",
+        "extrabold": "800"
+      },
+      "lineHeight": {
+        "tight": "1.1",
+        "normal": "1.5",
+        "relaxed": "1.75"
+      },
+      "letterSpacing": {
+        "tight": "-0.02em",
+        "normal": "0",
+        "wide": "0.02em"
+      }
+    },
+    "spacing": {
+      "0": "0",
+      "1": "0.25rem",
+      "2": "0.5rem",
+      "3": "0.75rem",
+      "4": "1rem",
+      "5": "1.25rem",
+      "6": "1.5rem",
+      "8": "2rem",
+      "10": "2.5rem",
+      "12": "3rem",
+      "16": "4rem",
+      "20": "5rem",
+      "24": "6rem"
+    },
+    "borderRadius": {
+      "none": "0",
+      "sm": "0.25rem",
+      "base": "0.5rem",
+      "md": "0.75rem",
+      "lg": "1rem",
+      "xl": "1.5rem",
+      "2xl": "2rem",
+      "full": "9999px"
+    },
+    "borderWidth": {
+      "0": "0",
+      "1": "1px",
+      "2": "2px",
+      "4": "4px",
+      "8": "8px"
+    },
+    "opacity": {
+      "0": "0",
+      "10": "0.1",
+      "20": "0.2",
+      "30": "0.3",
+      "40": "0.4",
+      "50": "0.5",
+      "60": "0.6",
+      "70": "0.7",
+      "80": "0.8",
+      "90": "0.9",
+      "100": "1"
+    },
+    "elevation": {
+      "shadows": {
+        "none": "none",
+        "sm": "0 2px 8px rgba(0, 0, 0, 0.3)",
+        "md": "0 4px 16px rgba(0, 0, 0, 0.4)",
+        "lg": "0 8px 24px rgba(0, 0, 0, 0.5)",
+        "xl": "0 16px 48px rgba(0, 0, 0, 0.6)"
+      },
+      "zIndex": {
+        "base": 0,
+        "dropdown": 1000,
+        "sticky": 1100,
+        "overlay": 1200,
+        "modal": 1300,
+        "tooltip": 1400
+      }
+    },
+    "transitions": {
+      "duration": {
+        "fast": "150ms",
+        "base": "250ms",
+        "slow": "400ms"
+      },
+      "timing": {
+        "ease": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+        "easeOut": "cubic-bezier(0, 0, 0.2, 1)",
+        "bounce": "cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+      }
+    }
+  },
+  "components": {
+    "button": {
+      "primary": {
+        "background": "colors.primary.500",
+        "color": "colors.text.inverse",
+        "borderRadius": "borderRadius.2xl",
+        "padding": "spacing.3 spacing.6",
+        "fontSize": "typography.fontSize.base",
+        "fontWeight": "typography.fontWeight.semibold",
+        "border": "none",
+        "shadow": "elevation.shadows.md"
+      },
+      "secondary": {
+        "background": "colors.secondary.200",
+        "color": "colors.text.inverse",
+        "borderRadius": "borderRadius.2xl",
+        "padding": "spacing.3 spacing.6",
+        "fontSize": "typography.fontSize.base",
+        "fontWeight": "typography.fontWeight.semibold",
+        "border": "none",
+        "shadow": "elevation.shadows.sm"
+      },
+      "outline": {
+        "background": "transparent",
+        "color": "colors.text.primary",
+        "borderRadius": "borderRadius.2xl",
+        "padding": "spacing.3 spacing.6",
+        "fontSize": "typography.fontSize.base",
+        "fontWeight": "typography.fontWeight.semibold",
+        "border": "borderWidth.2 solid colors.neutral.600",
+        "shadow": "none"
+      }
+    },
+    "card": {
+      "default": {
+        "background": "colors.surface.card",
+        "borderRadius": "borderRadius.xl",
+        "padding": "spacing.6",
+        "shadow": "elevation.shadows.md",
+        "border": "none"
+      },
+      "highlighted": {
+        "background": "colors.primary.500",
+        "borderRadius": "borderRadius.xl",
+        "padding": "spacing.6",
+        "shadow": "elevation.shadows.lg",
+        "border": "none",
+        "color": "colors.text.inverse"
+      },
+      "secondary": {
+        "background": "colors.secondary.200",
+        "borderRadius": "borderRadius.xl",
+        "padding": "spacing.6",
+        "shadow": "elevation.shadows.md",
+        "border": "none",
+        "color": "colors.text.inverse"
+      },
+      "accent": {
+        "background": "colors.accent.200",
+        "borderRadius": "borderRadius.xl",
+        "padding": "spacing.6",
+        "shadow": "elevation.shadows.md",
+        "border": "none",
+        "color": "colors.text.inverse"
+      }
+    },
+    "input": {
+      "default": {
+        "background": "colors.surface.card",
+        "color": "colors.text.primary",
+        "borderRadius": "borderRadius.xl",
+        "padding": "spacing.4",
+        "fontSize": "typography.fontSize.base",
+        "border": "borderWidth.2 solid colors.neutral.700",
+        "shadow": "elevation.shadows.sm"
+      }
+    },
+    "dropdown": {
+      "trigger": {
+        "background": "colors.surface.card",
+        "color": "colors.text.primary",
+        "borderRadius": "borderRadius.xl",
+        "padding": "spacing.4",
+        "fontSize": "typography.fontSize.base",
+        "border": "borderWidth.2 solid colors.neutral.700",
+        "shadow": "elevation.shadows.sm"
+      },
+      "menu": {
+        "background": "colors.surface.overlay",
+        "borderRadius": "borderRadius.lg",
+        "padding": "spacing.2",
+        "shadow": "elevation.shadows.xl",
+        "border": "borderWidth.1 solid colors.neutral.600"
+      },
+      "item": {
+        "background": "transparent",
+        "color": "colors.text.primary",
+        "borderRadius": "borderRadius.md",
+        "padding": "spacing.3 spacing.4",
+        "fontSize": "typography.fontSize.base"
+      }
+    },
+    "list": {
+      "container": {
+        "background": "colors.surface.card",
+        "borderRadius": "borderRadius.xl",
+        "padding": "spacing.2",
+        "shadow": "elevation.shadows.md",
+        "border": "none"
+      },
+      "item": {
+        "background": "transparent",
+        "color": "colors.text.primary",
+        "borderRadius": "borderRadius.lg",
+        "padding": "spacing.4",
+        "fontSize": "typography.fontSize.base",
+        "border": "none"
+      }
+    },
+    "navigation": {
+      "bar": {
+        "background": "colors.surface.card",
+        "borderRadius": "borderRadius.xl",
+        "padding": "spacing.4",
+        "shadow": "elevation.shadows.lg",
+        "border": "none"
+      },
+      "item": {
+        "background": "transparent",
+        "color": "colors.text.secondary",
+        "borderRadius": "borderRadius.lg",
+        "padding": "spacing.3 spacing.5",
+        "fontSize": "typography.fontSize.base",
+        "fontWeight": "typography.fontWeight.medium"
+      },
+      "itemActive": {
+        "background": "colors.primary.500",
+        "color": "colors.text.inverse",
+        "borderRadius": "borderRadius.lg",
+        "padding": "spacing.3 spacing.5",
+        "fontSize": "typography.fontSize.base",
+        "fontWeight": "typography.fontWeight.semibold",
+        "shadow": "elevation.shadows.md"
+      }
+    }
+  },
+  "restrictions": {
+    "allowedTokens": {
+      "button": {
+        "primary": {
+          "background": ["colors.primary.500", "colors.primary.600", "colors.accent.500"],
+          "color": ["colors.text.inverse", "colors.text.primary"]
+        },
+        "secondary": {
+          "background": ["colors.secondary.200", "colors.secondary.300", "colors.accent.200"],
+          "color": ["colors.text.inverse"]
+        }
+      },
+      "card": {
+        "default": {
+          "background": ["colors.surface.card", "colors.surface.overlay", "colors.neutral.800"]
+        },
+        "highlighted": {
+          "background": ["colors.primary.500", "colors.primary.400", "colors.accent.500"]
+        }
+      },
+      "input": {
+        "default": {
+          "background": ["colors.surface.card", "colors.surface.overlay"]
+        }
+      },
+      "dropdown": {
+        "trigger": {
+          "background": ["colors.surface.card", "colors.surface.overlay"]
+        }
+      },
+      "list": {
+        "container": {
+          "background": ["colors.surface.card", "colors.surface.overlay", "colors.neutral.800"]
+        }
+      },
+      "navigation": {
+        "itemActive": {
+          "background": ["colors.primary.500", "colors.accent.500", "colors.secondary.400"]
+        }
+      },
+      "components": ["button", "card", "input", "dropdown", "list", "navigation"]
+    }
+  },
+  "animations": {
+    "components": {
+      "button": {
+        "hover": {
+          "type": "pulse",
+          "intensity": "bold"
+        },
+        "active": {
+          "type": "scale",
+          "intensity": "bold"
+        }
+      },
+      "card": {
+        "hover": {
+          "type": "lift",
+          "intensity": "bold"
+        },
+        "active": {
+          "type": "scale",
+          "intensity": "medium"
+        }
+      },
+      "input": {
+        "hover": {
+          "type": "glow",
+          "intensity": "medium"
+        },
+        "focus": {
+          "type": "glow",
+          "intensity": "bold"
+        }
+      },
+      "dropdown": {
+        "hover": {
+          "type": "pulse",
+          "intensity": "medium"
+        },
+        "active": {
+          "type": "bounce",
+          "intensity": "subtle"
+        }
+      },
+      "list": {
+        "hover": {
+          "type": "slide",
+          "intensity": "bold"
+        },
+        "active": {
+          "type": "bounce",
+          "intensity": "medium"
+        }
+      },
+      "navigation": {
+        "hover": {
+          "type": "lift",
+          "intensity": "bold"
+        },
+        "active": {
+          "type": "pulse",
+          "intensity": "bold"
+        }
+      }
+    }
+  }
+}

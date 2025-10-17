@@ -64,6 +64,7 @@ export interface Colors {
   primary: ColorPalette;
   secondary: ColorPalette;
   neutral: ColorPalette;
+  accent?: ColorPalette;
   semantic: SemanticColors;
   text: TextColors;
   background: BackgroundColors;

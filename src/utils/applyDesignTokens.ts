@@ -39,6 +39,19 @@ export function applyDesignTokens(designSystem: DesignSystem): void {
     }
   });
 
+  // Apply accent colors (optional)
+  if (tokens.colors.accent) {
+    Object.entries(tokens.colors.accent).forEach(([key, value]) => {
+      if (typeof value === 'string') {
+        root.style.setProperty(`--color-accent-${key}`, value);
+        // Set RGB value for the main color (500 or 600)
+        if (key === '500' || key === '600') {
+          root.style.setProperty(`--color-accent-rgb`, hexToRgb(value));
+        }
+      }
+    });
+  }
+
   Object.entries(tokens.colors.neutral).forEach(([key, value]) => {
     root.style.setProperty(`--color-neutral-${key}`, value);
   });
